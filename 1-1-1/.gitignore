@@ -1,7 +1,4 @@
-#Mac system file
-.DS_Store
-
-#Xcode file
+#xcode file
 project.xcworkspace/
 xcuserdata/
 build/
@@ -9,3 +6,4 @@ build/
 #vim
 *~
 *.swp
+*.DS_Store
