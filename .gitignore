@@ -1,10 +1,8 @@
 #Mac system file
 .DS_Store
 
-#Xcode file
-project.xcworkspace/
-xcuserdata/
-build/
+#Xcode
+*.xcuserstate
 
 #vim
 *~
