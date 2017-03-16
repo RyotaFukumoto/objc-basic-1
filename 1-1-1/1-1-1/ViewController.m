@@ -17,7 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"log");
+    
+    boolProperty = YES;
+    string = @"Yuu";
+    integer = 35;
+    
+    typedef enum {
+        Red,
+        Green,
+        Blue,
+    }Color;
+    number = @(Green); //プリミティブ型の変数をNSNumber型として扱うときに使うboxed expression
+    
+    NSLog(@"sex:%d name:%@ age:%ld color:%@",boolProperty,string,(long)integer,number);
 }
 
 
