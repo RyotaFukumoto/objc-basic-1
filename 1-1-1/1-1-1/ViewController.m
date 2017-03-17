@@ -20,7 +20,7 @@
     
     boolProperty = YES;
     string = @"Yuu";
-    integer = 35;
+    integer = 85;
     
     typedef enum {
         Red,
@@ -29,7 +29,10 @@
     }Color;
     number = @(Green); //プリミティブ型の変数をNSNumber型として扱うときに使うboxed expression
     
-    NSLog(@"sex:%d name:%@ age:%ld color:%@",boolProperty,string,(long)integer,number);
+    //NSLog(@"sex:%d name:%@ age:%ld color:%@",boolProperty,string,(long)integer,number);
+    //longにキャストすると、桁落ちなどトラブルのもとになるためNSIntegerのままに修正
+    
+    NSLog(@"sex:%d name:%@ age:%ld favarite color:%@",boolProperty,string,integer,number);
 }
 
 
