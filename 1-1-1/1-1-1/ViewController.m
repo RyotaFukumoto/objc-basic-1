@@ -32,7 +32,7 @@
     //NSLog(@"sex:%d name:%@ age:%ld color:%@",boolProperty,string,(long)integer,number);
     //longにキャストすると、桁落ちなどトラブルのもとになるためNSIntegerのままに修正
     
-    NSLog(@"sex:%d name:%@ age:%ld favarite color:%@",boolProperty,string,integer,number);
+    NSLog(@"sex:%d name:%@ age:%zd favarite color:%@",boolProperty,string,integer,number);
 }
 
 
