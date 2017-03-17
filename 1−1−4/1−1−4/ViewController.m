@@ -29,7 +29,7 @@
     
     NSMutableArray *beatlesplus = [NSMutableArray arrayWithCapacity:5];
     
-    for (int i = 0; i <= 4; i++) {
+    for (int i = 0; i < [nameArray count]; i++) {
         Account *member = [[Account alloc] initWithName:beatlesDic[@"name"][i]
                                                     age:[beatlesDic[@"age"][i] integerValue]    //NSNumber型からNSInteger型の値を取り出す
                                                     sex:beatlesDic[@"sex"][i]
