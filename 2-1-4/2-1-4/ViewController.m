@@ -39,7 +39,7 @@
     [alertController addAction:okAction];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                     style:UIAlertActionStyleDefault
+                                                     style:UIAlertActionStyleCancel
                                                    handler:^(UIAlertAction *action) {
                                                        NSLog(@"clicked Button title: %@", action.title);
                                                    }];
