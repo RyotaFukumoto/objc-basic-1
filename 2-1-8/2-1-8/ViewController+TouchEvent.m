@@ -8,27 +8,27 @@
 
 #import "ViewController.h"
 
-const float AREA_PICKER_ACCESSORY_HEIGHT = 44;
-const float AREA_PICKER_HEIGHT = 216;
+const float PICKER_ACCESSORY_HEIGHT = 44;
+const float PICKER_HEIGHT = 216;
 
 @implementation ViewController (TouchEvent)
 
 - (IBAction)labelTapped:(id)sender {
-    [self showAreaView:sender];
+    [self showPickerBaseView:sender];
 }
 
 - (IBAction)viewTapped:(id)sender {
-    [self hideAreaView];
+    [self hidePickerBaseView];
 }
 
-- (void)showAreaView:(id)sender
+- (void)showPickerBaseView:(id)sender
 {
     //[self.view bringSubviewToFront:_overlayView]; // 最前面に移動
-    self.areaView.backgroundColor = [UIColor greenColor];
-    [self.view bringSubviewToFront:self.areaView]; // 最前面に移動
+    self.pickerBaseView.backgroundColor = [UIColor greenColor];
+    [self.view bringSubviewToFront:self.pickerBaseView]; // 最前面に移動
     //self.overlayView.frame = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:.20 animations:^{
-        self.areaView.transform = CGAffineTransformMakeTranslation(0, -(AREA_PICKER_ACCESSORY_HEIGHT + AREA_PICKER_HEIGHT));
+        self.pickerBaseView.transform = CGAffineTransformMakeTranslation(0, -(PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT));
     }];
 }
 

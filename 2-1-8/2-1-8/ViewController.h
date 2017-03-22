@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-extern const float AREA_PICKER_ACCESSORY_HEIGHT;
-extern const float AREA_PICKER_HEIGHT;
+extern const float PICKER_ACCESSORY_HEIGHT;
+extern const float PICKER_HEIGHT;
 
 @interface ViewController : UIViewController{
     
 }
-@property(nonatomic, strong) UIView *areaView;
-@property(nonatomic, strong) UIPickerView *areaPickerView;
-@property(nonatomic, strong) NSArray<NSString*> *roomList;
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property(nullable, nonatomic, strong) UIView *pickerBaseView;
+@property(nullable, nonatomic, strong) UIPickerView *pickerView;
+@property(nullable, nonatomic, strong) NSArray<NSString*> *roomList;
+@property (nullable, weak, nonatomic) IBOutlet UILabel *label;
 
 
 @end
@@ -27,13 +27,13 @@ extern const float AREA_PICKER_HEIGHT;
 @end
 
 @interface ViewController (AddView)
-- (void)buildAreaPickerView;
-- (void)hideAreaView;
+- (void)buildPickerView;
+- (void)hidePickerBaseView;
 @end
 
 @interface ViewController (PickerView)<UIPickerViewDelegate,UIPickerViewDataSource>
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
-- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (NSInteger)numberOfComponentsInPickerView:(nullable UIPickerView *)pickerView;
+- (NSInteger)pickerView:(nullable UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (nullable NSString *)pickerView:(nullable UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (void)pickerView:(nullable UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 @end
