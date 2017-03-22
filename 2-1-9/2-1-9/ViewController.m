@@ -14,8 +14,6 @@
 
 @end
 
-
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -55,6 +53,17 @@
     [self.view bringSubviewToFront:self.pickerBaseView]; // 最前面に移動
     [UIView animateWithDuration:.20 animations:^{
         self.pickerBaseView.transform = CGAffineTransformMakeTranslation(0, -(PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT));
+    }];
+}
+
+- (IBAction)viewTapped:(id)sender {
+    [self hidePickerBaseView];
+}
+
+- (void)hidePickerBaseView
+{
+    [UIView animateWithDuration:.20 animations:^{
+        self.pickerBaseView.transform = CGAffineTransformIdentity;
     }];
 }
 
