@@ -53,7 +53,7 @@
 		1F1A4B501E8261E800A54D16 /* __1_9UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __1_9UITests.m; sourceTree = "<group>"; };
 		1F1A4B521E8261E800A54D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1A4B5E1E82686100A54D16 /* PickerBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerBaseView.h; sourceTree = "<group>"; };
-		1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerBaseView.m; sourceTree = "<group>"; };
+		1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PickerBaseView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

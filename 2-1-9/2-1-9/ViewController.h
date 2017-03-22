@@ -12,8 +12,8 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property PickerBaseView *pickerBaseView;
-- (IBAction)labelTapped:(id)sender;
 
+- (IBAction)labelTapped:(id)sender;
 
 @end
 

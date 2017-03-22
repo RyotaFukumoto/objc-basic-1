@@ -45,6 +45,21 @@ const float DONE_BUTTON_WEDTH = 80;
     [pickerAccessoryView addSubview:doneBtn];
     [self addSubview:pickerAccessoryView];
     
+    // 3. ピッカー作成
+    self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0,
+                                                                     PICKER_ACCESSORY_HEIGHT,
+                                                                     frame.size.width,
+                                                                     PICKER_HEIGHT)];
+    self.datePicker.backgroundColor = [UIColor whiteColor];
+    
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    
+    //現在時刻をDate Pickerの初期設定にする
+    NSDate *now = [NSDate date];
+    self.datePicker.date = now;
+    
+    [self addSubview:self.datePicker];
+
     return self;
 }
 
