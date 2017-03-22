@@ -17,6 +17,7 @@
 		1F1A4B091E82153F00A54D16 /* __1_8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B081E82153F00A54D16 /* __1_8UITests.m */; };
 		1F1A4B181E82252F00A54D16 /* ViewController+TouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B171E82252F00A54D16 /* ViewController+TouchEvent.m */; };
 		1F1A4B1B1E822E3900A54D16 /* ViewController+AddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B1A1E822E3900A54D16 /* ViewController+AddView.m */; };
+		1F1A4B1E1E82428D00A54D16 /* ViewController+PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B1D1E82428D00A54D16 /* ViewController+PickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1F1A4B0A1E82153F00A54D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1A4B171E82252F00A54D16 /* ViewController+TouchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+TouchEvent.m"; sourceTree = "<group>"; };
 		1F1A4B1A1E822E3900A54D16 /* ViewController+AddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+AddView.m"; sourceTree = "<group>"; };
+		1F1A4B1D1E82428D00A54D16 /* ViewController+PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+PickerView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				1F1A4AEA1E82153E00A54D16 /* ViewController.m */,
 				1F1A4B171E82252F00A54D16 /* ViewController+TouchEvent.m */,
 				1F1A4B1A1E822E3900A54D16 /* ViewController+AddView.m */,
+				1F1A4B1D1E82428D00A54D16 /* ViewController+PickerView.m */,
 				1F1A4AEC1E82153E00A54D16 /* Main.storyboard */,
 				1F1A4AEF1E82153E00A54D16 /* Assets.xcassets */,
 				1F1A4AF11E82153E00A54D16 /* LaunchScreen.storyboard */,
@@ -284,6 +287,7 @@
 				1F1A4AE81E82153E00A54D16 /* AppDelegate.m in Sources */,
 				1F1A4AE51E82153E00A54D16 /* main.m in Sources */,
 				1F1A4B1B1E822E3900A54D16 /* ViewController+AddView.m in Sources */,
+				1F1A4B1E1E82428D00A54D16 /* ViewController+PickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,8 @@ extern const float AREA_PICKER_HEIGHT;
     
 }
 @property(nonatomic, strong) UIView *areaView;
-
+@property(nonatomic, strong) UIPickerView *areaPickerView;
+@property(nonatomic, strong) NSArray<NSString*> *roomList;
 
 @end
 
@@ -25,4 +26,11 @@ extern const float AREA_PICKER_HEIGHT;
 
 @interface ViewController (AddView)
 - (void)buildAreaPickerView;
+@end
+
+@interface ViewController (PickerView)<UIPickerViewDelegate,UIPickerViewDataSource>
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+
 @end

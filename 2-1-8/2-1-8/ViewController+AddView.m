@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @implementation ViewController (AddView)
+//PickerView,Doneボタンを設定する
 - (void)buildAreaPickerView{
     float height = self.view.bounds.size.height;
     float width = self.view.bounds.size.width;
@@ -46,6 +47,17 @@
     //2-3. 決定ボタンをアクセサリービューに乗せて、areaViewに加える
     [areaPickerAccessoryView addSubview:doneBtn];
     [self.areaView addSubview:areaPickerAccessoryView];
+    
+    // 3. ピッカー作成
+    self.areaPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0,
+                                                   AREA_PICKER_ACCESSORY_HEIGHT,
+                                                   width,
+                                                   AREA_PICKER_HEIGHT)];
+    self.areaPickerView.backgroundColor = [UIColor whiteColor];
+    self.areaPickerView.delegate = self;
+    self.areaPickerView.dataSource = self;
+    [self.areaPickerView selectRow:2 inComponent:0 animated:NO]; // 初期値設定
+    [self.areaView addSubview:self.areaPickerView];
 }
 
 - (void)performAreaDoneButtonAction
