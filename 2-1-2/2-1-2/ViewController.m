@@ -21,7 +21,7 @@
     UIImage* image = [UIImage imageNamed:@"cookie"];
 //    image.layer.cornerRadius = 10.0f;
 //    image.layer.masksToBounds = YES;
-    _imageView.image = image;
+    self.imageView.image = image;
 }
 
 

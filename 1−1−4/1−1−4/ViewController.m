@@ -17,12 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *nameArray = @[@"John",@"Paul",@"George",@"Ringo",@"Yoko"];
-    NSArray *ageArray = @[@26,@24,@23,@26,@33];
-    NSArray *sexArray = @[@"男性",@"男性",@"男性",@"男性",@"女性"];
-    NSArray *favoriteLanguageArray = @[@"英語",@"英語",@"英語",@"英語",@"日本語"];
+    NSArray<NSString*> *nameArray = @[@"John",@"Paul",@"George",@"Ringo",@"Yoko"];
+    NSArray<NSNumber*> *ageArray = @[@26,@24,@23,@26,@33];
+    NSArray<NSString*> *sexArray = @[@"男性",@"男性",@"男性",@"男性",@"女性"];
+    NSArray<NSString*> *favoriteLanguageArray = @[@"英語",@"英語",@"英語",@"英語",@"日本語"];
     
-    NSDictionary *beatlesDic = @{@"name":nameArray,
+    NSDictionary<NSString*, NSArray*> *beatlesDic = @{@"name":nameArray,
                                  @"age":ageArray,
                                  @"sex":sexArray,
                                  @"favoriteLanguage":favoriteLanguageArray};
