@@ -36,10 +36,14 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eRK-ly-AM5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jek-Gk-I5a"/>
                             <constraint firstItem="eRK-ly-AM5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Lm3-JM-XqX"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="u0L-CS-WLj" appends="YES" id="vrN-Gv-aaI"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="label" destination="eRK-ly-AM5" id="zcd-7n-POS"/>
@@ -49,6 +53,11 @@
                 <tapGestureRecognizer id="0al-ew-L3F">
                     <connections>
                         <action selector="labelTapped:" destination="BYZ-38-t0r" id="Aqf-8T-bEM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="u0L-CS-WLj">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="FWh-qx-3nm"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

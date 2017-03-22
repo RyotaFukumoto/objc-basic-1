@@ -17,6 +17,10 @@ const float AREA_PICKER_HEIGHT = 216;
     [self showAreaView:sender];
 }
 
+- (IBAction)viewTapped:(id)sender {
+    [self hideAreaView];
+}
+
 - (void)showAreaView:(id)sender
 {
     //[self.view bringSubviewToFront:_overlayView]; // 最前面に移動

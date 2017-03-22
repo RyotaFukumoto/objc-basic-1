@@ -28,6 +28,7 @@ extern const float AREA_PICKER_HEIGHT;
 
 @interface ViewController (AddView)
 - (void)buildAreaPickerView;
+- (void)hideAreaView;
 @end
 
 @interface ViewController (PickerView)<UIPickerViewDelegate,UIPickerViewDataSource>
