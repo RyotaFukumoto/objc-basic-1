@@ -17,6 +17,8 @@ extern const float AREA_PICKER_HEIGHT;
 @property(nonatomic, strong) UIView *areaView;
 @property(nonatomic, strong) UIPickerView *areaPickerView;
 @property(nonatomic, strong) NSArray<NSString*> *roomList;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
 
 @end
 

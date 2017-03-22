@@ -62,10 +62,16 @@
 
 - (void)performAreaDoneButtonAction
 {
-    //NSInteger row = [self.areaPickerView selectedRowInComponent:0];
-    //NSLog(@"areaCode:%@, areaName:%@", self.areaList[row][0], self.areaList[row][1]);
-    //self.areaLabel.text = self.areaList[row][1];
-    //[self hideAreaView];
+    NSInteger row = [self.areaPickerView selectedRowInComponent:0];
+    self.label.text = self.roomList[row];
+    [self hideAreaView];
 }
 
+- (void)hideAreaView
+{
+    [UIView animateWithDuration:.20 animations:^{
+        self.areaView.transform = CGAffineTransformIdentity;
+    }];
+    //self.overlayView.frame = CGRectZero;
+}
 @end
