@@ -21,4 +21,8 @@
     return self.roomList[row];
 }
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    self.label.text = self.roomList[row];
+}
+
 @end
