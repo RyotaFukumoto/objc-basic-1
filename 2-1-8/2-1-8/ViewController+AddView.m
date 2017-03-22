@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @implementation ViewController (AddView)
+
 //PickerView,Doneボタンを設定する
 - (void)buildAreaPickerView{
     float height = self.view.bounds.size.height;
@@ -29,7 +30,8 @@
                                              0,
                                              width,
                                              AREA_PICKER_ACCESSORY_HEIGHT)];
-    areaPickerAccessoryView.backgroundColor = [UIColor greenColor];
+    
+    areaPickerAccessoryView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     // 2-2. 決定ボタン作成
     const float DONE_BUTTON_WEDTH = 80;
