@@ -21,7 +21,9 @@
 //MARK:デリゲート先への通知
 -(void)joinIntern{
     //デリゲートにObjCができるようになったことを知らせる
-    delegate.goodAtObjC;
+    if ([delegate respondsToSelector:@selector(goodAtObjC)]) {
+        [delegate goodAtObjC];
+    }
 }
 
 @end
