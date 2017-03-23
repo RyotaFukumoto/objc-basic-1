@@ -17,25 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
+    //Load data form plist
     NSBundle *bundle = [NSBundle mainBundle];
-    //読み込むプロパティリストのファイルパスを指定
     NSString *path = [bundle pathForResource:@"2NE1" ofType:@"plist"];
-    //プロパティリストの中身データを取得
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     self.members = (NSArray *)[dic objectForKey:@"Name"];
-
+    self.descriptions = (NSArray *)[dic objectForKey:@"Description"];
+    
+    ///セルの高さを可変にする
+    ///参考：http://tomoyaonishi.hatenablog.jp/entry/2014/09/27/161152
+    self.tableView.estimatedRowHeight = 150.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 @end

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property NSArray *members;
-
+@property NSArray<NSString *> *members;
+@property NSArray<NSString *> *descriptions;
 @end
 
 @interface ViewController (TableViewDelegate)<UITableViewDelegate,UITableViewDataSource>

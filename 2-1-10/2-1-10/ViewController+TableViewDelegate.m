@@ -19,13 +19,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
     NSString *name = self.members[indexPath.row];
+    NSString *description = self.descriptions[indexPath.row];
     
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    label.text = [NSString stringWithFormat:@"%@",name];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
+    nameLabel.text = name;
+    nameLabel.font = [UIFont boldSystemFontOfSize:30];
     
     UIImage* image = [UIImage imageNamed:name];
     UIImageView *iv = (UIImageView *)[cell viewWithTag:2];
     iv.image = image;
+    
+    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:3];
+    descriptionLabel.text = description;
     
     return cell;
 }
