@@ -51,16 +51,26 @@ const float DONE_BUTTON_WEDTH = 80;
                                                                      frame.size.width,
                                                                      PICKER_HEIGHT)];
     self.datePicker.backgroundColor = [UIColor whiteColor];
-    
     self.datePicker.datePickerMode = UIDatePickerModeDate;
     
     //現在時刻をDate Pickerの初期設定にする
     NSDate *now = [NSDate date];
     self.datePicker.date = now;
     
+    [self.datePicker addTarget:self action:@selector(datePickerUpdated:) forControlEvents:UIControlEventValueChanged];
+
     [self addSubview:self.datePicker];
 
     return self;
+}
+
+-(void)datePickerUpdated:(id)sender{
+    UIDatePicker *picker = (UIDatePicker *)sender;
+
+    //デリゲート先に更新された値を通知
+    if ([self.delegate respondsToSelector:@selector(dateUpdated:)]) {
+        [self.delegate dateUpdated:picker.date];
+    }
 }
 
 -(void)performDoneButtonAction{

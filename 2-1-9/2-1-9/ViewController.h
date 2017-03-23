@@ -10,10 +10,15 @@
 #import "PickerBaseView.h"
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property PickerBaseView *pickerBaseView;
+@property (nullable, weak, nonatomic)  IBOutlet UILabel *label;
+@property (nonnull) PickerBaseView *pickerBaseView;
 
-- (IBAction)labelTapped:(id)sender;
+- (IBAction)labelTapped:(nonnull id)sender;
+-(void)datePickerUpdated:(nonnull id)sender;
 
 @end
 
+@interface ViewController (DatePickerDelegate)<PickerBaseViewDelegate>
+-(void)dateUpdated:(nonnull NSDate*)date;
+
+@end

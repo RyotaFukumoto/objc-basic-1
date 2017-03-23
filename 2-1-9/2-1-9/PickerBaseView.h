@@ -6,12 +6,12 @@
 //  Copyright © 2017年 stv. All rights reserved.
 //
 
-@protocol PickerBaseViewDelegate
-
-@end
 
 #import <UIKit/UIKit.h>
 
+@protocol PickerBaseViewDelegate <NSObject>
+-(void)dateUpdated:(nonnull NSDate*)date;
+@end
 
 @interface PickerBaseView : UIView
 @property(nullable, nonatomic, strong) UIDatePicker *datePicker;

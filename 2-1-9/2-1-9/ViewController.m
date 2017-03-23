@@ -41,6 +41,8 @@
                                                                    height,
                                                                    width,
                                                                    pickerBaseViewHeight)];
+    self.pickerBaseView.delegate = self;
+
     [self.view addSubview:self.pickerBaseView];
 }
 
@@ -65,6 +67,12 @@
     [UIView animateWithDuration:.20 animations:^{
         self.pickerBaseView.transform = CGAffineTransformIdentity;
     }];
+}
+
+-(void)datePickerUpdated:(id)sender{
+    //Date Pickerの値にラベルの表示を更新
+    UIDatePicker *picker = (UIDatePicker *)sender;
+    self.label.text = [NSString stringWithFormat:@"%@", picker.date];
 }
 
 @end

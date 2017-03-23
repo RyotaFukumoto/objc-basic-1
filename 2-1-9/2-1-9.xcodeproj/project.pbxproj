@@ -16,6 +16,7 @@
 		1F1A4B461E8261E800A54D16 /* __1_9Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B451E8261E800A54D16 /* __1_9Tests.m */; };
 		1F1A4B511E8261E800A54D16 /* __1_9UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B501E8261E800A54D16 /* __1_9UITests.m */; };
 		1F1A4B601E82686100A54D16 /* PickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */; };
+		1F506D701E835AE8000E0F05 /* ViewController+DatePickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506D6F1E835AE8000E0F05 /* ViewController+DatePickerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		1F1A4B521E8261E800A54D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1A4B5E1E82686100A54D16 /* PickerBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerBaseView.h; sourceTree = "<group>"; };
 		1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PickerBaseView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1F506D6F1E835AE8000E0F05 /* ViewController+DatePickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+DatePickerDelegate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1F1A4B2F1E8261E800A54D16 /* AppDelegate.m */,
 				1F1A4B311E8261E800A54D16 /* ViewController.h */,
 				1F1A4B321E8261E800A54D16 /* ViewController.m */,
+				1F506D6F1E835AE8000E0F05 /* ViewController+DatePickerDelegate.m */,
 				1F1A4B5E1E82686100A54D16 /* PickerBaseView.h */,
 				1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */,
 				1F1A4B341E8261E800A54D16 /* Main.storyboard */,
@@ -280,6 +283,7 @@
 			files = (
 				1F1A4B331E8261E800A54D16 /* ViewController.m in Sources */,
 				1F1A4B301E8261E800A54D16 /* AppDelegate.m in Sources */,
+				1F506D701E835AE8000E0F05 /* ViewController+DatePickerDelegate.m in Sources */,
 				1F1A4B2D1E8261E800A54D16 /* main.m in Sources */,
 				1F1A4B601E82686100A54D16 /* PickerBaseView.m in Sources */,
 			);
@@ -511,6 +515,7 @@
 				1F1A4B571E8261E800A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1A4B581E8261E800A54D16 /* Build configuration list for PBXNativeTarget "2-1-9Tests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +524,7 @@
 				1F1A4B5A1E8261E800A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1A4B5B1E8261E800A54D16 /* Build configuration list for PBXNativeTarget "2-1-9UITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +533,7 @@
 				1F1A4B5D1E8261E800A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
