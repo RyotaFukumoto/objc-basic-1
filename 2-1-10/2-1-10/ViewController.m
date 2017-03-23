@@ -21,7 +21,14 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.members = @[@"CL",@"Bom",@"Dara"];
+    //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
+    NSBundle *bundle = [NSBundle mainBundle];
+    //読み込むプロパティリストのファイルパスを指定
+    NSString *path = [bundle pathForResource:@"2NE1" ofType:@"plist"];
+    //プロパティリストの中身データを取得
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    self.members = (NSArray *)[dic objectForKey:@"Name"];
+
 }
 
 
