@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 @property NSArray *devices;
-
 @end
 
 @interface ViewController (TableViewDelegate)<UITableViewDataSource,UITableViewDelegate>

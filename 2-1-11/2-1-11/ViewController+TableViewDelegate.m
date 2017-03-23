@@ -19,7 +19,19 @@
     NSArray *devicesArray = self.devices[section];
     return devicesArray.count;
 }
-
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return @"iPhone";
+            break;
+        case 1:
+            return @"iPad";
+            break;
+        default:
+            return @"Others";
+            break;
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"Cell";
