@@ -14,4 +14,9 @@
     df.dateFormat = @"yyyy年MM月dd日";
     self.label.text = [df stringFromDate:date];
 }
+
+-(void)doneButtonTapped{
+    [self hidePickerBaseView];
+}
+
 @end

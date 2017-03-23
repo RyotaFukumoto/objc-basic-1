@@ -15,6 +15,7 @@
 
 - (IBAction)labelTapped:(nonnull id)sender;
 -(void)datePickerUpdated:(nonnull id)sender;
+- (void)hidePickerBaseView;
 
 @end
 

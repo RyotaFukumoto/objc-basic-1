@@ -11,6 +11,7 @@
 
 @protocol PickerBaseViewDelegate <NSObject>
 -(void)dateUpdated:(nonnull NSDate*)date;
+-(void)doneButtonTapped;
 @end
 
 @interface PickerBaseView : UIView
