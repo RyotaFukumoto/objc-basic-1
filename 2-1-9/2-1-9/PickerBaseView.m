@@ -74,7 +74,6 @@ const float DONE_BUTTON_WEDTH = 80;
 }
 
 -(void)performDoneButtonAction{
-    //Doneボタンが押された時の挙動
     if ([self.delegate respondsToSelector:@selector(doneButtonTapped)]) {
         [self.delegate doneButtonTapped];
     }

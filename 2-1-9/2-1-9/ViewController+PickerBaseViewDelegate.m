@@ -1,5 +1,5 @@
 //
-//  ViewController+DatePickerDelegate.m
+//  ViewController+PickerBaseViewDelegate.m
 //  2-1-9
 //
 //  Created by yuu ogasawara on 2017/03/23.
@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@implementation ViewController (DatePickerDelegate)
+@implementation ViewController (PickerBaseViewDelegate)
 -(void)dateUpdated:(nonnull NSDate*)date{
     NSDateFormatter *df = [NSDateFormatter new];
     df.dateFormat = @"yyyy年MM月dd日";

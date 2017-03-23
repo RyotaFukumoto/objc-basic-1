@@ -19,7 +19,6 @@
 
 @end
 
-@interface ViewController (DatePickerDelegate)<PickerBaseViewDelegate>
+@interface ViewController (PickerBaseViewDelegate)<PickerBaseViewDelegate>
 -(void)dateUpdated:(nonnull NSDate*)date;
-
 @end
