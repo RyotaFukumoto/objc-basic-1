@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>iPhone SE</string>
+			<key>size</key>
+			<integer>4</integer>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPhone 7</string>
+			<key>size</key>
+			<real>4.7</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPhone 7 Plus</string>
+			<key>size</key>
+			<real>5.5</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>iPad mini 4</string>
+			<key>size</key>
+			<real>7.9</real>
+			<key>capacity</key>
+			<array>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPad</string>
+			<key>size</key>
+			<real>9.699999999999999</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>9.7-inch iPad Pro</string>
+			<key>size</key>
+			<real>9.699999999999999</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>12.9-inch iPad Pro</string>
+			<key>size</key>
+			<real>12.9</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+		</dict>
+	</array>
+</array>
+</plist>
