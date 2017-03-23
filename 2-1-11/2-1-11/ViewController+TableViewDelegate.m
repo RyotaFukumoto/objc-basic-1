@@ -30,10 +30,6 @@
     
     //名前
     NSString *name = deviceDic[@"name"];
-    
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
-    nameLabel.text = name;
-    nameLabel.font = [UIFont boldSystemFontOfSize:30];
 
     //詳細情報
     NSMutableString *description = [NSMutableString string];
@@ -62,6 +58,16 @@
     NSString *str = [capacityString substringToIndex:capacityStringLength-1];
     NSString *str2 = [str stringByAppendingString:@"GB"];
     [description appendString:str2];
+    
+    //その他特記事項
+    if (deviceDic[@"Notices"] != nil) {
+        [description appendString:[NSString stringWithFormat:@"\n%@",deviceDic[@"Notices"]]];
+    }
+    
+    //UIパーツに設定
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
+    nameLabel.text = name;
+    nameLabel.font = [UIFont boldSystemFontOfSize:30];
     
     UIImage* image = [UIImage imageNamed:name];
     UIImageView *iv = (UIImageView *)[cell viewWithTag:2];

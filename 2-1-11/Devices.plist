@@ -25,6 +25,8 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
+			<key>Notices</key>
+			<string>Splash, Water, and Dust Resistant</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -37,6 +39,10 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
+			<key>Notices</key>
+			<string>Splash, Water, and Dust Resistant
+wide-angle and telephoto cameras
+Optical zoom at 2x</string>
 		</dict>
 	</array>
 	<array>
@@ -72,6 +78,16 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
+			<key>Notices</key>
+			<string>Wide color display (P3)
+True Tone display
+Compatible with Apple Pencil
+Compatible with Smart Keyboard
+Live Photos
+True Tone flash
+Wide color photo capture
+4K HD video recording (3840 by 2160)
+Front Flash</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -84,6 +100,9 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
+			<key>Notices</key>
+			<string>Compatible with Apple Pencil
+Compatible with Smart Keyboard</string>
 		</dict>
 	</array>
 </array>
