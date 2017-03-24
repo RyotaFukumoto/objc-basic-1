@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @implementation ViewController (UITableViewDataSource)
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section{
     return self.members.count;
 }
 
