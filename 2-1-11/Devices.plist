@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>iPhone SE</string>
+			<key>size</key>
+			<integer>4</integer>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPhone 7</string>
+			<key>size</key>
+			<real>4.7</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+			<key>Notices</key>
+			<string>Splash, Water, and Dust Resistant</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPhone 7 Plus</string>
+			<key>size</key>
+			<real>5.5</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+			<key>Notices</key>
+			<string>Splash, Water, and Dust Resistant
+wide-angle and telephoto cameras
+Optical zoom at 2x</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>iPad mini 4</string>
+			<key>size</key>
+			<real>7.9</real>
+			<key>capacity</key>
+			<array>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>iPad</string>
+			<key>size</key>
+			<real>9.699999999999999</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>9.7-inch iPad Pro</string>
+			<key>size</key>
+			<real>9.699999999999999</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+			<key>Notices</key>
+			<string>Wide color display (P3)
+True Tone display
+Compatible with Apple Pencil
+Compatible with Smart Keyboard
+Live Photos
+True Tone flash
+Wide color photo capture
+4K HD video recording (3840 by 2160)
+Front Flash</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>12.9-inch iPad Pro</string>
+			<key>size</key>
+			<real>12.9</real>
+			<key>capacity</key>
+			<array>
+				<integer>32</integer>
+				<integer>128</integer>
+				<integer>256</integer>
+			</array>
+			<key>Notices</key>
+			<string>Compatible with Apple Pencil
+Compatible with Smart Keyboard</string>
+		</dict>
+	</array>
+</array>
+</plist>
