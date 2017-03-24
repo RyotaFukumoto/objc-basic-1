@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 @end
 
 @interface ViewController (UITextFieldDelegate)<UITextFieldDelegate>
-//UITextFieldで入力文字数を制限するために実装
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+
 @end

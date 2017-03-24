@@ -33,17 +33,5 @@ replacementString:(NSString *)string
     return YES;
 }
 
-//キーボード以外をタッチした場合、キーボードを下げる
--(void)touchesBegan:(NSSet<UITouch *> *)touches
-          withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    if ([self.textField isFirstResponder]) {
-        //キーボードが表示されているので、消す
-        [self.textField resignFirstResponder];
-    }else{
-        //キーボードが非表示なので、表示する
-        //[self.textField becomeFirstResponder];
-    }
-}
 
 @end
