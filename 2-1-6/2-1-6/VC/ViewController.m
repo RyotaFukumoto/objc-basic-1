@@ -9,6 +9,13 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+- (IBAction)tappedReloadButton:(id)sender;
+
+@property (strong, nonatomic) WKWebView *webView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *reloadButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end
 
@@ -19,6 +26,7 @@
 
 static NSString * const InitialURL = @"https://google.com";
 
+#pragma mark Life Cycle & App State
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.navigationDelegate = self;
@@ -71,6 +79,24 @@ static NSString * const InitialURL = @"https://google.com";
     }
 }
 
+-(void)whenOffline{
+    //参考：http://nlogic.jp/?p=261
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Offline"
+                                                                             message:@"You are now in offline."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    //アクションの設定
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alertController addAction:okAction];
+    
+    //表示
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+}
+
+#pragma mark View
 - (void)loadView
 {
     [super loadView];
@@ -108,6 +134,9 @@ static NSString * const InitialURL = @"https://google.com";
     self.webView.frame = rect;
 }
 
+
+
+#pragma mark Button
 - (IBAction)tappedReloadButton:(id)sender {
     if ([ReachabilityChecker checkReachability]){
         [self.webView reload];
@@ -134,23 +163,6 @@ static NSString * const InitialURL = @"https://google.com";
     }else{
         [self whenOffline];
     }
-}
-
--(void)whenOffline{
-    //参考：http://nlogic.jp/?p=261
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Offline"
-                                                                             message:@"You are now in offline."
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    //アクションの設定
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-    [alertController addAction:okAction];
-    
-    //表示
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
 }
 
 @end
