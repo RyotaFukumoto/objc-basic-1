@@ -65,10 +65,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCq-Q2-TRw">
+                        <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCq-Q2-TRw">
                             <rect key="frame" x="0.0" y="30" width="240" height="98"/>
                         </pickerView>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-DX-EJ7">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-DX-EJ7">
                             <rect key="frame" x="203" y="0.0" width="37" height="30"/>
                             <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Done"/>
@@ -81,7 +81,6 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="fCq-Q2-TRw" secondAttribute="trailing" id="4F0-7a-7BL"/>
                         <constraint firstAttribute="bottom" secondItem="fCq-Q2-TRw" secondAttribute="bottom" id="Hjx-fn-6Ss"/>
-                        <constraint firstItem="fCq-Q2-TRw" firstAttribute="top" secondItem="DS3-DX-EJ7" secondAttribute="bottom" id="IPE-nZ-1EF"/>
                         <constraint firstItem="fCq-Q2-TRw" firstAttribute="centerX" secondItem="RZp-Rt-Pd0" secondAttribute="centerX" id="MkL-hP-eeN"/>
                         <constraint firstItem="DS3-DX-EJ7" firstAttribute="top" secondItem="RZp-Rt-Pd0" secondAttribute="top" id="ZFk-8R-adI"/>
                         <constraint firstItem="fCq-Q2-TRw" firstAttribute="leading" secondItem="RZp-Rt-Pd0" secondAttribute="leading" id="gdE-aU-D5P"/>

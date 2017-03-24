@@ -21,4 +21,7 @@ const float PICKER_HEIGHT = 216;
     [self hidePickerBaseView];
 }
 
+-(void)doneButtonDidTapped:(id)sender{
+    [self hidePickerBaseView];
+}
 @end

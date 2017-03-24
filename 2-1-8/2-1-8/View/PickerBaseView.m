@@ -11,16 +11,14 @@
 @implementation PickerBaseView
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    
-    self.pickerView.delegate = self;
-    self.pickerView.dataSource = self;
     [self.pickerView selectRow:0 inComponent:0 animated:NO];
-    
     return self;
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
-    NSLog(@"doneButtonTapped");
+    if ([self.delegate respondsToSelector:@selector(doneButtonDidTapped:)]) {
+        [self.delegate doneButtonDidTapped:sender];
+    }
 }
 
 @end

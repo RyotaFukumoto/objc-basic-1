@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol PickerBaseViewDelegate<NSObject>
+-(void)doneButtonDidTapped:(nullable id)sender;
+@end
 
 @interface PickerBaseView : UIView
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
-
+@property (nullable, weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (nullable, weak, nonatomic) IBOutlet UIButton *doneButton;
+@property(nullable,nonatomic,weak) id<PickerBaseViewDelegate> delegate;
 @end
+

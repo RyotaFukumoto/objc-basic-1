@@ -96,7 +96,6 @@
 				1F1A4AE91E82153E00A54D16 /* ViewController.h */,
 				1F1A4AEA1E82153E00A54D16 /* ViewController.m */,
 			);
-			name = ViewController;
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -107,7 +106,6 @@
 				1F0DB4BC1E84E613002743E0 /* PickerBaseView.h */,
 				1F0DB4BD1E84E613002743E0 /* PickerBaseView.m */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -118,7 +116,6 @@
 				1F1A4AF41E82153E00A54D16 /* Info.plist */,
 				1F1A4AF11E82153E00A54D16 /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -160,7 +157,6 @@
 			children = (
 				1F1A4AE41E82153E00A54D16 /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};

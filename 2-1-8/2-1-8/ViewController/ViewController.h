@@ -12,30 +12,21 @@
 extern const float PICKER_ACCESSORY_HEIGHT;
 extern const float PICKER_HEIGHT;
 
-@interface ViewController : UIViewController{
-    
-}
-
+@interface ViewController : UIViewController
 @property(nullable, nonatomic, strong) IBOutlet PickerBaseView *pickerBaseView;
 @property(nullable, nonatomic, strong) NSArray<NSString*> *roomList;
 @property (nullable, weak, nonatomic) IBOutlet UILabel *label;
 
-
 @end
 
-@interface ViewController (TouchEvent)
-
+@interface ViewController (TouchEvent)<PickerBaseViewDelegate>
+-(void)doneButtonDidTapped:(nonnull id)sender;
 @end
 
 @interface ViewController (AddView)
-- (void)buildPickerView;
 - (void)showPickerBaseView:(nullable id)sender;
 - (void)hidePickerBaseView;
 @end
 
-@interface ViewController (PickerView)<UIPickerViewDelegate,UIPickerViewDataSource>
-- (NSInteger)numberOfComponentsInPickerView:(nullable UIPickerView *)pickerView;
-- (NSInteger)pickerView:(nullable UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
-- (nullable NSString *)pickerView:(nullable UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
-- (void)pickerView:(nullable UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+@interface ViewController (PickerView)<UIPickerViewDelegate,UIPickerViewDelegate>
 @end
