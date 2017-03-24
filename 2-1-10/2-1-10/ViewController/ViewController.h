@@ -13,6 +13,6 @@
 @property NSArray<NSString *> *descriptions;
 @end
 
-@interface ViewController (TableViewDelegate)<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController (UITableViewDataSource)<UITableViewDataSource>
 
 @end
