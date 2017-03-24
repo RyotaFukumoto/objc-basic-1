@@ -11,43 +11,46 @@
 
 
 @interface ViewController ()
+@property (nonnull) PickerBaseView *pickerBaseView;
 
 @end
 
 @implementation ViewController
-
+#pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.label.userInteractionEnabled = YES;
-
     [self buildPickerView];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Event Handling
+- (IBAction)labelTapped:(id)sender{
+    [self showPickerBaseView:sender];
+}
+
+- (IBAction)viewTapped:(id)sender {
+    [self hidePickerBaseView];
+}
+
+#pragma mark View Handling
 -(void)buildPickerView{
     float height = self.view.bounds.size.height;
     float width = self.view.bounds.size.width;
     
-    // 1. アクセサリビューとピッカービューを乗せるビューの作成
+    //アクセサリビューとピッカービューを乗せるビューの作成
     float pickerBaseViewHeight = PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT;
     
     self.pickerBaseView = [[PickerBaseView alloc] initWithFrame:CGRectMake(0,
-                                                                   height,
-                                                                   width,
-                                                                   pickerBaseViewHeight)];
+                                                                           height,
+                                                                           width,
+                                                                           pickerBaseViewHeight)];
     self.pickerBaseView.delegate = self;
-
+    
     [self.view addSubview:self.pickerBaseView];
-}
-
-- (IBAction)labelTapped:(id)sender{
-    [self showPickerBaseView:sender];
 }
 
 - (void)showPickerBaseView:(id)sender
@@ -58,21 +61,11 @@
     }];
 }
 
-- (IBAction)viewTapped:(id)sender {
-    [self hidePickerBaseView];
-}
-
 - (void)hidePickerBaseView
 {
     [UIView animateWithDuration:.20 animations:^{
         self.pickerBaseView.transform = CGAffineTransformIdentity;
     }];
-}
-
--(void)datePickerUpdated:(id)sender{
-    //Date Pickerの値にラベルの表示を更新
-    UIDatePicker *picker = (UIDatePicker *)sender;
-    self.label.text = [NSString stringWithFormat:@"%@", picker.date];
 }
 
 @end

@@ -11,10 +11,6 @@
 
 @interface ViewController : UIViewController
 @property (nullable, weak, nonatomic)  IBOutlet UILabel *label;
-@property (nonnull) PickerBaseView *pickerBaseView;
-
-- (IBAction)labelTapped:(nonnull id)sender;
--(void)datePickerUpdated:(nonnull id)sender;
 - (void)hidePickerBaseView;
 
 @end
