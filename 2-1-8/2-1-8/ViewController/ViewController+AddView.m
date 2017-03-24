@@ -12,9 +12,8 @@
 
 //PickerView,Doneボタンを設定する
 - (void)buildPickerView{
-    float height = self.view.bounds.size.height;
-    float width = self.view.bounds.size.width;
     
+    /*
     // 1. アクセサリビューとピッカービューを乗せるビューの作成
     float pickerBaseViewHeight = PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT;
 
@@ -50,7 +49,9 @@
     //2-3. 決定ボタンをアクセサリービューに乗せて、pickerBaseViewに加える
     [pickerAccessoryView addSubview:doneBtn];
     [self.pickerBaseView addSubview:pickerAccessoryView];
+    */
     
+    /*
     // 3. ピッカー作成
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0,
                                                    PICKER_ACCESSORY_HEIGHT,
@@ -61,20 +62,53 @@
     self.pickerView.dataSource = self;
     [self.pickerView selectRow:2 inComponent:0 animated:NO]; // 初期値設定
     [self.pickerBaseView addSubview:self.pickerView];
+     */
+}
+
+- (void)showPickerBaseView:(id)sender
+{
+    //[self.view bringSubviewToFront:_overlayView]; // 最前面に移動
+    //self.pickerBaseView.backgroundColor = [UIColor greenColor];
+    //[self.view bringSubviewToFront:self.pickerBaseView]; // 最前面に移動
+    //self.overlayView.frame = [[UIScreen mainScreen] bounds];
+    //画面外に生成して、画面内にアニメーションする
+    
+    float height = self.view.bounds.size.height;
+    float width = self.view.bounds.size.width;
+    
+    float pickerBaseViewHeight = PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT;
+/*
+    self.pickerBaseView = [[PickerBaseView alloc] initWithFrame:CGRectMake(0,
+                                                                   300,
+                                                                   width,
+                                                                   pickerBaseViewHeight)];
+ */
+    self.pickerBaseView.frame = CGRectMake(0,
+                                           height,
+                                           width,
+                                           pickerBaseViewHeight);
+    
+    [self.view addSubview:self.pickerBaseView];
+
+    [UIView animateWithDuration:.20
+                     animations:^{
+        self.pickerBaseView.transform = CGAffineTransformMakeTranslation(0, -(PICKER_ACCESSORY_HEIGHT + PICKER_HEIGHT));
+    }];
 }
 
 - (void)performDoneButtonAction
 {
-    NSInteger row = [self.pickerView selectedRowInComponent:0];
-    self.label.text = self.roomList[row];
+    //NSInteger row = [self.pickerView selectedRowInComponent:0];
+    //self.label.text = self.roomList[row];
     [self hidePickerBaseView];
 }
 
 - (void)hidePickerBaseView
 {
-    [UIView animateWithDuration:.20 animations:^{
-        self.pickerBaseView.transform = CGAffineTransformIdentity;
-    }];
+    
+    //[UIView animateWithDuration:.20 animations:^{
+    //    self.pickerBaseView.transform = CGAffineTransformIdentity;
+    //}];
     //self.overlayView.frame = CGRectZero;
 }
 

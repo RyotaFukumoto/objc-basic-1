@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PickerBaseView.h"
 
 extern const float PICKER_ACCESSORY_HEIGHT;
 extern const float PICKER_HEIGHT;
@@ -14,8 +15,8 @@ extern const float PICKER_HEIGHT;
 @interface ViewController : UIViewController{
     
 }
-@property(nullable, nonatomic, strong) UIView *pickerBaseView;
-@property(nullable, nonatomic, strong) UIPickerView *pickerView;
+
+@property(nullable, nonatomic, strong) IBOutlet PickerBaseView *pickerBaseView;
 @property(nullable, nonatomic, strong) NSArray<NSString*> *roomList;
 @property (nullable, weak, nonatomic) IBOutlet UILabel *label;
 
@@ -28,6 +29,7 @@ extern const float PICKER_HEIGHT;
 
 @interface ViewController (AddView)
 - (void)buildPickerView;
+- (void)showPickerBaseView:(nullable id)sender;
 - (void)hidePickerBaseView;
 @end
 
