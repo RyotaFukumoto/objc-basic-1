@@ -20,11 +20,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    //Load data form plist
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:@"Devices" ofType:@"plist"];
-    self.devices = [NSArray arrayWithContentsOfFile:path];
-    
     ///セルの高さを可変にする
     ///参考：http://tomoyaonishi.hatenablog.jp/entry/2014/09/27/161152
     self.tableView.estimatedRowHeight = 150.0;
@@ -35,4 +30,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(NSArray *)appleDeviceArray{
+    NSArray *appleDeviceArray = [DeviceManager new].devices;
+    return appleDeviceArray;
+}
+
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DeviceTableViewCell.h"
+#import "DeviceManager.h"
 
 @interface ViewController : UIViewController
-@property NSArray *devices;
+@property (readonly,weak) NSArray* appleDeviceArray;
 @end
 
 @interface ViewController (UITableViewDataSource)<UITableViewDataSource>

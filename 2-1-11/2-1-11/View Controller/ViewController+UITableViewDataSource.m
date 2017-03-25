@@ -9,15 +9,18 @@
 #import "ViewController.h"
 
 @implementation ViewController (UITableViewDataSource)
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.devices.count;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.appleDeviceArray.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section{
-    NSArray *devicesArray = self.devices[section];
-    return devicesArray.count;
+numberOfRowsInSection:(NSInteger)section
+{
+    NSArray *deviceArray = self.appleDeviceArray[section];
+    return deviceArray.count;
 }
+
 -(NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section{
     switch (section) {
@@ -32,22 +35,23 @@ titleForHeaderInSection:(NSInteger)section{
             break;
     }
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"Cell";
     DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    NSArray *devicesArray = self.devices[indexPath.section];
-    NSDictionary *deviceDic = devicesArray[indexPath.row];
+    NSArray *deviceArray = self.appleDeviceArray[indexPath.section];
+    Device *device = deviceArray[indexPath.row];
     
     //名前
-    NSString *name = deviceDic[@"name"];
+    NSString *name = device.name;
 
     //詳細情報
     NSMutableString *description = [NSMutableString string];
     
     //画面サイズ 例："size:9.7inch"
-    NSNumber *displaySize = deviceDic[@"size"];
+    NSNumber *displaySize = device.size;
     //小数点以下第一位まで表示するように設定する　参考:http://program.station.ez-net.jp/special/handbook/objective-c/datatype/format-number.asp
     NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -58,22 +62,22 @@ titleForHeaderInSection:(NSInteger)section{
     [description appendString:sizeString];
     
     //容量 例："capacity:32,64GB"
-    NSArray<NSNumber*> *capacityArray = deviceDic[@"capacity"];
+    NSArray<NSNumber*> *capacityArray = device.capacity;
     NSMutableString *capacityString = [NSMutableString stringWithFormat:@"capacity:"];
     
     for (NSNumber *capacity in capacityArray) {
         [capacityString appendString:[capacity stringValue]];
         [capacityString appendString:@","];
     }
-    
+    //最後についている「,」を削除して末尾に「GB」を付け足す
     NSUInteger capacityStringLength = [capacityString length];
     NSString *str = [capacityString substringToIndex:capacityStringLength-1];
     NSString *str2 = [str stringByAppendingString:@"GB"];
     [description appendString:str2];
     
     //その他特記事項
-    if (deviceDic[@"Notices"] != nil) {
-        [description appendString:[NSString stringWithFormat:@"\n%@",deviceDic[@"Notices"]]];
+    if (device.notices != nil) {
+        [description appendString:[NSString stringWithFormat:@"\n%@",device.notices]];
     }
     
     //UIパーツに設定

@@ -25,7 +25,7 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
-			<key>Notices</key>
+			<key>notices</key>
 			<string>Splash, Water, and Dust Resistant</string>
 		</dict>
 		<dict>
@@ -39,7 +39,7 @@
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
-			<key>Notices</key>
+			<key>notices</key>
 			<string>Splash, Water, and Dust Resistant
 wide-angle and telephoto cameras
 Optical zoom at 2x</string>
@@ -78,7 +78,7 @@ Optical zoom at 2x</string>
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
-			<key>Notices</key>
+			<key>notices</key>
 			<string>Wide color display (P3)
 True Tone display
 Compatible with Apple Pencil
@@ -100,7 +100,7 @@ Front Flash</string>
 				<integer>128</integer>
 				<integer>256</integer>
 			</array>
-			<key>Notices</key>
+			<key>notices</key>
 			<string>Compatible with Apple Pencil
 Compatible with Smart Keyboard</string>
 		</dict>
