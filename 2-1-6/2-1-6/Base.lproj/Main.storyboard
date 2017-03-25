@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <barButtonItem tag="1" title="◀" id="m3T-D8-lb9">
+                                    <barButtonItem tag="1" enabled="NO" title="◀" id="m3T-D8-lb9">
                                         <connections>
                                             <action selector="tappedBackButton:" destination="BYZ-38-t0r" id="fZr-V2-kaC"/>
                                         </connections>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sI1-78-zUc"/>
-                                    <barButtonItem tag="3" title="▶" id="Mvn-4L-3we">
+                                    <barButtonItem tag="3" enabled="NO" title="▶" id="Mvn-4L-3we">
                                         <connections>
                                             <action selector="tappedForwardButton:" destination="BYZ-38-t0r" id="GUt-Ql-KUj"/>
                                         </connections>

@@ -52,7 +52,7 @@
 		1F1A4ABF1E8204E900A54D16 /* 2-1-7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-1-7UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1A4AC31E8204E900A54D16 /* __1_7UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __1_7UITests.m; sourceTree = "<group>"; };
 		1F1A4AC51E8204E900A54D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F1A4AD51E820B1C00A54D16 /* ViewController+UITextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ViewController+UITextFieldDelegate.m"; path = "../ViewController+UITextFieldDelegate.m"; sourceTree = "<group>"; };
+		1F1A4AD51E820B1C00A54D16 /* ViewController+UITextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ViewController+UITextFieldDelegate.m"; path = "ViewController+UITextFieldDelegate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +80,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0DB4801E84CDA1002743E0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A4AD51E820B1C00A54D16 /* ViewController+UITextFieldDelegate.m */,
+				1F1A4AA41E8204E900A54D16 /* ViewController.h */,
+				1F1A4AA51E8204E900A54D16 /* ViewController.m */,
+			);
+			name = "View Controller";
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1F0DB4811E84CDB2002743E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A4AAA1E8204E900A54D16 /* Assets.xcassets */,
+				1F1A4AAF1E8204E900A54D16 /* Info.plist */,
+				1F1A4AAC1E8204E900A54D16 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F1A4A921E8204E900A54D16 = {
 			isa = PBXGroup;
 			children = (
@@ -103,16 +125,12 @@
 		1F1A4A9D1E8204E900A54D16 /* 2-1-7 */ = {
 			isa = PBXGroup;
 			children = (
+				1F0DB4811E84CDB2002743E0 /* Resources */,
+				1F1A4A9E1E8204E900A54D16 /* Supporting Files */,
+				1F0DB4801E84CDA1002743E0 /* View Controller */,
 				1F1A4AA11E8204E900A54D16 /* AppDelegate.h */,
 				1F1A4AA21E8204E900A54D16 /* AppDelegate.m */,
-				1F1A4AA41E8204E900A54D16 /* ViewController.h */,
-				1F1A4AA51E8204E900A54D16 /* ViewController.m */,
-				1F1A4AD51E820B1C00A54D16 /* ViewController+UITextFieldDelegate.m */,
 				1F1A4AA71E8204E900A54D16 /* Main.storyboard */,
-				1F1A4AAA1E8204E900A54D16 /* Assets.xcassets */,
-				1F1A4AAC1E8204E900A54D16 /* LaunchScreen.storyboard */,
-				1F1A4AAF1E8204E900A54D16 /* Info.plist */,
-				1F1A4A9E1E8204E900A54D16 /* Supporting Files */,
 			);
 			path = "2-1-7";
 			sourceTree = "<group>";
@@ -123,13 +141,14 @@
 				1F1A4A9F1E8204E900A54D16 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1F1A4AB71E8204E900A54D16 /* 2-1-7Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1A4AB81E8204E900A54D16 /* __1_7Tests.m */,
 				1F1A4ABA1E8204E900A54D16 /* Info.plist */,
+				1F1A4AB81E8204E900A54D16 /* __1_7Tests.m */,
 			);
 			path = "2-1-7Tests";
 			sourceTree = "<group>";
@@ -137,8 +156,8 @@
 		1F1A4AC21E8204E900A54D16 /* 2-1-7UITests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1A4AC31E8204E900A54D16 /* __1_7UITests.m */,
 				1F1A4AC51E8204E900A54D16 /* Info.plist */,
+				1F1A4AC31E8204E900A54D16 /* __1_7UITests.m */,
 			);
 			path = "2-1-7UITests";
 			sourceTree = "<group>";
@@ -321,6 +340,7 @@
 				1F1A4AA81E8204E900A54D16 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1F1A4AAC1E8204E900A54D16 /* LaunchScreen.storyboard */ = {
@@ -329,6 +349,7 @@
 				1F1A4AAD1E8204E900A54D16 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -426,7 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-7/Info.plist";
+				INFOPLIST_FILE = "2-1-7/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,7 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-7/Info.plist";
+				INFOPLIST_FILE = "2-1-7/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +530,7 @@
 				1F1A4ACA1E8204E900A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1A4ACB1E8204E900A54D16 /* Build configuration list for PBXNativeTarget "2-1-7Tests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +539,7 @@
 				1F1A4ACD1E8204E900A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1A4ACE1E8204E900A54D16 /* Build configuration list for PBXNativeTarget "2-1-7UITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +548,7 @@
 				1F1A4AD01E8204E900A54D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部屋のタイプを選ぶ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-ly-AM5">
+                                <rect key="frame" x="46" y="169" width="228" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0al-ew-L3F" appends="YES" id="80A-HF-0HK"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="eRK-ly-AM5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jek-Gk-I5a"/>
+                            <constraint firstItem="eRK-ly-AM5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Lm3-JM-XqX"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="u0L-CS-WLj" appends="YES" id="vrN-Gv-aaI"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="eRK-ly-AM5" id="zcd-7n-POS"/>
+                        <outlet property="pickerBaseView" destination="RZp-Rt-Pd0" id="gAh-S9-Vln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0al-ew-L3F" userLabel="Label Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="labelTapped:" destination="BYZ-38-t0r" id="Aqf-8T-bEM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="u0L-CS-WLj" userLabel="View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="FWh-qx-3nm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <view contentMode="scaleToFill" id="RZp-Rt-Pd0" customClass="PickerBaseView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCq-Q2-TRw">
+                            <rect key="frame" x="0.0" y="30" width="240" height="98"/>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-DX-EJ7">
+                            <rect key="frame" x="203" y="0.0" width="37" height="30"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="RZp-Rt-Pd0" eventType="touchUpInside" id="Qww-rO-iDv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fCq-Q2-TRw" secondAttribute="trailing" id="4F0-7a-7BL"/>
+                        <constraint firstAttribute="bottom" secondItem="fCq-Q2-TRw" secondAttribute="bottom" id="Hjx-fn-6Ss"/>
+                        <constraint firstItem="fCq-Q2-TRw" firstAttribute="centerX" secondItem="RZp-Rt-Pd0" secondAttribute="centerX" id="MkL-hP-eeN"/>
+                        <constraint firstItem="DS3-DX-EJ7" firstAttribute="top" secondItem="RZp-Rt-Pd0" secondAttribute="top" id="ZFk-8R-adI"/>
+                        <constraint firstItem="fCq-Q2-TRw" firstAttribute="leading" secondItem="RZp-Rt-Pd0" secondAttribute="leading" id="gdE-aU-D5P"/>
+                        <constraint firstAttribute="trailing" secondItem="DS3-DX-EJ7" secondAttribute="trailing" id="we4-V9-R3l"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="doneButton" destination="DS3-DX-EJ7" id="nWw-U2-foO"/>
+                        <outlet property="pickerView" destination="fCq-Q2-TRw" id="KfU-LA-Z2z"/>
+                    </connections>
+                </view>
+            </objects>
+        </scene>
+    </scenes>
+</document>

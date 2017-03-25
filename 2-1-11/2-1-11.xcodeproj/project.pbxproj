@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107C85EB1E86A8740042B15D /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */; };
+		107C85EE1E86AAF90042B15D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 107C85ED1E86AAF90042B15D /* Device.m */; };
+		107C85F11E86AB330042B15D /* DeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 107C85F01E86AB330042B15D /* DeviceManager.m */; };
+
 		1F506DC31E839984000E0F05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC21E839984000E0F05 /* main.m */; };
 		1F506DC61E839984000E0F05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC51E839984000E0F05 /* AppDelegate.m */; };
 		1F506DC91E839984000E0F05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC81E839984000E0F05 /* ViewController.m */; };
@@ -16,7 +20,8 @@
 		1F506DE71E839984000E0F05 /* __1_11UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DE61E839984000E0F05 /* __1_11UITests.m */; };
 		1F506DF51E839A68000E0F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F506DF41E839A68000E0F05 /* Main.storyboard */; };
 		1F506DF91E839ADD000E0F05 /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F506DF81E839ADD000E0F05 /* Devices.plist */; };
-		1F506DFB1E83A97F000E0F05 /* ViewController+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DFA1E83A97F000E0F05 /* ViewController+TableViewDelegate.m */; };
+		1F506DFB1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DFA1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107C85E91E86A8740042B15D /* DeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
+		107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
+		107C85EC1E86AAF90042B15D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		107C85ED1E86AAF90042B15D /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		107C85EF1E86AB330042B15D /* DeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManager.h; sourceTree = "<group>"; };
+		107C85F01E86AB330042B15D /* DeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManager.m; sourceTree = "<group>"; };
 		1F506DBE1E839984000E0F05 /* 2-1-11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-1-11.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F506DC21E839984000E0F05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F506DC41E839984000E0F05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,8 +64,9 @@
 		1F506DE61E839984000E0F05 /* __1_11UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __1_11UITests.m; sourceTree = "<group>"; };
 		1F506DE81E839984000E0F05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F506DF41E839A68000E0F05 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		1F506DF81E839ADD000E0F05 /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Devices.plist; path = ../Devices.plist; sourceTree = "<group>"; };
-		1F506DFA1E83A97F000E0F05 /* ViewController+TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+TableViewDelegate.m"; sourceTree = "<group>"; };
+		1F506DF81E839ADD000E0F05 /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
+		1F506DFA1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+UITableViewDataSource.m"; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107C85E61E86A7360042B15D /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F506DFA1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m */,
+				1F506DC71E839984000E0F05 /* ViewController.h */,
+				1F506DC81E839984000E0F05 /* ViewController.m */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		107C85E71E86A7430042B15D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				107C85E91E86A8740042B15D /* DeviceTableViewCell.h */,
+				107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */,
+				1F506DF41E839A68000E0F05 /* Main.storyboard */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		107C85E81E86A74F0042B15D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F506DCD1E839984000E0F05 /* Assets.xcassets */,
+				1F506DF81E839ADD000E0F05 /* Devices.plist */,
+				1F506DD21E839984000E0F05 /* Info.plist */,
+				1F506DCF1E839984000E0F05 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		107C85F21E86AB3E0042B15D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				107C85EC1E86AAF90042B15D /* Device.h */,
+				107C85ED1E86AAF90042B15D /* Device.m */,
+				107C85EF1E86AB330042B15D /* DeviceManager.h */,
+				107C85F01E86AB330042B15D /* DeviceManager.m */,
+			);
+			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+
 		1F506DB51E839984000E0F05 = {
 			isa = PBXGroup;
 			children = (
@@ -105,17 +162,13 @@
 		1F506DC01E839984000E0F05 /* 2-1-11 */ = {
 			isa = PBXGroup;
 			children = (
+				107C85F21E86AB3E0042B15D /* Model */,
+				107C85E81E86A74F0042B15D /* Resources */,
+				1F506DC11E839984000E0F05 /* Supporting Files */,
+				107C85E71E86A7430042B15D /* View */,
+				107C85E61E86A7360042B15D /* View Controller */,
 				1F506DC41E839984000E0F05 /* AppDelegate.h */,
 				1F506DC51E839984000E0F05 /* AppDelegate.m */,
-				1F506DC71E839984000E0F05 /* ViewController.h */,
-				1F506DC81E839984000E0F05 /* ViewController.m */,
-				1F506DFA1E83A97F000E0F05 /* ViewController+TableViewDelegate.m */,
-				1F506DF41E839A68000E0F05 /* Main.storyboard */,
-				1F506DCD1E839984000E0F05 /* Assets.xcassets */,
-				1F506DCF1E839984000E0F05 /* LaunchScreen.storyboard */,
-				1F506DD21E839984000E0F05 /* Info.plist */,
-				1F506DF81E839ADD000E0F05 /* Devices.plist */,
-				1F506DC11E839984000E0F05 /* Supporting Files */,
 			);
 			path = "2-1-11";
 			sourceTree = "<group>";
@@ -125,14 +178,16 @@
 			children = (
 				1F506DC21E839984000E0F05 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
+
 			sourceTree = "<group>";
 		};
 		1F506DDA1E839984000E0F05 /* 2-1-11Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1F506DDB1E839984000E0F05 /* __1_11Tests.m */,
 				1F506DDD1E839984000E0F05 /* Info.plist */,
+				1F506DDB1E839984000E0F05 /* __1_11Tests.m */,
+
 			);
 			path = "2-1-11Tests";
 			sourceTree = "<group>";
@@ -140,8 +195,8 @@
 		1F506DE51E839984000E0F05 /* 2-1-11UITests */ = {
 			isa = PBXGroup;
 			children = (
-				1F506DE61E839984000E0F05 /* __1_11UITests.m */,
 				1F506DE81E839984000E0F05 /* Info.plist */,
+				1F506DE61E839984000E0F05 /* __1_11UITests.m */,
 			);
 			path = "2-1-11UITests";
 			sourceTree = "<group>";
@@ -282,7 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F506DC91E839984000E0F05 /* ViewController.m in Sources */,
-				1F506DFB1E83A97F000E0F05 /* ViewController+TableViewDelegate.m in Sources */,
+				107C85F11E86AB330042B15D /* DeviceManager.m in Sources */,
+				107C85EB1E86A8740042B15D /* DeviceTableViewCell.m in Sources */,
+				1F506DFB1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m in Sources */,
+				107C85EE1E86AAF90042B15D /* Device.m in Sources */,
+
 				1F506DC61E839984000E0F05 /* AppDelegate.m in Sources */,
 				1F506DC31E839984000E0F05 /* main.m in Sources */,
 			);
@@ -326,6 +385,8 @@
 				1F506DD01E839984000E0F05 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
+
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -424,7 +485,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KE8PEF6922;
-				INFOPLIST_FILE = "2-1-11/Info.plist";
+				INFOPLIST_FILE = "2-1-11/Resources/Info.plist";
+
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +498,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KE8PEF6922;
-				INFOPLIST_FILE = "2-1-11/Info.plist";
+				INFOPLIST_FILE = "2-1-11/Resources/Info.plist";
+
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +571,8 @@
 				1F506DED1E839984000E0F05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+
 		};
 		1F506DEE1E839984000E0F05 /* Build configuration list for PBXNativeTarget "2-1-11Tests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +581,8 @@
 				1F506DF01E839984000E0F05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+
 		};
 		1F506DF11E839984000E0F05 /* Build configuration list for PBXNativeTarget "2-1-11UITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +591,8 @@
 				1F506DF31E839984000E0F05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+
 		};
 /* End XCConfigurationList section */
 	};

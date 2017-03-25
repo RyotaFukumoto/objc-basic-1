@@ -83,6 +83,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0DB4C51E8512F4002743E0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F506D6F1E835AE8000E0F05 /* ViewController+PickerBaseViewDelegate.m */,
+				1F1A4B311E8261E800A54D16 /* ViewController.h */,
+				1F1A4B321E8261E800A54D16 /* ViewController.m */,
+			);
+			name = ViewController;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1F0DB4C61E851346002743E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A4B341E8261E800A54D16 /* Main.storyboard */,
+				1F1A4B5E1E82686100A54D16 /* PickerBaseView.h */,
+				1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F0DB4C71E851350002743E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A4B371E8261E800A54D16 /* Assets.xcassets */,
+				1F1A4B3C1E8261E800A54D16 /* Info.plist */,
+				1F1A4B391E8261E800A54D16 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F1A4B1F1E8261E700A54D16 = {
 			isa = PBXGroup;
 			children = (
@@ -106,18 +139,12 @@
 		1F1A4B2A1E8261E800A54D16 /* 2-1-9 */ = {
 			isa = PBXGroup;
 			children = (
+				1F0DB4C71E851350002743E0 /* Resources */,
+				1F1A4B2B1E8261E800A54D16 /* Supporting Files */,
+				1F0DB4C61E851346002743E0 /* View */,
+				1F0DB4C51E8512F4002743E0 /* ViewController */,
 				1F1A4B2E1E8261E800A54D16 /* AppDelegate.h */,
 				1F1A4B2F1E8261E800A54D16 /* AppDelegate.m */,
-				1F1A4B311E8261E800A54D16 /* ViewController.h */,
-				1F1A4B321E8261E800A54D16 /* ViewController.m */,
-				1F506D6F1E835AE8000E0F05 /* ViewController+PickerBaseViewDelegate.m */,
-				1F1A4B5E1E82686100A54D16 /* PickerBaseView.h */,
-				1F1A4B5F1E82686100A54D16 /* PickerBaseView.m */,
-				1F1A4B341E8261E800A54D16 /* Main.storyboard */,
-				1F1A4B371E8261E800A54D16 /* Assets.xcassets */,
-				1F1A4B391E8261E800A54D16 /* LaunchScreen.storyboard */,
-				1F1A4B3C1E8261E800A54D16 /* Info.plist */,
-				1F1A4B2B1E8261E800A54D16 /* Supporting Files */,
 			);
 			path = "2-1-9";
 			sourceTree = "<group>";
@@ -128,13 +155,14 @@
 				1F1A4B2C1E8261E800A54D16 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1F1A4B441E8261E800A54D16 /* 2-1-9Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1A4B451E8261E800A54D16 /* __1_9Tests.m */,
 				1F1A4B471E8261E800A54D16 /* Info.plist */,
+				1F1A4B451E8261E800A54D16 /* __1_9Tests.m */,
 			);
 			path = "2-1-9Tests";
 			sourceTree = "<group>";
@@ -142,8 +170,8 @@
 		1F1A4B4F1E8261E800A54D16 /* 2-1-9UITests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1A4B501E8261E800A54D16 /* __1_9UITests.m */,
 				1F1A4B521E8261E800A54D16 /* Info.plist */,
+				1F1A4B501E8261E800A54D16 /* __1_9UITests.m */,
 			);
 			path = "2-1-9UITests";
 			sourceTree = "<group>";
@@ -327,6 +355,7 @@
 				1F1A4B351E8261E800A54D16 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1F1A4B391E8261E800A54D16 /* LaunchScreen.storyboard */ = {
@@ -335,6 +364,7 @@
 				1F1A4B3A1E8261E800A54D16 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -432,7 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-9/Info.plist";
+				INFOPLIST_FILE = "2-1-9/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-9/Info.plist";
+				INFOPLIST_FILE = "2-1-9/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
