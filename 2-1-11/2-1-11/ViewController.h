@@ -12,6 +12,6 @@
 @property NSArray *devices;
 @end
 
-@interface ViewController (TableViewDelegate)<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController (UITableViewDataSource)<UITableViewDataSource>
 
 @end

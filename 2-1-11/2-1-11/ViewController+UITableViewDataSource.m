@@ -1,5 +1,5 @@
 //
-//  ViewController+TableViewDelegate.m
+//  ViewController+UITableViewDataSource.m
 //  2-1-10
 //
 //  Created by yuu ogasawara on 2017/03/23.
@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@implementation ViewController (TableViewDelegate)
+@implementation ViewController (UITableViewDataSource)
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
