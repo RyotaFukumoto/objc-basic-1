@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TwoAnyOneManager.h"
 
 @interface ViewController : UIViewController
-@property NSArray<NSString *> *members;
-@property NSArray<NSString *> *descriptions;
 @end
 
 @interface ViewController (UITableViewDataSource)<UITableViewDataSource>

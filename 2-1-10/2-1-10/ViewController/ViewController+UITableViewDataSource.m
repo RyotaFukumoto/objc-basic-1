@@ -11,7 +11,8 @@
 @implementation ViewController (UITableViewDataSource)
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section{
-    return self.members.count;
+    NSArray *members = [self callMembers];
+    return members.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -19,20 +20,26 @@ numberOfRowsInSection:(NSInteger)section{
     NSString *reuseIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    NSString *name = self.members[indexPath.row];
-    NSString *description = self.descriptions[indexPath.row];
+    NSArray *members = [self callMembers];
+    Member *member = members[indexPath.row];
     
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
-    nameLabel.text = name;
+    nameLabel.text = member.name;
     nameLabel.font = [UIFont boldSystemFontOfSize:30];
     
-    UIImage* image = [UIImage imageNamed:name];
+    UIImage* image = [UIImage imageNamed:member.name];
     UIImageView *iv = (UIImageView *)[cell viewWithTag:2];
     iv.image = image;
     
-    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:3];
-    descriptionLabel.text = description;
+    UILabel *explanationLabel = (UILabel *)[cell viewWithTag:3];
+    explanationLabel.text = member.explanation;
     
     return cell;
+}
+
+-(NSArray*)callMembers
+{
+    TwoAnyOneManager* manager = [TwoAnyOneManager new];
+    return manager.members;
 }
 @end
