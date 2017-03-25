@@ -18,21 +18,17 @@ numberOfRowsInSection:(NSInteger)section{
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    TATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
     NSArray *members = [self callMembers];
     Member *member = members[indexPath.row];
     
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
-    nameLabel.text = member.name;
-    nameLabel.font = [UIFont boldSystemFontOfSize:30];
+    cell.nameLabel.text = member.name;
     
     UIImage* image = [UIImage imageNamed:member.name];
-    UIImageView *iv = (UIImageView *)[cell viewWithTag:2];
-    iv.image = image;
-    
-    UILabel *explanationLabel = (UILabel *)[cell viewWithTag:3];
-    explanationLabel.text = member.explanation;
+    cell.portraitView.image = image;
+
+    cell.explainLabel.text = member.explanation;
     
     return cell;
 }

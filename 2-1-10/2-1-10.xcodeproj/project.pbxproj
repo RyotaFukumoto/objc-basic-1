@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107C85E51E86A3920042B15D /* TATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 107C85E41E86A3920042B15D /* TATableViewCell.m */; };
 		10B1C7051E8616E0002F2177 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1C7041E8616E0002F2177 /* Member.m */; };
 		10B1C7091E861794002F2177 /* TwoAnyOneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1C7081E861794002F2177 /* TwoAnyOneManager.m */; };
 		1F506D7F1E8365CB000E0F05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506D7E1E8365CB000E0F05 /* main.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107C85E31E86A3920042B15D /* TATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATableViewCell.h; sourceTree = "<group>"; };
+		107C85E41E86A3920042B15D /* TATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATableViewCell.m; sourceTree = "<group>"; };
 		10B1C7031E8616E0002F2177 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		10B1C7041E8616E0002F2177 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		10B1C7071E861794002F2177 /* TwoAnyOneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoAnyOneManager.h; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 				10B1C7071E861794002F2177 /* TwoAnyOneManager.h */,
 				10B1C7081E861794002F2177 /* TwoAnyOneManager.m */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -104,8 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				1F506D861E8365CB000E0F05 /* Main.storyboard */,
+				107C85E31E86A3920042B15D /* TATableViewCell.h */,
+				107C85E41E86A3920042B15D /* TATableViewCell.m */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -328,6 +331,7 @@
 				1F506D851E8365CB000E0F05 /* ViewController.m in Sources */,
 				10B1C7091E861794002F2177 /* TwoAnyOneManager.m in Sources */,
 				1F506DB41E836E25000E0F05 /* ViewController+UITableViewDataSource.m in Sources */,
+				107C85E51E86A3920042B15D /* TATableViewCell.m in Sources */,
 				1F506D821E8365CB000E0F05 /* AppDelegate.m in Sources */,
 				1F506D7F1E8365CB000E0F05 /* main.m in Sources */,
 				10B1C7051E8616E0002F2177 /* Member.m in Sources */,

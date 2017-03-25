@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TwoAnyOneManager.h"
+#import "TATableViewCell.h"
 
 @interface ViewController : UIViewController
 @end
