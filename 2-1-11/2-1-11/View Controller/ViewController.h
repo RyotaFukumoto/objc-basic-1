@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DeviceTableViewCell.h"
 
 @interface ViewController : UIViewController
 @property NSArray *devices;

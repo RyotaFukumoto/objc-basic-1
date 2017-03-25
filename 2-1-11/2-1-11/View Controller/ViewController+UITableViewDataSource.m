@@ -9,17 +9,17 @@
 #import "ViewController.h"
 
 @implementation ViewController (UITableViewDataSource)
-
-
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.devices.count;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section{
     NSArray *devicesArray = self.devices[section];
     return devicesArray.count;
 }
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+-(NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section{
     switch (section) {
         case 0:
             return @"iPhone";
@@ -35,7 +35,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
     NSArray *devicesArray = self.devices[indexPath.section];
     NSDictionary *deviceDic = devicesArray[indexPath.row];
@@ -77,16 +77,13 @@
     }
     
     //UIパーツに設定
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
-    nameLabel.text = name;
-    nameLabel.font = [UIFont boldSystemFontOfSize:30];
+    cell.nameLabel.text = name;
+    cell.nameLabel.font = [UIFont boldSystemFontOfSize:30];
     
     UIImage* image = [UIImage imageNamed:name];
-    UIImageView *iv = (UIImageView *)[cell viewWithTag:2];
-    iv.image = image;
+    cell.photoView.image = image;
     
-    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:3];
-    descriptionLabel.text = description;
+    cell.explainLabel.text = description;
     
     return cell;
 }

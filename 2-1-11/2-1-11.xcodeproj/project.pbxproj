@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107C85EB1E86A8740042B15D /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */; };
 		1F506DC31E839984000E0F05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC21E839984000E0F05 /* main.m */; };
 		1F506DC61E839984000E0F05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC51E839984000E0F05 /* AppDelegate.m */; };
 		1F506DC91E839984000E0F05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F506DC81E839984000E0F05 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107C85E91E86A8740042B15D /* DeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
+		107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
 		1F506DBE1E839984000E0F05 /* 2-1-11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-1-11.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F506DC21E839984000E0F05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F506DC41E839984000E0F05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,7 +56,7 @@
 		1F506DE61E839984000E0F05 /* __1_11UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __1_11UITests.m; sourceTree = "<group>"; };
 		1F506DE81E839984000E0F05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F506DF41E839A68000E0F05 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		1F506DF81E839ADD000E0F05 /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Devices.plist; path = Devices.plist; sourceTree = "<group>"; };
+		1F506DF81E839ADD000E0F05 /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
 		1F506DFA1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+UITableViewDataSource.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +92,6 @@
 				1F506DC71E839984000E0F05 /* ViewController.h */,
 				1F506DC81E839984000E0F05 /* ViewController.m */,
 			);
-			name = "View Controller";
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
@@ -97,8 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				1F506DF41E839A68000E0F05 /* Main.storyboard */,
+				107C85E91E86A8740042B15D /* DeviceTableViewCell.h */,
+				107C85EA1E86A8740042B15D /* DeviceTableViewCell.m */,
 			);
-			name = VIew;
 			path = VIew;
 			sourceTree = "<group>";
 		};
@@ -110,7 +113,6 @@
 				1F506DD21E839984000E0F05 /* Info.plist */,
 				1F506DCF1E839984000E0F05 /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -152,7 +154,6 @@
 			children = (
 				1F506DC21E839984000E0F05 /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -310,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F506DC91E839984000E0F05 /* ViewController.m in Sources */,
+				107C85EB1E86A8740042B15D /* DeviceTableViewCell.m in Sources */,
 				1F506DFB1E83A97F000E0F05 /* ViewController+UITableViewDataSource.m in Sources */,
 				1F506DC61E839984000E0F05 /* AppDelegate.m in Sources */,
 				1F506DC31E839984000E0F05 /* main.m in Sources */,
