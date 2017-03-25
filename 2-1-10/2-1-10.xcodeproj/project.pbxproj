@@ -97,6 +97,16 @@
 				10B1C7081E861794002F2177 /* TwoAnyOneManager.m */,
 			);
 			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10B1C70A1E86893A002F2177 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F506D861E8365CB000E0F05 /* Main.storyboard */,
+			);
+			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1F0DB4C81E85186F002743E0 /* ViewController */ = {
@@ -143,13 +153,13 @@
 		1F506D7C1E8365CB000E0F05 /* 2-1-10 */ = {
 			isa = PBXGroup;
 			children = (
+				10B1C7061E8616E5002F2177 /* Model */,
 				1F0DB4C91E851883002743E0 /* Resources */,
 				1F506D7D1E8365CB000E0F05 /* Supporting Files */,
+				10B1C70A1E86893A002F2177 /* View */,
 				1F0DB4C81E85186F002743E0 /* ViewController */,
-				10B1C7061E8616E5002F2177 /* Model */,
 				1F506D801E8365CB000E0F05 /* AppDelegate.h */,
 				1F506D811E8365CB000E0F05 /* AppDelegate.m */,
-				1F506D861E8365CB000E0F05 /* Main.storyboard */,
 			);
 			path = "2-1-10";
 			sourceTree = "<group>";
