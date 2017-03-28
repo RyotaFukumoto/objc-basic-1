@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1056290F1E89E5A9002F5119 /* BLeagueCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056290E1E89E5A8002F5119 /* BLeagueCollectionViewHeader.m */; };
 		105629111E8A244C002F5119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105629101E8A244C002F5119 /* Assets.xcassets */; };
+		105629131E8A3408002F5119 /* BLeague.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105629121E8A3408002F5119 /* BLeague.plist */; };
 		10ED843D1E88F65400D4ED5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED843C1E88F65400D4ED5E /* main.m */; };
 		10ED84401E88F65400D4ED5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED843F1E88F65400D4ED5E /* AppDelegate.m */; };
 		10ED84461E88F65400D4ED5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ED84441E88F65400D4ED5E /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		10ED84561E88F65400D4ED5E /* __1_13Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84551E88F65400D4ED5E /* __1_13Tests.m */; };
 		10ED84611E88F65400D4ED5E /* __1_13UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84601E88F65400D4ED5E /* __1_13UITests.m */; };
 		10ED84711E88F6B100D4ED5E /* BLeagueWestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84701E88F6B100D4ED5E /* BLeagueWestCollectionViewController.m */; };
-		10ED84741E88F6DB00D4ED5E /* BLeague.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10ED84731E88F6DB00D4ED5E /* BLeague.plist */; };
 		10ED84781E88FE9500D4ED5E /* BLeagueCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84771E88FE9500D4ED5E /* BLeagueCollectionViewCell.m */; };
 		10ED847B1E89006400D4ED5E /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED847A1E89006400D4ED5E /* Team.m */; };
 		10ED847F1E89014700D4ED5E /* TeamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED847E1E89014700D4ED5E /* TeamManager.m */; };
@@ -43,6 +43,7 @@
 		1056290D1E89E5A8002F5119 /* BLeagueCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeagueCollectionViewHeader.h; sourceTree = "<group>"; };
 		1056290E1E89E5A8002F5119 /* BLeagueCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeagueCollectionViewHeader.m; sourceTree = "<group>"; };
 		105629101E8A244C002F5119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		105629121E8A3408002F5119 /* BLeague.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BLeague.plist; sourceTree = "<group>"; };
 		10ED84381E88F65400D4ED5E /* 2-1-13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-1-13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ED843C1E88F65400D4ED5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10ED843E1E88F65400D4ED5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		10ED84621E88F65400D4ED5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10ED846F1E88F6B100D4ED5E /* BLeagueWestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeagueWestCollectionViewController.h; sourceTree = "<group>"; };
 		10ED84701E88F6B100D4ED5E /* BLeagueWestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeagueWestCollectionViewController.m; sourceTree = "<group>"; };
-		10ED84731E88F6DB00D4ED5E /* BLeague.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BLeague.plist; sourceTree = "<group>"; };
 		10ED84761E88FE9500D4ED5E /* BLeagueCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeagueCollectionViewCell.h; sourceTree = "<group>"; };
 		10ED84771E88FE9500D4ED5E /* BLeagueCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeagueCollectionViewCell.m; sourceTree = "<group>"; };
 		10ED84791E89006400D4ED5E /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				105629101E8A244C002F5119 /* Assets.xcassets */,
 				10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */,
 				10ED844C1E88F65400D4ED5E /* Info.plist */,
-				10ED84731E88F6DB00D4ED5E /* BLeague.plist */,
+				105629121E8A3408002F5119 /* BLeague.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10ED84741E88F6DB00D4ED5E /* BLeague.plist in Resources */,
+				105629131E8A3408002F5119 /* BLeague.plist in Resources */,
 				10ED844B1E88F65400D4ED5E /* LaunchScreen.storyboard in Resources */,
 				105629111E8A244C002F5119 /* Assets.xcassets in Resources */,
 				10ED84461E88F65400D4ED5E /* Main.storyboard in Resources */,
