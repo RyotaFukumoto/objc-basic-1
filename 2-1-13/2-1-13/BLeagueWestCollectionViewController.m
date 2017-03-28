@@ -48,7 +48,7 @@ static NSString * const reuseHeaderIdentifier = @"Header";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     CGFloat collectionViewWidth = self.collectionView.bounds.size.width;
-    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth/2, collectionViewWidth/2);
+    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth/3, collectionViewWidth/3);
     
     // Register cell classes
     [self.collectionView registerClass:[BLeagueCollectionViewCell class]
