@@ -56,11 +56,6 @@ static NSString * const reuseHeaderIdentifier = @"Header";
     
     [self.collectionView setCollectionViewLayout:vFlowLayout];
     
-    //status barに被らないようにする
-    CGFloat topMargin = self.topLayoutGuide.length;
-    CGFloat bottomMargin = self.bottomLayoutGuide.length;
-    [self.collectionView setContentInset:UIEdgeInsetsMake(topMargin,0,bottomMargin,0)];
-    
     //load team data
     teamsDict = [[TeamManager alloc] init].teams;
 }
@@ -134,21 +129,14 @@ static NSString * const reuseHeaderIdentifier = @"Header";
         BLeagueCollectionViewHeader *header = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                    withReuseIdentifier:reuseHeaderIdentifier
                                                                                           forIndexPath:indexPath];
-        //NSArray<Team*> *teamArray = [NSArray alloc];
         switch (indexPath.section) {
             case tohoku:
             {
-//                teamArray = teamsDict[tohokuKey];
-//                Team *team = (Team *)teamArray[indexPath.row];
-//                header.label.text = team.name;
                 header.label.text = tohokuKey;
                 break;
             }
             case hokuriku:
             {
-//                teamArray = teamsDict[hokurikuKey];
-//                Team *team = (Team *)teamArray[indexPath.row];
-//                header.label.text = team.name;
                 header.label.text = hokurikuKey;
                 break;
             }
@@ -160,36 +148,5 @@ static NSString * const reuseHeaderIdentifier = @"Header";
     }
     return resusableView;
 }
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

@@ -11,7 +11,7 @@
 @implementation SushiCollectionViewCell
 -(void)prepareForReuse{
     [super prepareForReuse];
-    _sushiImageView.image = nil;
+    self.sushiImageView.image = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame

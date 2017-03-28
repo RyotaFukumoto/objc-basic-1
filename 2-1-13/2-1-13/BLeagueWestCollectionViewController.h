@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BLeagueCollectionViewCell.h"
 #import "TeamManager.h"
-@interface BLeagueWestCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BLeagueWestCollectionViewController : UICollectionViewController
+<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
