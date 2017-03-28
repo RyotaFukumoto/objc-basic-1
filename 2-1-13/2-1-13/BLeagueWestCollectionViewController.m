@@ -44,11 +44,8 @@ static NSString * const reuseHeaderIdentifier = @"Header";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
     CGFloat collectionViewWidth = self.collectionView.bounds.size.width;
-    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth/3, collectionViewWidth/3);
+    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth* 3/7, collectionViewWidth* 3/7);
     
     // Register cell classes
     [self.collectionView registerClass:[BLeagueCollectionViewCell class]
