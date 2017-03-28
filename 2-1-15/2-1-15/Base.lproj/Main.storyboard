@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Exu-Mp-Wg1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tokyo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Tokyo" customClass="TokyoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Tokyo" translatesAutoresizingMaskIntoConstraints="NO" id="U3I-fL-9fX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U3I-fL-9fX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0EM-Fj-iwQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U3I-fL-9fX" secondAttribute="bottom" id="FtR-ng-efK"/>
+                            <constraint firstAttribute="trailing" secondItem="U3I-fL-9fX" secondAttribute="trailing" id="TWV-dE-1qJ"/>
+                            <constraint firstItem="U3I-fL-9fX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oLT-mb-Kvc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tokyo" image="T" id="eu2-EL-irg" userLabel="Tokyo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Osaka-->
+        <scene sceneID="nSu-V8-CMR">
+            <objects>
+                <viewController id="fUX-0p-d0k" userLabel="Osaka" customClass="OsakaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RPg-Yh-gIM"/>
+                        <viewControllerLayoutGuide type="bottom" id="XPV-lT-gOu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sa4-7P-wat">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Osaka" translatesAutoresizingMaskIntoConstraints="NO" id="Ea6-tR-S6X">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ea6-tR-S6X" firstAttribute="top" secondItem="sa4-7P-wat" secondAttribute="top" id="MzN-aw-dIV"/>
+                            <constraint firstAttribute="bottom" secondItem="Ea6-tR-S6X" secondAttribute="bottom" id="cO1-zP-cW4"/>
+                            <constraint firstAttribute="trailing" secondItem="Ea6-tR-S6X" secondAttribute="trailing" id="dCu-cD-Bzk"/>
+                            <constraint firstItem="Ea6-tR-S6X" firstAttribute="leading" secondItem="sa4-7P-wat" secondAttribute="leading" id="wz3-Ft-SDs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Osaka" image="O" id="pp2-E3-nqy" userLabel="Osaka"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asJ-1X-uNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="833"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nwO-aa-Yjs">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Exu-Mp-Wg1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="NLV-61-E1j">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="KOj-3b-au9"/>
+                        <segue destination="fUX-0p-d0k" kind="relationship" relationship="viewControllers" id="eew-cj-UhF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZa-Ir-sbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="O" width="30" height="30"/>
+        <image name="Osaka" width="1632" height="1224"/>
+        <image name="T" width="30" height="30"/>
+        <image name="Tokyo" width="1224" height="1632"/>
+    </resources>
+</document>
