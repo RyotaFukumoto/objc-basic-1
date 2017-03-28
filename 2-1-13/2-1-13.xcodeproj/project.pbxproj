@@ -115,13 +115,13 @@
 		10ED843A1E88F65400D4ED5E /* 2-1-13 */ = {
 			isa = PBXGroup;
 			children = (
-				10ED843E1E88F65400D4ED5E /* AppDelegate.h */,
-				10ED843F1E88F65400D4ED5E /* AppDelegate.m */,
 				10ED847C1E89006A00D4ED5E /* Model */,
-				10ED84751E88FE7200D4ED5E /* View */,
-				10ED84721E88F6B500D4ED5E /* ViewController */,
 				10ED846E1E88F68900D4ED5E /* Resources */,
 				10ED843B1E88F65400D4ED5E /* Supporting Files */,
+				10ED84751E88FE7200D4ED5E /* View */,
+				10ED84721E88F6B500D4ED5E /* ViewController */,
+				10ED843E1E88F65400D4ED5E /* AppDelegate.h */,
+				10ED843F1E88F65400D4ED5E /* AppDelegate.m */,
 			);
 			path = "2-1-13";
 			sourceTree = "<group>";
@@ -132,13 +132,14 @@
 				10ED843C1E88F65400D4ED5E /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		10ED84541E88F65400D4ED5E /* 2-1-13Tests */ = {
 			isa = PBXGroup;
 			children = (
-				10ED84551E88F65400D4ED5E /* __1_13Tests.m */,
 				10ED84571E88F65400D4ED5E /* Info.plist */,
+				10ED84551E88F65400D4ED5E /* __1_13Tests.m */,
 			);
 			path = "2-1-13Tests";
 			sourceTree = "<group>";
@@ -146,8 +147,8 @@
 		10ED845F1E88F65400D4ED5E /* 2-1-13UITests */ = {
 			isa = PBXGroup;
 			children = (
-				10ED84601E88F65400D4ED5E /* __1_13UITests.m */,
 				10ED84621E88F65400D4ED5E /* Info.plist */,
+				10ED84601E88F65400D4ED5E /* __1_13UITests.m */,
 			);
 			path = "2-1-13UITests";
 			sourceTree = "<group>";
@@ -156,11 +157,12 @@
 			isa = PBXGroup;
 			children = (
 				105629101E8A244C002F5119 /* Assets.xcassets */,
-				10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */,
-				10ED844C1E88F65400D4ED5E /* Info.plist */,
 				105629121E8A3408002F5119 /* BLeague.plist */,
+				10ED844C1E88F65400D4ED5E /* Info.plist */,
+				10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		10ED84721E88F6B500D4ED5E /* ViewController */ = {
@@ -170,18 +172,20 @@
 				10ED84701E88F6B100D4ED5E /* BLeagueWestCollectionViewController.m */,
 			);
 			name = ViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		10ED84751E88FE7200D4ED5E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				10ED84441E88F65400D4ED5E /* Main.storyboard */,
 				10ED84761E88FE9500D4ED5E /* BLeagueCollectionViewCell.h */,
 				10ED84771E88FE9500D4ED5E /* BLeagueCollectionViewCell.m */,
 				1056290D1E89E5A8002F5119 /* BLeagueCollectionViewHeader.h */,
 				1056290E1E89E5A8002F5119 /* BLeagueCollectionViewHeader.m */,
+				10ED84441E88F65400D4ED5E /* Main.storyboard */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		10ED847C1E89006A00D4ED5E /* Model */ = {
@@ -193,6 +197,7 @@
 				10ED847E1E89014700D4ED5E /* TeamManager.m */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +385,7 @@
 				10ED84451E88F65400D4ED5E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */ = {
@@ -388,6 +394,7 @@
 				10ED844A1E88F65400D4ED5E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -486,7 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KE8PEF6922;
-				INFOPLIST_FILE = "2-1-13/Info.plist";
+				INFOPLIST_FILE = "2-1-13/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "smart-tech-ventures.--1-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KE8PEF6922;
-				INFOPLIST_FILE = "2-1-13/Info.plist";
+				INFOPLIST_FILE = "2-1-13/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "smart-tech-ventures.--1-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
