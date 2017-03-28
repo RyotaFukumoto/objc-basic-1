@@ -48,7 +48,7 @@ static NSString * const reuseHeaderIdentifier = @"Header";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     CGFloat collectionViewWidth = self.collectionView.bounds.size.width;
-    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth, collectionViewWidth);
+    vFlowLayout.itemSize = CGSizeMake(collectionViewWidth/2, collectionViewWidth/2);
     
     // Register cell classes
     [self.collectionView registerClass:[BLeagueCollectionViewCell class]
@@ -58,6 +58,11 @@ static NSString * const reuseHeaderIdentifier = @"Header";
                    withReuseIdentifier:reuseHeaderIdentifier];
     
     [self.collectionView setCollectionViewLayout:vFlowLayout];
+    
+    //status barに被らないようにする
+    CGFloat topMargin = self.topLayoutGuide.length;
+    CGFloat bottomMargin = self.bottomLayoutGuide.length;
+    [self.collectionView setContentInset:UIEdgeInsetsMake(topMargin,0,bottomMargin,0)];
     
     //load team data
     teamsDict = [[TeamManager alloc] init].teams;
@@ -119,8 +124,7 @@ static NSString * const reuseHeaderIdentifier = @"Header";
             break;
     }
     
-    UIImage *logoImage = [UIImage imageNamed:team.image];
-    cell.logoImageView.image = logoImage;
+    cell.logoImageView.image = team.image;
     return cell;
 }
 

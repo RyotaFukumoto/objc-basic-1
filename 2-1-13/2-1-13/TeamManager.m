@@ -27,7 +27,7 @@ const NSString* hokurikuKey = @"北陸";
     NSMutableDictionary *teamDictionary = [NSMutableDictionary dictionary];
     
     for (NSString* key in [plistDictionary keyEnumerator]) {
-        NSArray<NSString*> *regionPlistArray = plistDictionary[@"key"];
+        NSArray<NSString*> *regionPlistArray = plistDictionary[key];
         NSMutableArray<Team*> *regionTeamArray = [NSMutableArray array];
         
         for (NSString* teamName in regionPlistArray) {

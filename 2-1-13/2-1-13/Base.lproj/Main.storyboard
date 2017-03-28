@@ -38,6 +38,7 @@
                             <outlet property="delegate" destination="GvN-Xe-bcN" id="5C9-86-0kB"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrN-Qg-IhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

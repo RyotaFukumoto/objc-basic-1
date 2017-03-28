@@ -5,17 +5,10 @@
 	<key>東北</key>
 	<array>
 		<string>仙台89ERS</string>
-		<string>秋田ノーザンハピネッツ</string>
 		<string>青森ワッツ</string>
-		<string>岩手ビッグブルズ</string>
-		<string>山形ワイヴァンズ </string>
-		<string>福島ファイヤーボンズ</string>
 	</array>
 	<key>北陸</key>
 	<array>
-		<string>新潟アルビレックスBB</string>
-		<string>富山グラウジーズ</string>
-		<string>信州ブレイブウォリアーズ</string>
 		<string>金沢武士団</string>
 	</array>
 </dict>

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1056290F1E89E5A9002F5119 /* BLeagueCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056290E1E89E5A8002F5119 /* BLeagueCollectionViewHeader.m */; };
+		105629111E8A244C002F5119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105629101E8A244C002F5119 /* Assets.xcassets */; };
 		10ED843D1E88F65400D4ED5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED843C1E88F65400D4ED5E /* main.m */; };
 		10ED84401E88F65400D4ED5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED843F1E88F65400D4ED5E /* AppDelegate.m */; };
 		10ED84461E88F65400D4ED5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ED84441E88F65400D4ED5E /* Main.storyboard */; };
-		10ED84481E88F65400D4ED5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10ED84471E88F65400D4ED5E /* Assets.xcassets */; };
 		10ED844B1E88F65400D4ED5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */; };
 		10ED84561E88F65400D4ED5E /* __1_13Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84551E88F65400D4ED5E /* __1_13Tests.m */; };
 		10ED84611E88F65400D4ED5E /* __1_13UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED84601E88F65400D4ED5E /* __1_13UITests.m */; };
@@ -42,12 +42,12 @@
 /* Begin PBXFileReference section */
 		1056290D1E89E5A8002F5119 /* BLeagueCollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeagueCollectionViewHeader.h; sourceTree = "<group>"; };
 		1056290E1E89E5A8002F5119 /* BLeagueCollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeagueCollectionViewHeader.m; sourceTree = "<group>"; };
+		105629101E8A244C002F5119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10ED84381E88F65400D4ED5E /* 2-1-13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-1-13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ED843C1E88F65400D4ED5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10ED843E1E88F65400D4ED5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10ED843F1E88F65400D4ED5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		10ED84451E88F65400D4ED5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		10ED84471E88F65400D4ED5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10ED844A1E88F65400D4ED5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10ED844C1E88F65400D4ED5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10ED84511E88F65400D4ED5E /* 2-1-13Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-1-13Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +155,7 @@
 		10ED846E1E88F68900D4ED5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				10ED84471E88F65400D4ED5E /* Assets.xcassets */,
+				105629101E8A244C002F5119 /* Assets.xcassets */,
 				10ED84491E88F65400D4ED5E /* LaunchScreen.storyboard */,
 				10ED844C1E88F65400D4ED5E /* Info.plist */,
 				10ED84731E88F6DB00D4ED5E /* BLeague.plist */,
@@ -306,7 +306,7 @@
 			files = (
 				10ED84741E88F6DB00D4ED5E /* BLeague.plist in Resources */,
 				10ED844B1E88F65400D4ED5E /* LaunchScreen.storyboard in Resources */,
-				10ED84481E88F65400D4ED5E /* Assets.xcassets in Resources */,
+				105629111E8A244C002F5119 /* Assets.xcassets in Resources */,
 				10ED84461E88F65400D4ED5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
