@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setViewControllers:@[[self generatePageFromPageNumber:kMinPageNumber]]
+    [self setViewControllers:@[[self generatePageFromPageNumber:kFirstPageNumber]]
                    direction:UIPageViewControllerNavigationDirectionForward
                     animated:true
                   completion:nil];
@@ -43,7 +43,7 @@
     ViewController* vc = (ViewController*)viewController;
     int pageNumber = vc.pageNumber;
     
-    if (pageNumber == kMinPageNumber) {
+    if (pageNumber == kFirstPageNumber) {
         return nil;
     }else{
         return [self generatePageFromPageNumber:pageNumber-1];
@@ -53,7 +53,7 @@
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
     ViewController* vc = (ViewController*)viewController;
     int pageNumber = vc.pageNumber;
-    if (pageNumber == kMaxPageNumber) {
+    if (pageNumber == kLastPageNumber) {
         return nil;
     }else{
         return [self generatePageFromPageNumber:pageNumber + 1];

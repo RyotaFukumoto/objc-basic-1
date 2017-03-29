@@ -8,13 +8,13 @@
 
 #import "Settings.h"
 
-double const kRedInitialNumber = 0.3;
-double const kGreenInitialNumber = 0.5;
-double const kBlueInitialNumber = 0.3;
+double const kRedParameter = 0.3;
+double const kGreenInitialParameter = 0.5;
+double const kBlueParameter = 0.3;
 double const kAlphaValue = 0.6;
 
-int const kMaxPageNumber = 10;
-int const kMinPageNumber = 1;
+int const kLastPageNumber = 10;
+int const kFirstPageNumber = 1;
 
 NSString * const kViewControllerIdentifier = @"ViewController";
 
