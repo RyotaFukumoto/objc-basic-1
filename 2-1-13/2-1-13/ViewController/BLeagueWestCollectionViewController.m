@@ -14,7 +14,7 @@
     NSArray<NSString*> *teams;
     
     //[tohokuKey:[（Team型の東北のチーム）],hokurikuKey:[(Team*)北陸のチーム]
-    NSDictionary *teamsDict;
+    NSDictionary<NSString*,NSArray*> *teamsDict;
 }
 @end
 

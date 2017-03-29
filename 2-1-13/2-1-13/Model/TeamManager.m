@@ -8,11 +8,12 @@
 
 #import "TeamManager.h"
 
-const NSString* kBLeague = @"BLeague";
-const NSString* nameKey = @"name";
-const NSString* imageKey = @"image";
-const NSString* tohokuKey = @"東北";
-const NSString* hokurikuKey = @"北陸";
+NSString* const kBLeague = @"BLeague";
+NSString* const nameKey = @"name";
+NSString* const imageKey = @"image";
+NSString* const tohokuKey = @"東北";
+NSString* const hokurikuKey = @"北陸";
+
 
 @implementation TeamManager
 
@@ -22,9 +23,9 @@ const NSString* hokurikuKey = @"北陸";
  */
 -(NSDictionary *)teams{
     //plistから取得して返す
-    NSDictionary *plistDictionary = [self objectFromPlistOf:kBLeague
+    NSDictionary<NSString*, NSArray*> *plistDictionary = [self objectFromPlistOf:kBLeague
                                            rootTypeOfPlist:Dictionary];
-    NSMutableDictionary *teamDictionary = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString*,NSMutableArray*> *teamDictionary = [NSMutableDictionary dictionary];
     
     for (NSString* key in [plistDictionary keyEnumerator]) {
         NSArray<NSString*> *regionPlistArray = plistDictionary[key];
@@ -35,7 +36,7 @@ const NSString* hokurikuKey = @"北陸";
                                               image:[UIImage imageNamed:teamName]];
             [regionTeamArray addObject:team];
         }
-        [teamDictionary setValue:regionTeamArray forKey:key];
+        teamDictionary[key] = regionTeamArray;
     }
     
     return teamDictionary;

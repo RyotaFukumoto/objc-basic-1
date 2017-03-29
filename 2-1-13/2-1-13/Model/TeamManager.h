@@ -13,10 +13,11 @@ typedef enum : NSInteger{
     Array = 0,
     Dictionary
 }RootType;
-extern const NSString* kBLeague;
-extern const NSString* tohokuKey;
-extern const NSString* hokurikuKey;
+
+extern NSString* const kBLeague;
+extern NSString* const tohokuKey;
+extern NSString* const hokurikuKey;
 
 @interface TeamManager : NSObject
-@property (nonatomic, readonly) NSDictionary *teams;
+@property (nonatomic, readonly) NSDictionary<NSString*,NSArray*> *teams;
 @end
