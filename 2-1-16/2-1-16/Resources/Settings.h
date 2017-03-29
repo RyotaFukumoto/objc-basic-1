@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-extern double const kRedInitialNumber;
-extern double const kGreenInitialNumber;
-extern double const kBlueInitialNumber;
+extern double const kRedParameter;
+extern double const kGreenInitialParameter;
+extern double const kBlueParameter;
 extern double const kAlphaValue;
 
-extern int const kMaxPageNumber;
-extern int const kMinPageNumber;
+extern int const kLastPageNumber;
+extern int const kFirstPageNumber;
 
 extern NSString * const kViewControllerIdentifier;
 

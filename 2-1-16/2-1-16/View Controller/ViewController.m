@@ -22,18 +22,18 @@
     NSMutableString *pageNumberLabelText = [NSMutableString string];
     [pageNumberLabelText appendString:[NSString stringWithFormat:@"%zd",self.pageNumber]];
     [pageNumberLabelText appendString:@"/"];
-    [pageNumberLabelText appendString:[NSString stringWithFormat:@"%d",kMaxPageNumber]];
+    [pageNumberLabelText appendString:[NSString stringWithFormat:@"%d",kLastPageNumber]];
     self.pageNumberLabel.text = [NSString stringWithString:pageNumberLabelText];
     
     //背景色の設定:ページ番号が大きくなるに連れて、緑が濃くなる
-    double a = 1.0 - kGreenInitialNumber;
-    double b = kMaxPageNumber - kMinPageNumber;
-    NSInteger tempNum = self.pageNumber - kMinPageNumber;
+    double a = 1.0 - kGreenInitialParameter;
+    double b = kLastPageNumber - kFirstPageNumber;
+    NSInteger tempNum = self.pageNumber - kFirstPageNumber;
     double c = tempNum;
-    double greenParameter = (a/b) * c + (double)kGreenInitialNumber;
-    self.view.backgroundColor = [UIColor colorWithRed:kRedInitialNumber
+    double greenParameter = (a/b) * c + (double)kGreenInitialParameter;
+    self.view.backgroundColor = [UIColor colorWithRed:kRedParameter
                                                 green:greenParameter
-                                                 blue:kBlueInitialNumber
+                                                 blue:kBlueParameter
                                                 alpha:kAlphaValue];
 }
 
