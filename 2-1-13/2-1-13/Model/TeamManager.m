@@ -36,7 +36,7 @@ NSString* const hokurikuKey = @"北陸";
                                               image:[UIImage imageNamed:teamName]];
             [regionTeamArray addObject:team];
         }
-        [teamDictionary setValue:regionTeamArray forKey:key];
+        teamDictionary[key] = regionTeamArray;
     }
     
     return teamDictionary;
