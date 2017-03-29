@@ -8,11 +8,12 @@
 
 #import "TeamManager.h"
 
-const NSString* kBLeague = @"BLeague";
-const NSString* nameKey = @"name";
-const NSString* imageKey = @"image";
-const NSString* tohokuKey = @"東北";
-const NSString* hokurikuKey = @"北陸";
+NSString* const kBLeague = @"BLeague";
+NSString* const nameKey = @"name";
+NSString* const imageKey = @"image";
+NSString* const tohokuKey = @"東北";
+NSString* const hokurikuKey = @"北陸";
+
 
 @implementation TeamManager
 
