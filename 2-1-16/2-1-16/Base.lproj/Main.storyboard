@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lib-Nr-nht">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="yR3-El-Wfn">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Lib-Nr-nht" customClass="PageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbM-0u-qbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="122"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LdB-8n-gmr">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="GQR-ui-gc6" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F5P-lc-xkH"/>
+                        <viewControllerLayoutGuide type="bottom" id="eiT-TQ-42T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pcD-jY-qBd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vco-2P-vHj">
+                                <rect key="frame" x="138.5" y="557" width="98" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vco-2P-vHj" firstAttribute="centerX" secondItem="pcD-jY-qBd" secondAttribute="centerX" id="SRc-sK-sLo"/>
+                            <constraint firstItem="eiT-TQ-42T" firstAttribute="top" secondItem="vco-2P-vHj" secondAttribute="bottom" constant="50" id="TwF-7n-H2B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageNumberLabel" destination="vco-2P-vHj" id="aKP-Zr-UFq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPD-Tc-U9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.400000000000006" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
