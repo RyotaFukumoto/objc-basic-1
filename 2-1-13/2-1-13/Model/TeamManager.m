@@ -23,9 +23,9 @@ NSString* const hokurikuKey = @"北陸";
  */
 -(NSDictionary *)teams{
     //plistから取得して返す
-    NSDictionary *plistDictionary = [self objectFromPlistOf:kBLeague
+    NSDictionary<NSString*, NSArray*> *plistDictionary = [self objectFromPlistOf:kBLeague
                                            rootTypeOfPlist:Dictionary];
-    NSMutableDictionary *teamDictionary = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString*,NSMutableArray*> *teamDictionary = [NSMutableDictionary dictionary];
     
     for (NSString* key in [plistDictionary keyEnumerator]) {
         NSArray<NSString*> *regionPlistArray = plistDictionary[key];
