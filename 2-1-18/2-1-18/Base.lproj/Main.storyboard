@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1G-Kf-RuF">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Day Info-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-Ro-Gy3">
+                                <rect key="frame" x="64" y="260" width="192" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Show Day Info"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Sj-UJ-ynM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dhc-Ro-Gy3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8t7-HZ-CuG"/>
+                            <constraint firstItem="dhc-Ro-Gy3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3v-3K-XUx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Day Info" id="XNv-MZ-ob2"/>
+                    <connections>
+                        <segue destination="Oee-8K-hFn" kind="show" identifier="show" id="sGl-1Q-rum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="793"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="w8l-hw-Qoh">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Oee-8K-hFn" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3aF-cY-hVc"/>
+                        <viewControllerLayoutGuide type="bottom" id="mOC-8W-DKz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mn1-NP-bhl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このラベルに時に関する情報が表示されます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMR-h6-yQl">
+                                <rect key="frame" x="20" y="274" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DMR-h6-yQl" firstAttribute="centerX" secondItem="mn1-NP-bhl" secondAttribute="centerX" id="3Yg-Q7-sZ5"/>
+                            <constraint firstItem="DMR-h6-yQl" firstAttribute="centerY" secondItem="mn1-NP-bhl" secondAttribute="centerY" id="d2P-nG-nJh"/>
+                            <constraint firstItem="DMR-h6-yQl" firstAttribute="leading" secondItem="mn1-NP-bhl" secondAttribute="leading" constant="20" id="wiC-zM-u48"/>
+                            <constraint firstAttribute="trailing" secondItem="DMR-h6-yQl" secondAttribute="trailing" constant="20" id="xGr-I7-tL2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="DMR-h6-yQl" id="R9w-ra-wQ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRF-P8-hfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891.875" y="792.25352112676057"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5R9-c6-pj2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H1G-Kf-RuF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GJU-BU-X3O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Ed-e2-Moh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptA-NC-DpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="792.95352323838085"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.19607843137254902" green="0.80392156862745101" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
