@@ -15,6 +15,8 @@
 		1F1360551E8C95F400485A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */; };
 		1F1360601E8C95F400485A0C /* __1_17Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13605F1E8C95F400485A0C /* __1_17Tests.m */; };
 		1F13606B1E8C95F400485A0C /* __1_17UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13606A1E8C95F400485A0C /* __1_17UITests.m */; };
+		1F13607C1E8C975A00485A0C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13607B1E8C975A00485A0C /* SecondViewController.m */; };
+		1F13607E1E8C976E00485A0C /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13607D1E8C976E00485A0C /* Second.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		1F1360661E8C95F400485A0C /* 2-1-17UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-1-17UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F13606A1E8C95F400485A0C /* __1_17UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __1_17UITests.m; sourceTree = "<group>"; };
 		1F13606C1E8C95F400485A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F13607A1E8C975A00485A0C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		1F13607B1E8C975A00485A0C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1F13607D1E8C976E00485A0C /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +106,12 @@
 		1F1360441E8C95F400485A0C /* 2-1-17 */ = {
 			isa = PBXGroup;
 			children = (
+				1F1360781E8C96E800485A0C /* Resources */,
+				1F1360451E8C95F400485A0C /* Supporting Files */,
+				1F13607F1E8C977700485A0C /* View */,
+				1F1360791E8C971400485A0C /* View Controller */,
 				1F1360481E8C95F400485A0C /* AppDelegate.h */,
 				1F1360491E8C95F400485A0C /* AppDelegate.m */,
-				1F13604B1E8C95F400485A0C /* ViewController.h */,
-				1F13604C1E8C95F400485A0C /* ViewController.m */,
-				1F13604E1E8C95F400485A0C /* Main.storyboard */,
-				1F1360511E8C95F400485A0C /* Assets.xcassets */,
-				1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */,
-				1F1360561E8C95F400485A0C /* Info.plist */,
-				1F1360451E8C95F400485A0C /* Supporting Files */,
 			);
 			path = "2-1-17";
 			sourceTree = "<group>";
@@ -120,13 +122,14 @@
 				1F1360461E8C95F400485A0C /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1F13605E1E8C95F400485A0C /* 2-1-17Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1F13605F1E8C95F400485A0C /* __1_17Tests.m */,
 				1F1360611E8C95F400485A0C /* Info.plist */,
+				1F13605F1E8C95F400485A0C /* __1_17Tests.m */,
 			);
 			path = "2-1-17Tests";
 			sourceTree = "<group>";
@@ -134,10 +137,43 @@
 		1F1360691E8C95F400485A0C /* 2-1-17UITests */ = {
 			isa = PBXGroup;
 			children = (
-				1F13606A1E8C95F400485A0C /* __1_17UITests.m */,
 				1F13606C1E8C95F400485A0C /* Info.plist */,
+				1F13606A1E8C95F400485A0C /* __1_17UITests.m */,
 			);
 			path = "2-1-17UITests";
+			sourceTree = "<group>";
+		};
+		1F1360781E8C96E800485A0C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F1360511E8C95F400485A0C /* Assets.xcassets */,
+				1F1360561E8C95F400485A0C /* Info.plist */,
+				1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1F1360791E8C971400485A0C /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F13607A1E8C975A00485A0C /* SecondViewController.h */,
+				1F13607B1E8C975A00485A0C /* SecondViewController.m */,
+				1F13604B1E8C95F400485A0C /* ViewController.h */,
+				1F13604C1E8C95F400485A0C /* ViewController.m */,
+			);
+			name = "View Controller";
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1F13607F1E8C977700485A0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F13604E1E8C95F400485A0C /* Main.storyboard */,
+				1F13607D1E8C976E00485A0C /* Second.storyboard */,
+			);
+			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F13607E1E8C976E00485A0C /* Second.storyboard in Resources */,
 				1F1360551E8C95F400485A0C /* LaunchScreen.storyboard in Resources */,
 				1F1360521E8C95F400485A0C /* Assets.xcassets in Resources */,
 				1F1360501E8C95F400485A0C /* Main.storyboard in Resources */,
@@ -273,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F13607C1E8C975A00485A0C /* SecondViewController.m in Sources */,
 				1F13604D1E8C95F400485A0C /* ViewController.m in Sources */,
 				1F13604A1E8C95F400485A0C /* AppDelegate.m in Sources */,
 				1F1360471E8C95F400485A0C /* main.m in Sources */,
@@ -317,6 +355,7 @@
 				1F13604F1E8C95F400485A0C /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */ = {
@@ -325,6 +364,7 @@
 				1F1360541E8C95F400485A0C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -424,7 +464,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-17/Info.plist";
+				INFOPLIST_FILE = "2-1-17/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,7 +476,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "2-1-17/Info.plist";
+				INFOPLIST_FILE = "2-1-17/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
