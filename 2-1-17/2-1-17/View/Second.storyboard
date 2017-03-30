@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTf-Ur-eND">
-                                <rect key="frame" x="142" y="409.5" width="90" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Transit"/>
+                                <rect key="frame" x="157" y="412.5" width="60" height="42"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
+                                <state key="normal" title="戻る"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="8wS-2J-gZJ" eventType="touchUpInside" id="PyO-7o-X5X"/>
                                 </connections>
