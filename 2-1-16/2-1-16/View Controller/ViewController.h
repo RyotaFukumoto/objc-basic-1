@@ -10,6 +10,6 @@
 #import "Settings.h"
 
 @interface ViewController : UIViewController
-@property int pageNumber;
+@property NSInteger pageNumber;
 @end
 

@@ -13,8 +13,8 @@ extern double const kGreenInitialParameter;
 extern double const kBlueParameter;
 extern double const kAlphaValue;
 
-extern int const kLastPageNumber;
-extern int const kFirstPageNumber;
+extern NSInteger const kLastPageNumber;
+extern NSInteger const kFirstPageNumber;
 
 extern NSString * const kViewControllerIdentifier;
 
