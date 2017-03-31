@@ -13,17 +13,16 @@ NSString* const explanationKey = @"explanation";
 
 @implementation TwoAnyOneManager
 -(NSArray<Member*> *)members{
-    //plistから取得して返す
-    NSArray *array = [self objectFromPlistOf:twoAnyOne rootTypeOfPlist:Array];
+    NSArray<NSDictionary*> *array = [self objectFromPlistOf:twoAnyOne rootTypeOfPlist:Array];
     NSMutableArray<Member*> *memberArray = [NSMutableArray array];
     
-    for (NSDictionary *mem in array) {
+    for (NSDictionary<NSString*,NSString*> *mem in array) {
         Member *member = [[Member alloc] initWithName:mem[nameKey]
                                           explanation:mem[explanationKey]];
         [memberArray addObject:member];
     }
     
-    return (NSArray *)memberArray;
+    return (NSArray<Member*> *)memberArray;
 }
 
 /**

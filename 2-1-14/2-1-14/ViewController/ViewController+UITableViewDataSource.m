@@ -11,7 +11,7 @@
 @implementation ViewController (UITableViewDataSource)
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section{
-    NSArray *members = [self callMembers];
+    NSArray<Member*> *members = [self callMembers];
     return members.count;
 }
 
@@ -20,7 +20,7 @@ numberOfRowsInSection:(NSInteger)section{
     NSString *reuseIdentifier = @"Cell";
     TATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    NSArray *members = [self callMembers];
+    NSArray<Member*> *members = [self callMembers];
     Member *member = members[indexPath.row];
     
     cell.nameLabel.text = member.name;
@@ -33,7 +33,7 @@ numberOfRowsInSection:(NSInteger)section{
     return cell;
 }
 
--(NSArray*)callMembers
+-(NSArray<Member*>*)callMembers
 {
     TwoAnyOneManager* manager = [TwoAnyOneManager new];
     return manager.members;
