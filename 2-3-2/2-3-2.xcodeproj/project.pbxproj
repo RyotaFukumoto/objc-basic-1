@@ -16,6 +16,7 @@
 		1F46C3581E8E4E8D00876521 /* __3_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3571E8E4E8D00876521 /* __3_2Tests.m */; };
 		1F46C3631E8E4E8D00876521 /* __3_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3621E8E4E8D00876521 /* __3_2UITests.m */; };
 		1F46C3721E8E4F3200876521 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3711E8E4F3200876521 /* Podfile */; };
+		1F46C3761E8E591800876521 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46C3751E8E591800876521 /* libsqlite3.0.tbd */; };
 		57E91C10DD109D39AF33E289 /* libPods-2-3-2UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */; };
 		64501B83FBC1CED7F3DBD416 /* libPods-2-3-2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */; };
 		A790DB03F84E375FC7007B3F /* libPods-2-3-2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A367F4D344FE575BF1D410 /* libPods-2-3-2.a */; };
@@ -57,6 +58,7 @@
 		1F46C3621E8E4E8D00876521 /* __3_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __3_2UITests.m; sourceTree = "<group>"; };
 		1F46C3641E8E4E8D00876521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F46C3711E8E4F3200876521 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		1F46C3751E8E591800876521 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		36BFB6840DFBFFCBCEA859CF /* Pods-2-3-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-3-2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2-3-2/Pods-2-3-2.debug.xcconfig"; sourceTree = "<group>"; };
 		610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2-3-2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2-3-2UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C3761E8E591800876521 /* libsqlite3.0.tbd in Frameworks */,
 				A790DB03F84E375FC7007B3F /* libPods-2-3-2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +174,7 @@
 		848C13288DFCBFB425C2A2AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C3751E8E591800876521 /* libsqlite3.0.tbd */,
 				A9A367F4D344FE575BF1D410 /* libPods-2-3-2.a */,
 				610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */,
 				72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */,
@@ -712,6 +716,7 @@
 				1F46C3691E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F46C36A1E8E4E8D00876521 /* Build configuration list for PBXNativeTarget "2-3-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +725,7 @@
 				1F46C36C1E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F46C36D1E8E4E8D00876521 /* Build configuration list for PBXNativeTarget "2-3-2UITests" */ = {
 			isa = XCConfigurationList;
@@ -728,6 +734,7 @@
 				1F46C36F1E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
