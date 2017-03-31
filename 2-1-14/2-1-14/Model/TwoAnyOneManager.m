@@ -7,9 +7,9 @@
 //
 
 #import "TwoAnyOneManager.h"
-const NSString* twoAnyOne = @"2NE1";
-const NSString* nameKey = @"name";
-const NSString* explanationKey = @"explanation";
+NSString* const twoAnyOne = @"2NE1";
+NSString* const nameKey = @"name";
+NSString* const explanationKey = @"explanation";
 
 @implementation TwoAnyOneManager
 -(NSArray<Member*> *)members{

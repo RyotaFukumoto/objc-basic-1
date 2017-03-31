@@ -14,9 +14,9 @@ typedef enum : NSInteger{
     Dictionary
 }RootType;
 
-extern const NSString* twoAnyOne;
-extern const NSString* nameKey;
-extern const NSString* explanationKey;
+extern NSString* const twoAnyOne;
+extern NSString* const nameKey;
+extern NSString* const explanationKey;
 
 @interface TwoAnyOneManager : NSObject
 @property (nonatomic, readonly) NSArray<Member*> *members;
