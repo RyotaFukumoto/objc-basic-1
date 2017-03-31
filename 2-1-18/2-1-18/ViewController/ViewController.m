@@ -27,10 +27,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Subview Event
+#pragma mark View Transition
 - (IBAction)buttonTapped:(UIButton *)sender {
-    [self performSegueWithIdentifier:kShowSegueIdentifier
-                              sender:nil];
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main"
+                                                               bundle:nil];
+    DetailViewController* detailVC = [storyBoard instantiateViewControllerWithIdentifier:kDetailViewControllerIdentifier];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 @end

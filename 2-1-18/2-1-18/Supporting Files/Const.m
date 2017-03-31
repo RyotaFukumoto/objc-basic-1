@@ -8,7 +8,8 @@
 
 #import "Const.h"
 
-NSString* const kShowSegueIdentifier = @"show";
+NSString* const kDetailViewControllerIdentifier = @"DetailViewController";
+
 @implementation Const
 
 @end
