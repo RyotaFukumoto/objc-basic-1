@@ -122,7 +122,6 @@
 			children = (
 				1F0167FF1E8B5CDA00BD089D /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -152,7 +151,6 @@
 				1F0168041E8B5CDA00BD089D /* ViewController.h */,
 				1F0168051E8B5CDA00BD089D /* ViewController.m */,
 			);
-			name = "View Controller";
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
@@ -165,7 +163,6 @@
 				1F0168361E8B67D500BD089D /* Settings.h */,
 				1F0168371E8B67D500BD089D /* Settings.m */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -236,6 +233,7 @@
 				TargetAttributes = {
 					1F0167FA1E8B5CDA00BD089D = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = PCCZJUYRT6;
 						ProvisioningStyle = Automatic;
 					};
 					1F0168131E8B5CDA00BD089D = {
@@ -457,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-16/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-16";
@@ -468,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-16/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-16";
@@ -540,6 +540,7 @@
 				1F01682A1E8B5CDB00BD089D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F01682B1E8B5CDB00BD089D /* Build configuration list for PBXNativeTarget "2-1-16Tests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +549,7 @@
 				1F01682D1E8B5CDB00BD089D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F01682E1E8B5CDB00BD089D /* Build configuration list for PBXNativeTarget "2-1-16UITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +558,7 @@
 				1F0168301E8B5CDB00BD089D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
