@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface CalendarHandler : NSObject
-
+-(NSString*)timeInfomationString;
 @end
