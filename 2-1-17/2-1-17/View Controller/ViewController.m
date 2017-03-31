@@ -27,7 +27,7 @@
 }
 
 - (IBAction)buttonTapped:(UIButton *)sender {
-    UIStoryboard* secondStoryBoard = [UIStoryboard storyboardWithName:@"Second"
+    UIStoryboard* secondStoryBoard = [UIStoryboard storyboardWithName:@"SecondViewController"
                                                                bundle:nil];
     SecondViewController* secondVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"SecondViewController"];
     secondVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
