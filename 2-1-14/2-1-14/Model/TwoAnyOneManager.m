@@ -1,29 +1,28 @@
 //
 //  TwoAnyOneManager.m
-//  2-1-10
+//  2-1-14
 //
 //  Created by yogasawara@stv on 2017/03/25.
 //  Copyright © 2017年 stv. All rights reserved.
 //
 
 #import "TwoAnyOneManager.h"
-const NSString* twoAnyOne = @"2NE1";
-const NSString* nameKey = @"name";
-const NSString* explanationKey = @"explanation";
+NSString* const twoAnyOne = @"2NE1";
+NSString* const nameKey = @"name";
+NSString* const explanationKey = @"explanation";
 
 @implementation TwoAnyOneManager
 -(NSArray<Member*> *)members{
-    //plistから取得して返す
-    NSArray *array = [self objectFromPlistOf:twoAnyOne rootTypeOfPlist:Array];
+    NSArray<NSDictionary*> *array = [self objectFromPlistOf:twoAnyOne rootTypeOfPlist:Array];
     NSMutableArray<Member*> *memberArray = [NSMutableArray array];
     
-    for (NSDictionary *mem in array) {
+    for (NSDictionary<NSString*,NSString*> *mem in array) {
         Member *member = [[Member alloc] initWithName:mem[nameKey]
                                           explanation:mem[explanationKey]];
         [memberArray addObject:member];
     }
     
-    return (NSArray *)memberArray;
+    return (NSArray<Member*> *)memberArray;
 }
 
 /**

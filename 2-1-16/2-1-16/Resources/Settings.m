@@ -13,8 +13,8 @@ double const kGreenInitialParameter = 0.5;
 double const kBlueParameter = 0.3;
 double const kAlphaValue = 0.6;
 
-int const kLastPageNumber = 10;
-int const kFirstPageNumber = 1;
+NSInteger const kLastPageNumber = 10;
+NSInteger const kFirstPageNumber = 1;
 
 NSString * const kViewControllerIdentifier = @"ViewController";
 

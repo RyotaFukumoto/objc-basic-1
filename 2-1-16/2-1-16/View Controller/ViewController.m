@@ -22,7 +22,7 @@
     NSMutableString *pageNumberLabelText = [NSMutableString string];
     [pageNumberLabelText appendString:[NSString stringWithFormat:@"%zd",self.pageNumber]];
     [pageNumberLabelText appendString:@"/"];
-    [pageNumberLabelText appendString:[NSString stringWithFormat:@"%d",kLastPageNumber]];
+    [pageNumberLabelText appendString:[NSString stringWithFormat:@"%zd",kLastPageNumber]];
     self.pageNumberLabel.text = [NSString stringWithString:pageNumberLabelText];
     
     //背景色の設定:ページ番号が大きくなるに連れて、緑が濃くなる

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString* const kShowSegueIdentifier;
+extern NSString* const kDetailViewControllerIdentifier;
 
 @interface Const : NSObject
 

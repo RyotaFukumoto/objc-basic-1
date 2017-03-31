@@ -1,6 +1,6 @@
 //
 //  TATableViewCell.m
-//  2-1-10
+//  2-1-14
 //
 //  Created by yogasawara@stv on 2017/03/25.
 //  Copyright © 2017年 stv. All rights reserved.

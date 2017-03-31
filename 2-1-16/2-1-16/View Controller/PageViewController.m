@@ -31,7 +31,7 @@
 }
 
 #pragma mark Page generate
--(ViewController*)generatePageFromPageNumber:(int)pageNumber{
+-(ViewController*)generatePageFromPageNumber:(NSInteger)pageNumber{
     ViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:kViewControllerIdentifier];
     vc.pageNumber = pageNumber;
     return vc;
@@ -41,7 +41,7 @@
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController
      viewControllerBeforeViewController:(UIViewController *)viewController{
     ViewController* vc = (ViewController*)viewController;
-    int pageNumber = vc.pageNumber;
+    NSInteger pageNumber = vc.pageNumber;
     
     if (pageNumber == kFirstPageNumber) {
         return nil;
@@ -52,7 +52,7 @@
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
     ViewController* vc = (ViewController*)viewController;
-    int pageNumber = vc.pageNumber;
+    NSInteger pageNumber = vc.pageNumber;
     if (pageNumber == kLastPageNumber) {
         return nil;
     }else{

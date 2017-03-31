@@ -17,6 +17,7 @@
 		1F1360B21E8CA47900485A0C /* __1_18UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1360B11E8CA47900485A0C /* __1_18UITests.m */; };
 		1F1360C31E8CC96B00485A0C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1360C21E8CC96B00485A0C /* DetailViewController.m */; };
 		1F1360C61E8CCA1200485A0C /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1360C51E8CCA1200485A0C /* Const.m */; };
+		1F46C3301E8E40BD00876521 /* CalendarHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C32F1E8E40BD00876521 /* CalendarHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		1F1360C21E8CC96B00485A0C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1F1360C41E8CCA1200485A0C /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		1F1360C51E8CCA1200485A0C /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
+		1F46C32E1E8E40BD00876521 /* CalendarHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarHandler.h; sourceTree = "<group>"; };
+		1F46C32F1E8E40BD00876521 /* CalendarHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		1F13608B1E8CA47900485A0C /* 2-1-18 */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C32D1E8E403A00876521 /* Model */,
 				1F1360BF1E8CC93800485A0C /* Resources */,
 				1F13608C1E8CA47900485A0C /* Supporting Files */,
 				1F1360C01E8CC94600485A0C /* ViewController */,
@@ -124,7 +128,6 @@
 				1F1360C51E8CCA1200485A0C /* Const.m */,
 				1F13608D1E8CA47900485A0C /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -153,7 +156,6 @@
 				1F13609D1E8CA47900485A0C /* Info.plist */,
 				1F13609A1E8CA47900485A0C /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -165,8 +167,17 @@
 				1F1360921E8CA47900485A0C /* ViewController.h */,
 				1F1360931E8CA47900485A0C /* ViewController.m */,
 			);
-			name = ViewController;
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1F46C32D1E8E403A00876521 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C32E1E8E40BD00876521 /* CalendarHandler.h */,
+				1F46C32F1E8E40BD00876521 /* CalendarHandler.m */,
+			);
+			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				TargetAttributes = {
 					1F1360881E8CA47900485A0C = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = PCCZJUYRT6;
 						ProvisioningStyle = Automatic;
 					};
 					1F1360A11E8CA47900485A0C = {
@@ -302,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C3301E8E40BD00876521 /* CalendarHandler.m in Sources */,
 				1F1360C61E8CCA1200485A0C /* Const.m in Sources */,
 				1F1360941E8CA47900485A0C /* ViewController.m in Sources */,
 				1F1360911E8CA47900485A0C /* AppDelegate.m in Sources */,
@@ -457,7 +470,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-18/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-18";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,7 +483,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-18/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--1-18";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +557,7 @@
 				1F1360B81E8CA47900485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1360B91E8CA47900485A0C /* Build configuration list for PBXNativeTarget "2-1-18Tests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +566,7 @@
 				1F1360BB1E8CA47900485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1360BC1E8CA47900485A0C /* Build configuration list for PBXNativeTarget "2-1-18UITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +575,7 @@
 				1F1360BE1E8CA47900485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

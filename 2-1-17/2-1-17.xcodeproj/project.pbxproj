@@ -10,13 +10,13 @@
 		1F1360471E8C95F400485A0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1360461E8C95F400485A0C /* main.m */; };
 		1F13604A1E8C95F400485A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1360491E8C95F400485A0C /* AppDelegate.m */; };
 		1F13604D1E8C95F400485A0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13604C1E8C95F400485A0C /* ViewController.m */; };
-		1F1360501E8C95F400485A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13604E1E8C95F400485A0C /* Main.storyboard */; };
+		1F1360501E8C95F400485A0C /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13604E1E8C95F400485A0C /* ViewController.storyboard */; };
 		1F1360521E8C95F400485A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1360511E8C95F400485A0C /* Assets.xcassets */; };
 		1F1360551E8C95F400485A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */; };
 		1F1360601E8C95F400485A0C /* __1_17Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13605F1E8C95F400485A0C /* __1_17Tests.m */; };
 		1F13606B1E8C95F400485A0C /* __1_17UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13606A1E8C95F400485A0C /* __1_17UITests.m */; };
 		1F13607C1E8C975A00485A0C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13607B1E8C975A00485A0C /* SecondViewController.m */; };
-		1F13607E1E8C976E00485A0C /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13607D1E8C976E00485A0C /* Second.storyboard */; };
+		1F13607E1E8C976E00485A0C /* SecondViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13607D1E8C976E00485A0C /* SecondViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		1F1360491E8C95F400485A0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F13604B1E8C95F400485A0C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1F13604C1E8C95F400485A0C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1F13604F1E8C95F400485A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F13604F1E8C95F400485A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		1F1360511E8C95F400485A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1360541E8C95F400485A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F1360561E8C95F400485A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		1F13606C1E8C95F400485A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F13607A1E8C975A00485A0C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1F13607B1E8C975A00485A0C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		1F13607D1E8C976E00485A0C /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		1F13607D1E8C976E00485A0C /* SecondViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,6 @@
 			children = (
 				1F1360461E8C95F400485A0C /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -150,7 +149,6 @@
 				1F1360561E8C95F400485A0C /* Info.plist */,
 				1F1360531E8C95F400485A0C /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -162,17 +160,15 @@
 				1F13604B1E8C95F400485A0C /* ViewController.h */,
 				1F13604C1E8C95F400485A0C /* ViewController.m */,
 			);
-			name = "View Controller";
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		1F13607F1E8C977700485A0C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1F13604E1E8C95F400485A0C /* Main.storyboard */,
-				1F13607D1E8C976E00485A0C /* Second.storyboard */,
+				1F13604E1E8C95F400485A0C /* ViewController.storyboard */,
+				1F13607D1E8C976E00485A0C /* SecondViewController.storyboard */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -243,6 +239,7 @@
 				TargetAttributes = {
 					1F1360411E8C95F400485A0C = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = PCCZJUYRT6;
 						ProvisioningStyle = Automatic;
 					};
 					1F13605A1E8C95F400485A0C = {
@@ -282,10 +279,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F13607E1E8C976E00485A0C /* Second.storyboard in Resources */,
+				1F13607E1E8C976E00485A0C /* SecondViewController.storyboard in Resources */,
 				1F1360551E8C95F400485A0C /* LaunchScreen.storyboard in Resources */,
 				1F1360521E8C95F400485A0C /* Assets.xcassets in Resources */,
-				1F1360501E8C95F400485A0C /* Main.storyboard in Resources */,
+				1F1360501E8C95F400485A0C /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +346,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1F13604E1E8C95F400485A0C /* Main.storyboard */ = {
+		1F13604E1E8C95F400485A0C /* ViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F13604F1E8C95F400485A0C /* Base */,
 			);
-			name = Main.storyboard;
+			name = ViewController.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};
@@ -464,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-17/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-1-17/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +548,7 @@
 				1F1360711E8C95F400485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1360721E8C95F400485A0C /* Build configuration list for PBXNativeTarget "2-1-17Tests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +557,7 @@
 				1F1360741E8C95F400485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F1360751E8C95F400485A0C /* Build configuration list for PBXNativeTarget "2-1-17UITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +566,7 @@
 				1F1360771E8C95F400485A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
