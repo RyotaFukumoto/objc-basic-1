@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2A568E1E91D1B20074EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */; };
 		1F46C33F1E8E4E8D00876521 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C33E1E8E4E8D00876521 /* main.m */; };
 		1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3411E8E4E8D00876521 /* AppDelegate.m */; };
 		1F46C3451E8E4E8D00876521 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3441E8E4E8D00876521 /* ViewController.m */; };
@@ -16,6 +17,9 @@
 		1F46C3581E8E4E8D00876521 /* __3_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3571E8E4E8D00876521 /* __3_2Tests.m */; };
 		1F46C3631E8E4E8D00876521 /* __3_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3621E8E4E8D00876521 /* __3_2UITests.m */; };
 		1F46C3721E8E4F3200876521 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3711E8E4F3200876521 /* Podfile */; };
+		1F46C3761E8E591800876521 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46C3751E8E591800876521 /* libsqlite3.0.tbd */; };
+		1FF129D51E9231ED00595859 /* DaoToDos.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF129D41E9231ED00595859 /* DaoToDos.m */; };
+		1FF129D81E9231FC00595859 /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF129D71E9231FC00595859 /* ToDo.m */; };
 		57E91C10DD109D39AF33E289 /* libPods-2-3-2UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */; };
 		64501B83FBC1CED7F3DBD416 /* libPods-2-3-2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */; };
 		A790DB03F84E375FC7007B3F /* libPods-2-3-2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A367F4D344FE575BF1D410 /* libPods-2-3-2.a */; };
@@ -40,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		139AF39ACDA973CFDD357405 /* Pods-2-3-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-3-2.release.xcconfig"; path = "Pods/Target Support Files/Pods-2-3-2/Pods-2-3-2.release.xcconfig"; sourceTree = "<group>"; };
+		1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		1F46C33A1E8E4E8D00876521 /* 2-3-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-3-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F46C33E1E8E4E8D00876521 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F46C3401E8E4E8D00876521 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,7 +61,12 @@
 		1F46C35E1E8E4E8D00876521 /* 2-3-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-3-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F46C3621E8E4E8D00876521 /* __3_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __3_2UITests.m; sourceTree = "<group>"; };
 		1F46C3641E8E4E8D00876521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F46C3711E8E4F3200876521 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		1F46C3711E8E4F3200876521 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1F46C3751E8E591800876521 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1FF129D31E9231ED00595859 /* DaoToDos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoToDos.h; sourceTree = "<group>"; };
+		1FF129D41E9231ED00595859 /* DaoToDos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoToDos.m; sourceTree = "<group>"; };
+		1FF129D61E9231FC00595859 /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		1FF129D71E9231FC00595859 /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
 		36BFB6840DFBFFCBCEA859CF /* Pods-2-3-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-3-2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2-3-2/Pods-2-3-2.debug.xcconfig"; sourceTree = "<group>"; };
 		610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2-3-2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2-3-2UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2A568E1E91D1B20074EE9A /* libsqlite3.dylib in Frameworks */,
+				1F46C3761E8E591800876521 /* libsqlite3.0.tbd in Frameworks */,
 				A790DB03F84E375FC7007B3F /* libPods-2-3-2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +107,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2A56881E91CFBB0074EE9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C3461E8E4E8D00876521 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1F2A56891E91CFC10074EE9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FF129D31E9231ED00595859 /* DaoToDos.h */,
+				1FF129D41E9231ED00595859 /* DaoToDos.m */,
+				1FF129D61E9231FC00595859 /* ToDo.h */,
+				1FF129D71E9231FC00595859 /* ToDo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1F46C3311E8E4E8C00876521 = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +152,11 @@
 		1F46C33C1E8E4E8D00876521 /* 2-3-2 */ = {
 			isa = PBXGroup;
 			children = (
+				1F2A56891E91CFC10074EE9A /* Model */,
 				1F46C3401E8E4E8D00876521 /* AppDelegate.h */,
 				1F46C3411E8E4E8D00876521 /* AppDelegate.m */,
 				1F46C3701E8E4EC800876521 /* View Controller */,
-				1F46C3461E8E4E8D00876521 /* Main.storyboard */,
-				1F46C3491E8E4E8D00876521 /* Assets.xcassets */,
-				1F46C34B1E8E4E8D00876521 /* LaunchScreen.storyboard */,
-				1F46C34E1E8E4E8D00876521 /* Info.plist */,
+				1F2A56881E91CFBB0074EE9A /* View */,
 				1F46C33D1E8E4E8D00876521 /* Supporting Files */,
 			);
 			path = "2-3-2";
@@ -136,6 +165,9 @@
 		1F46C33D1E8E4E8D00876521 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C3491E8E4E8D00876521 /* Assets.xcassets */,
+				1F46C34B1E8E4E8D00876521 /* LaunchScreen.storyboard */,
+				1F46C34E1E8E4E8D00876521 /* Info.plist */,
 				1F46C33E1E8E4E8D00876521 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -171,6 +203,8 @@
 		848C13288DFCBFB425C2A2AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */,
+				1F46C3751E8E591800876521 /* libsqlite3.0.tbd */,
 				A9A367F4D344FE575BF1D410 /* libPods-2-3-2.a */,
 				610C54804A19F5406787BB18 /* libPods-2-3-2Tests.a */,
 				72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */,
@@ -473,8 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F46C3451E8E4E8D00876521 /* ViewController.m in Sources */,
+				1FF129D51E9231ED00595859 /* DaoToDos.m in Sources */,
 				1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */,
 				1F46C33F1E8E4E8D00876521 /* main.m in Sources */,
+				1FF129D81E9231FC00595859 /* ToDo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +748,7 @@
 				1F46C3691E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F46C36A1E8E4E8D00876521 /* Build configuration list for PBXNativeTarget "2-3-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +757,7 @@
 				1F46C36C1E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F46C36D1E8E4E8D00876521 /* Build configuration list for PBXNativeTarget "2-3-2UITests" */ = {
 			isa = XCConfigurationList;
@@ -728,6 +766,7 @@
 				1F46C36F1E8E4E8D00876521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
