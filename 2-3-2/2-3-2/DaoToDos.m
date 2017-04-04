@@ -57,7 +57,7 @@ NSString* const kSQLInsert = @"insert into tr_todo_test(todo_title,todo_contents
     FMDatabase* db = [self fetchFMDB];
     [db open];
     
-//    [db setShouldCacheStatements:YES];
+    [db setShouldCacheStatements:YES];
     
     //limit_dateをdataformatterでUTCに変換してから保存する
     NSString* utcLimitDateString = [DateTrimmer utcDateString:todo.limit_date];
