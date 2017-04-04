@@ -10,14 +10,17 @@
 		1F2A568E1E91D1B20074EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */; };
 		1F46C33F1E8E4E8D00876521 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C33E1E8E4E8D00876521 /* main.m */; };
 		1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3411E8E4E8D00876521 /* AppDelegate.m */; };
-		1F46C3451E8E4E8D00876521 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3441E8E4E8D00876521 /* ViewController.m */; };
-		1F46C3481E8E4E8D00876521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3461E8E4E8D00876521 /* Main.storyboard */; };
+		1F46C3481E8E4E8D00876521 /* ToDoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3461E8E4E8D00876521 /* ToDoListViewController.storyboard */; };
 		1F46C34A1E8E4E8D00876521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3491E8E4E8D00876521 /* Assets.xcassets */; };
 		1F46C34D1E8E4E8D00876521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C34B1E8E4E8D00876521 /* LaunchScreen.storyboard */; };
 		1F46C3581E8E4E8D00876521 /* __3_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3571E8E4E8D00876521 /* __3_2Tests.m */; };
 		1F46C3631E8E4E8D00876521 /* __3_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3621E8E4E8D00876521 /* __3_2UITests.m */; };
 		1F46C3721E8E4F3200876521 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3711E8E4F3200876521 /* Podfile */; };
 		1F46C3761E8E591800876521 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46C3751E8E591800876521 /* libsqlite3.0.tbd */; };
+		1F558CB51E9373D3004BCEDC /* DateTrimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F558CB41E9373D3004BCEDC /* DateTrimmer.m */; };
+		1F558CB81E937D28004BCEDC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F558CB71E937D28004BCEDC /* ToDoListViewController.m */; };
+		1F558CBB1E937D43004BCEDC /* ToDoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */; };
+		1F558CBD1E937D8C004BCEDC /* ToDoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F558CBC1E937D8C004BCEDC /* ToDoDetailViewController.storyboard */; };
 		1FF129D51E9231ED00595859 /* DaoToDos.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF129D41E9231ED00595859 /* DaoToDos.m */; };
 		1FF129D81E9231FC00595859 /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF129D71E9231FC00595859 /* ToDo.m */; };
 		57E91C10DD109D39AF33E289 /* libPods-2-3-2UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F303DCBDCA73D6524532D6 /* libPods-2-3-2UITests.a */; };
@@ -49,9 +52,7 @@
 		1F46C33E1E8E4E8D00876521 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F46C3401E8E4E8D00876521 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F46C3411E8E4E8D00876521 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1F46C3431E8E4E8D00876521 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1F46C3441E8E4E8D00876521 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1F46C3471E8E4E8D00876521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F46C3471E8E4E8D00876521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ToDoListViewController.storyboard; sourceTree = "<group>"; };
 		1F46C3491E8E4E8D00876521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F46C34C1E8E4E8D00876521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F46C34E1E8E4E8D00876521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +64,13 @@
 		1F46C3641E8E4E8D00876521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F46C3711E8E4F3200876521 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1F46C3751E8E591800876521 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1F558CB31E9373D3004BCEDC /* DateTrimmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTrimmer.h; sourceTree = "<group>"; };
+		1F558CB41E9373D3004BCEDC /* DateTrimmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTrimmer.m; sourceTree = "<group>"; };
+		1F558CB61E937D28004BCEDC /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
+		1F558CB71E937D28004BCEDC /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
+		1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoDetailViewController.h; sourceTree = "<group>"; };
+		1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoDetailViewController.m; sourceTree = "<group>"; };
+		1F558CBC1E937D8C004BCEDC /* ToDoDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDoDetailViewController.storyboard; sourceTree = "<group>"; };
 		1FF129D31E9231ED00595859 /* DaoToDos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoToDos.h; sourceTree = "<group>"; };
 		1FF129D41E9231ED00595859 /* DaoToDos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoToDos.m; sourceTree = "<group>"; };
 		1FF129D61E9231FC00595859 /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
@@ -110,7 +118,8 @@
 		1F2A56881E91CFBB0074EE9A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1F46C3461E8E4E8D00876521 /* Main.storyboard */,
+				1F46C3461E8E4E8D00876521 /* ToDoListViewController.storyboard */,
+				1F558CBC1E937D8C004BCEDC /* ToDoDetailViewController.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 				1FF129D41E9231ED00595859 /* DaoToDos.m */,
 				1FF129D61E9231FC00595859 /* ToDo.h */,
 				1FF129D71E9231FC00595859 /* ToDo.m */,
+				1F558CB31E9373D3004BCEDC /* DateTrimmer.h */,
+				1F558CB41E9373D3004BCEDC /* DateTrimmer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -194,8 +205,10 @@
 		1F46C3701E8E4EC800876521 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F46C3431E8E4E8D00876521 /* ViewController.h */,
-				1F46C3441E8E4E8D00876521 /* ViewController.m */,
+				1F558CB61E937D28004BCEDC /* ToDoListViewController.h */,
+				1F558CB71E937D28004BCEDC /* ToDoListViewController.m */,
+				1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */,
+				1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -340,10 +353,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F558CBD1E937D8C004BCEDC /* ToDoDetailViewController.storyboard in Resources */,
 				1F46C34D1E8E4E8D00876521 /* LaunchScreen.storyboard in Resources */,
 				1F46C34A1E8E4E8D00876521 /* Assets.xcassets in Resources */,
 				1F46C3721E8E4F3200876521 /* Podfile in Resources */,
-				1F46C3481E8E4E8D00876521 /* Main.storyboard in Resources */,
+				1F46C3481E8E4E8D00876521 /* ToDoListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,9 +520,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F46C3451E8E4E8D00876521 /* ViewController.m in Sources */,
+				1F558CB81E937D28004BCEDC /* ToDoListViewController.m in Sources */,
 				1FF129D51E9231ED00595859 /* DaoToDos.m in Sources */,
+				1F558CB51E9373D3004BCEDC /* DateTrimmer.m in Sources */,
 				1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */,
+				1F558CBB1E937D43004BCEDC /* ToDoDetailViewController.m in Sources */,
 				1F46C33F1E8E4E8D00876521 /* main.m in Sources */,
 				1FF129D81E9231FC00595859 /* ToDo.m in Sources */,
 			);
@@ -546,12 +562,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1F46C3461E8E4E8D00876521 /* Main.storyboard */ = {
+		1F46C3461E8E4E8D00876521 /* ToDoListViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F46C3471E8E4E8D00876521 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ToDoListViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		1F46C34B1E8E4E8D00876521 /* LaunchScreen.storyboard */ = {
