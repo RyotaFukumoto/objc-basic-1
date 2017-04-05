@@ -50,9 +50,9 @@ NSString* const kSQLInsert = @"insert into tr_todo_test(todo_title,todo_contents
  *
  * @param todo 書籍。
  *
- * @return 成功時は識別子を割り当てられた書籍。失敗時は nil。
+ * @return 成功時は識別子を割り当てられたタスク、失敗時は nilが返る。
  */
-- (ToDo*)add:(ToDo *)todo
+- (nullable ToDo*)add:(ToDo *)todo
 {
     FMDatabase* db = [self fetchFMDB];
     [db open];

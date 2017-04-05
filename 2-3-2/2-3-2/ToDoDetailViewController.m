@@ -35,6 +35,13 @@
 }
 
 #pragma mark button action
+
+
+/**
+ 登録ボタンが押されたら、入力情報をDBに保存する。
+
+ @param sender subscribeボタン
+ */
 - (IBAction)subscribeButtonTapped:(UIButton *)sender
 {
     if ([self.titleTextField.text isEqualToString:@""]) {
