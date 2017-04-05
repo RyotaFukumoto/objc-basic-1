@@ -71,6 +71,7 @@
 		1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoDetailViewController.h; sourceTree = "<group>"; };
 		1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoDetailViewController.m; sourceTree = "<group>"; };
 		1F558CBC1E937D8C004BCEDC /* ToDoDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDoDetailViewController.storyboard; sourceTree = "<group>"; };
+		1F9CE67F1E947429009CD767 /* 2-3-2-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "2-3-2-prefix.pch"; sourceTree = "<group>"; };
 		1FF129D31E9231ED00595859 /* DaoToDos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoToDos.h; sourceTree = "<group>"; };
 		1FF129D41E9231ED00595859 /* DaoToDos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoToDos.m; sourceTree = "<group>"; };
 		1FF129D61E9231FC00595859 /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 				1F46C34B1E8E4E8D00876521 /* LaunchScreen.storyboard */,
 				1F46C34E1E8E4E8D00876521 /* Info.plist */,
 				1F46C33E1E8E4E8D00876521 /* main.m */,
+				1F9CE67F1E947429009CD767 /* 2-3-2-prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -676,6 +678,7 @@
 			baseConfigurationReference = 36BFB6840DFBFFCBCEA859CF /* Pods-2-3-2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "2-3-2/2-3-2-prefix.pch";
 				INFOPLIST_FILE = "2-3-2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
@@ -688,6 +691,7 @@
 			baseConfigurationReference = 139AF39ACDA973CFDD357405 /* Pods-2-3-2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "2-3-2/2-3-2-prefix.pch";
 				INFOPLIST_FILE = "2-3-2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";

@@ -1,0 +1,24 @@
+//
+//  2-3-2-prefix.pch
+//  2-3-2
+//
+//  Created by yuu ogasawara on 2017/04/05.
+//  Copyright © 2017年 stv. All rights reserved.
+//
+
+#ifndef __3_2_prefix_pch
+#define __3_2_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* __3_2_prefix_pch */
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
+
+// ALog always displays output regardless of the DEBUG alarm
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

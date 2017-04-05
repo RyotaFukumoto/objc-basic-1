@@ -101,8 +101,7 @@ NSString* const kSQLInsert = @"insert into tr_todo_test(todo_title,todo_contents
     
     NSString* dir   = [paths objectAtIndex:0];
     
-    //TODO:ファイル名参照のためログに出しているので、消す
-    NSLog(@"%@",dir);
+    DLog(@"%@",dir);
     
     return [dir stringByAppendingPathComponent:kDBFileName];
 }
