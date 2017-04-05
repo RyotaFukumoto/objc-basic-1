@@ -14,9 +14,16 @@
 @end
 
 @implementation ToDoListViewController
-
+#pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.daoToDos = [[DaoToDos alloc] init];
+    NSArray<ToDo*>* existToDos = [self.daoToDos todos];
+    
+    for (ToDo* todo in existToDos) {
+        [self.todos addObject:todo];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

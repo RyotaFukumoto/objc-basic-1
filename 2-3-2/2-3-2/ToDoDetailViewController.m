@@ -60,6 +60,7 @@
         [self showAlert:FailedToSave];
         return;
     }
+    
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }

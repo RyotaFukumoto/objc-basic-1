@@ -10,5 +10,6 @@
 
 @interface DateTrimmer : NSObject
 +(NSString*)utcDateString:(NSDate*)date;
++(NSString*)systemDateString:(NSDate*)date;
 +(NSDate*)dateFrom:(NSString*)utcDateString;
 @end

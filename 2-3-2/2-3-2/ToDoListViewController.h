@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoToDos.h"
 
-@interface ToDoListViewController : UIViewController
-
+@interface ToDoListViewController : UIViewController{
+    
+}
+@property (nonatomic) DaoToDos*         daoToDos;
+@property (nonatomic) NSMutableArray*   todos;
 @end
