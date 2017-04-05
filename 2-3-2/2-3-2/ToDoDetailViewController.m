@@ -38,7 +38,7 @@
 - (IBAction)subscribeButtonTapped:(UIButton *)sender
 {
     if ([self.titleTextField.text isEqualToString:@""]) {
-        [self showAlert];
+        [self showAlert:NoTitle];
         return;
     }
     
@@ -47,8 +47,12 @@
     todo.todo_contents = self.contentTextField.text;
     todo.limit_date = self.datePicker.date;
     
-    [[[DaoToDos alloc] init] add:todo];
+    ToDo* completedTodo = [[[DaoToDos alloc] init] add:todo];
     
+    if (completedTodo == nil) {
+        [self showAlert:FailedToSave];
+        return;
+    }
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
@@ -58,16 +62,45 @@
                              completion:nil];
 }
 
--(void)showAlert{
-    //タイトルを埋めるようにメッセージ
-    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Fill in title field."
-                                                                             message:nil
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK, tell title" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
+#pragma mark Alert
+//アラートを出したいケースが増えたらここに追加すること
+typedef NS_ENUM(NSUInteger,Error){
+    NoTitle,
+    FailedToSave
+};
+
+-(void)showAlert:(Error)error{
+    switch (error) {
+        case NoTitle:
+        {
+            UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Blank Title"
+                                                                                     message:nil
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK, tell title" style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+
+            return;
+        }
+            
+        case FailedToSave:{
+            UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Failed to save."
+                                                                                     message:nil
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK." style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+            
+            return;
+        }
+            
+        default:
+            return;
+    }
 }
 
 #pragma mark UITextFieldDelegate
