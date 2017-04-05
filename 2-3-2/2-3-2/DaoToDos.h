@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
+#import "ToDo.h"
 
 @interface DaoToDos : NSObject
-
+- (ToDo*)add:(ToDo *)todo;
 @end
