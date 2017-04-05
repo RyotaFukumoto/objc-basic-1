@@ -25,6 +25,8 @@
     
     self.titleTextField.delegate = self;
     self.contentTextField.delegate = self;
+    
+    self.datePicker.minimumDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning {

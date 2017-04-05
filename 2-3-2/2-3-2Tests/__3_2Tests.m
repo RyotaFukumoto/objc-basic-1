@@ -31,7 +31,8 @@ DaoToDos* daoToDos;
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
-//正常な値を入れて、idが補完されて返ってくるか
+//２−３−４　テーブルにタスクのレコードを追加
+//正常な値をDBに入れて、DB側でidが発行されて返ってくるかを確認
 - (void)testAddTask{
     ToDo* toDo = [[ToDo alloc] init];
     toDo.todo_title = @"買い物";
@@ -46,6 +47,7 @@ DaoToDos* daoToDos;
     //書き込みが失敗した場合、completedToDoにはNilが入っている
     ToDo *completedToDo = [daoToDos add:toDo];
     XCTAssertNotNil(completedToDo);
+    NSLog(@"タスクのIDは%zdが発行されました",completedToDo.todo_id);
     //DB Browserでレコードが発行されているか、タイトル、コンテンツ、書式はあっているか確認のこと
 }
 
