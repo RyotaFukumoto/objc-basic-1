@@ -19,7 +19,6 @@
 		10755F401E96354A00099C9D /* ToDoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10755F3D1E96354A00099C9D /* ToDoListCell.xib */; };
 		10755F451E9635D300099C9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10755F421E9635D300099C9D /* Assets.xcassets */; };
 		10755F471E9635D300099C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10755F441E9635D300099C9D /* main.m */; };
-		10755F491E96371300099C9D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10755F481E96371300099C9D /* Info.plist */; };
 		1F2A568E1E91D1B20074EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */; };
 		1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3411E8E4E8D00876521 /* AppDelegate.m */; };
 		1F46C3481E8E4E8D00876521 /* ToDoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3461E8E4E8D00876521 /* ToDoListViewController.storyboard */; };
@@ -397,7 +396,6 @@
 				10755F451E9635D300099C9D /* Assets.xcassets in Resources */,
 				1F46C3721E8E4F3200876521 /* Podfile in Resources */,
 				1F46C3481E8E4E8D00876521 /* ToDoListViewController.storyboard in Resources */,
-				10755F491E96371300099C9D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AC52546E8ED09582A59D03E0 /* [CP] Check Pods Manifest.lock */ = {
@@ -505,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C047D07DF20E06AF9E6C6F49 /* [CP] Check Pods Manifest.lock */ = {
@@ -520,7 +518,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ED578024BDF162CEFE138A0D /* [CP] Copy Pods Resources */ = {
@@ -665,10 +663,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -707,9 +705,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -726,7 +724,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -742,7 +740,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -756,6 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-3-2.app/2-3-2";
 			};
 			name = Debug;
@@ -770,6 +769,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-3-2.app/2-3-2";
 			};
 			name = Release;
