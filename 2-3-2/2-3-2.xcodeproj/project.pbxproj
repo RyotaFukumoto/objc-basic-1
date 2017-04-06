@@ -137,13 +137,13 @@
 			name = ToDoList;
 			sourceTree = "<group>";
 		};
-		106EBD291E95CCE000DC48B2 /* ToDODetail */ = {
+		106EBD291E95CCE000DC48B2 /* ToDoDetail */ = {
 			isa = PBXGroup;
 			children = (
 				1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */,
 				1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */,
 			);
-			name = ToDODetail;
+			name = ToDoDetail;
 			sourceTree = "<group>";
 		};
 		1F2A56881E91CFBB0074EE9A /* View */ = {
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				106EBD281E95CCD200DC48B2 /* ToDoList */,
-				106EBD291E95CCE000DC48B2 /* ToDODetail */,
+				106EBD291E95CCE000DC48B2 /* ToDoDetail */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -722,6 +722,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.2;
 			};
 			name = Debug;
 		};
@@ -737,6 +738,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.2;
 			};
 			name = Release;
 		};
@@ -746,6 +748,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "2-3-2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -759,6 +762,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "2-3-2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
