@@ -21,9 +21,11 @@
     self.daoToDos = [[DaoToDos alloc] init];
     NSArray<ToDo*>* existToDos = [self.daoToDos todos];
     
-    for (ToDo* todo in existToDos) {
-        [self.todos addObject:todo];
-    }
+    self.todos = [NSMutableArray arrayWithArray:existToDos];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:[ToDoListCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[ToDoListCell className]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +38,7 @@
                                                  bundle:nil];
     ToDoDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:[ToDoDetailViewController className]];
     vc.modalTransitionStyle = UIModalPresentationFullScreen;
+    vc.delegate = self;
     [self presentViewController:vc animated:true completion:nil];
 }
 @end

@@ -61,8 +61,12 @@
         return;
     }
     
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+//    [self dismissViewControllerAnimated:YES
+//                             completion:nil];
+    
+    if ([self.delegate respondsToSelector:@selector(createdNewTask)]) {
+        [self.delegate createdNewTask];
+    }
 }
 
 - (IBAction)cancelButtonTapped:(UIButton *)sender {
@@ -84,7 +88,8 @@ typedef NS_ENUM(NSUInteger,Error){
             UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Blank Title"
                                                                                      message:nil
                                                                               preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"OK, tell title" style:UIAlertActionStyleDefault handler:nil]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK, I'll fill in."
+                                                                style:UIAlertActionStyleDefault handler:nil]];
             
             [self presentViewController:alertController
                                animated:YES

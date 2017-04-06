@@ -20,5 +20,8 @@
 
     // Configure the view for the selected state
 }
-
+#pragma mark utility
++ (NSString*)className {
+    return NSStringFromClass([ToDoListCell class]);
+}
 @end
