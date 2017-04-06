@@ -21,25 +21,19 @@ NSInteger const numberOfSection = 1;
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
+    self.todos = [NSMutableArray arrayWithArray:[self.daoToDos todos]];
     return self.todos.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* CellIdentifier = @"Cell";
+    static NSString* CellIdentifier = @"MyCell";
     
     ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[ToDoListCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                   reuseIdentifier:CellIdentifier];
-    }
-    
+    self.todos = [NSMutableArray arrayWithArray:[self.daoToDos todos]];
     ToDo* todo = self.todos[indexPath.row];
     cell.titleLabel.text = todo.todo_title;
-    
-    
     cell.expirationDateLabel.text = [DateTrimmer systemDateString:todo.limit_date];
     
     return cell;

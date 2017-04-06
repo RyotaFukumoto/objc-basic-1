@@ -126,6 +126,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		106EBD281E95CCD200DC48B2 /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				1F558CB61E937D28004BCEDC /* ToDoListViewController.h */,
+				1F558CB71E937D28004BCEDC /* ToDoListViewController.m */,
+				1F9CE6851E94DB89009CD767 /* ToDoListViewController+UITableViewDataSource.h */,
+				1F9CE6861E94DB89009CD767 /* ToDoListViewController+UITableViewDataSource.m */,
+			);
+			name = ToDoList;
+			sourceTree = "<group>";
+		};
+		106EBD291E95CCE000DC48B2 /* ToDODetail */ = {
+			isa = PBXGroup;
+			children = (
+				1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */,
+				1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */,
+			);
+			name = ToDODetail;
+			sourceTree = "<group>";
+		};
 		1F2A56881E91CFBB0074EE9A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,12 +239,8 @@
 		1F46C3701E8E4EC800876521 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F558CB61E937D28004BCEDC /* ToDoListViewController.h */,
-				1F558CB71E937D28004BCEDC /* ToDoListViewController.m */,
-				1F9CE6851E94DB89009CD767 /* ToDoListViewController+UITableViewDataSource.h */,
-				1F9CE6861E94DB89009CD767 /* ToDoListViewController+UITableViewDataSource.m */,
-				1F558CB91E937D43004BCEDC /* ToDoDetailViewController.h */,
-				1F558CBA1E937D43004BCEDC /* ToDoDetailViewController.m */,
+				106EBD281E95CCD200DC48B2 /* ToDoList */,
+				106EBD291E95CCE000DC48B2 /* ToDODetail */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 				TargetAttributes = {
 					1F46C3391E8E4E8C00876521 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = PCCZJUYRT6;
 						ProvisioningStyle = Automatic;
 					};
 					1F46C3521E8E4E8D00876521 = {
@@ -698,8 +715,10 @@
 			baseConfigurationReference = 36BFB6840DFBFFCBCEA859CF /* Pods-2-3-2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				GCC_PREFIX_HEADER = "2-3-2/2-3-2-prefix.pch";
 				INFOPLIST_FILE = "2-3-2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,8 +730,10 @@
 			baseConfigurationReference = 139AF39ACDA973CFDD357405 /* Pods-2-3-2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				GCC_PREFIX_HEADER = "2-3-2/2-3-2-prefix.pch";
 				INFOPLIST_FILE = "2-3-2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";

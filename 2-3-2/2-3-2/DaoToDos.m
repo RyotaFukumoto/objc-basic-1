@@ -241,7 +241,7 @@ BOOL const kDebugMode = YES;
     
     NSString* dir   = [paths objectAtIndex:0];
     
-    DLog(@"%@",dir);
+    DLog(@"DB Path = %@",dir);
     
     return [dir stringByAppendingPathComponent:kDBFileName];
 }
