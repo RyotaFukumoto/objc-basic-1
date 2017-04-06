@@ -15,13 +15,26 @@
  日時のオブジェクトからUTCでフォーマットした文字列を生成
  参考： http://qiita.com/__zck__/items/aa08e1ed8496f6da1eb9
  @param date ロケールを問わない日時
- @return UTCでフォーマットした日時の文字列
- ex: 2017-04-08 13:25:03
+ @return ex: "2017-04-08 13:25:03"
+ 
  */
 +(NSString*)utcDateString:(NSDate*)date{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    return [dateFormatter stringFromDate:date];
+}
+
+/**
+ NSDateからシステムが使用しているタイムゾーンでフォーマットした文字列を生成
+
+ @param date NSDate
+ @return ex) "2020-08-16"
+ */
++(NSString*)systemDateString:(NSDate*)date{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     return [dateFormatter stringFromDate:date];
 }
 

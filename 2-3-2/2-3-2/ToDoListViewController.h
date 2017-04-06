@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoToDos.h"
+#import "ToDoListCell.h"
 
-@interface ToDoListViewController : UIViewController
-
+@interface ToDoListViewController : UIViewController{
+    
+}
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) DaoToDos*         daoToDos;
+@property (nonatomic) NSMutableArray*   todos;
 @end
+

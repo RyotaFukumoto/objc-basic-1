@@ -14,9 +14,18 @@
 @end
 
 @implementation ToDoListViewController
-
+#pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.daoToDos = [[DaoToDos alloc] init];
+    NSArray<ToDo*>* existToDos = [self.daoToDos todos];
+    
+    self.todos = [NSMutableArray arrayWithArray:existToDos];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:[ToDoListCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[ToDoListCell className]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,10 +34,11 @@
 
 #pragma mark view transition
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender {
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"ToDoDetailViewController" bundle:nil];
-    ToDoDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"ToDoDetailViewController"];
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:[ToDoDetailViewController className]
+                                                 bundle:nil];
+    ToDoDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:[ToDoDetailViewController className]];
     vc.modalTransitionStyle = UIModalPresentationFullScreen;
+    vc.delegate = self;
     [self presentViewController:vc animated:true completion:nil];
 }
-
 @end

@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToDoDetailViewController : UIViewController<UITextFieldDelegate>
+@protocol ToDoDetailViewDelegate <NSObject>
+
+-(void)createdNewTask;
 
 @end
+
+@interface ToDoDetailViewController : UIViewController<UITextFieldDelegate>
+@property (weak) id<ToDoDetailViewDelegate> delegate;
++ (NSString*)className;
+
+@end
+
