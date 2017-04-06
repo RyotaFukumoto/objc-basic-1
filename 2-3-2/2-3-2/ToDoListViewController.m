@@ -32,10 +32,10 @@
 
 #pragma mark view transition
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender {
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"ToDoDetailViewController" bundle:nil];
-    ToDoDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"ToDoDetailViewController"];
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:[ToDoDetailViewController className]
+                                                 bundle:nil];
+    ToDoDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:[ToDoDetailViewController className]];
     vc.modalTransitionStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:true completion:nil];
 }
-
 @end

@@ -118,4 +118,8 @@ typedef NS_ENUM(NSUInteger,Error){
     return  YES;
 }
 
+#pragma mark utility
++ (NSString*)className {
+    return NSStringFromClass([ToDoDetailViewController class]);
+}
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ToDoDetailViewController : UIViewController<UITextFieldDelegate>
-
++ (NSString*)className;
 @end
