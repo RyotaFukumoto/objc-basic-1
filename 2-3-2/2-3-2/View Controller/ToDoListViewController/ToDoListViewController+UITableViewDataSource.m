@@ -10,13 +10,7 @@
 #import "ToDoListCell.h"
 #import "DateTrimmer.h"
 
-NSInteger const numberOfSection = 1;
-
 @implementation ToDoListViewController (UITableViewDataSource)
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return numberOfSection;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
@@ -26,7 +20,7 @@ numberOfRowsInSection:(NSInteger)section
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:[ToDoListCell className]
                           forIndexPath:indexPath];
     
