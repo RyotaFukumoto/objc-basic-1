@@ -33,8 +33,8 @@ numberOfRowsInSection:(NSInteger)section
                           forIndexPath:indexPath];
     
     ToDo* todo = self.todos[indexPath.row];
-    cell.titleLabel.text = todo.todo_title;
-    cell.expirationDateLabel.text = [DateTrimmer systemDateString:todo.limit_date];
+    cell.titleLabel.text = todo.todoTitle;
+    cell.expirationDateLabel.text = [DateTrimmer systemDateString:todo.limitDate];
     
     return cell;
 }

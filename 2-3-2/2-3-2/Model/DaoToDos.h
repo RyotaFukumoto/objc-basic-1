@@ -45,8 +45,8 @@ extern BOOL const kDebugMode;
 -(void)insertDammyTasks;
 
 //ゲッタ
--(nullable NSArray*)todos;
--(NSArray*_Nullable)todosFrom:(TableName)tableName;
+-(nullable NSArray<ToDo*>*)todos;
+-(NSArray<ToDo*>* _Nullable)todosFrom:(TableName)tableName;
 
 //削除
 -(void)removeAllRecordIn:(TableName)tableName;
