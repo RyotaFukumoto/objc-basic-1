@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "DaoToDos.h"
+#import "NSDate+DateFormat.h"
 
 @interface __3_2Tests : XCTestCase
 @end
@@ -125,6 +126,22 @@ DaoToDos* daoToDos;
     for (ToDo* todo in dbArray) {
         XCTAssertNotEqual(todoID, todo.todoID);
     }
+}
+
+- (void)testDateFromUTCDateString{
+    NSString* testString = @"2011-11-03 15:13:57";
+    NSDate* date = [NSDate dateFrom:testString];
+    XCTAssertEqualObjects([DateTrimmer utcDateString:date], testString);
+}
+
+- (void)testSystemDateString{
+    NSDate* date = [NSDate date];
+    XCTAssertEqualObjects([DateTrimmer systemDateString:date], [date systemDateString]);
+}
+
+- (void)testUTCDateString{
+    NSDate* date = [NSDate date];
+    XCTAssertEqualObjects([DateTrimmer utcDateString:date], [date utcDateString]);
 }
 
 - (void)testPerformanceExample {
