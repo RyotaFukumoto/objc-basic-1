@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDo.h"
 
 @interface ToDoListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expirationDateLabel;
 + (NSString*)className;
+- (void)setCell:(ToDo*)todo;
 @end
