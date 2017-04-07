@@ -77,6 +77,15 @@ BOOL const kDebugMode = NO;
     return self;
 }
 
++ (DaoToDos*)shared{
+    static DaoToDos* shared;
+    if (shared == nil) {
+        shared = [[DaoToDos alloc] init];
+    }
+    
+    return shared;
+}
+
 #pragma mark - Public methods
 /**
  * タスクを追加します。

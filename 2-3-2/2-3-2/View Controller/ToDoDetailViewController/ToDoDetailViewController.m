@@ -54,7 +54,7 @@
     todo.todoContents = self.contentTextField.text;
     todo.limitDate = self.datePicker.date;
     
-    ToDo* completedTodo = [[[DaoToDos alloc] init] add:todo];
+    ToDo* completedTodo = [[DaoToDos shared] add:todo];
     
     if (completedTodo == nil) {
         [self showAlert:FailedToSave];
