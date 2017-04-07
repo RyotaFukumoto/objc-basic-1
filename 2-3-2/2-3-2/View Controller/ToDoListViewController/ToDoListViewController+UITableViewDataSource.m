@@ -26,10 +26,8 @@ numberOfRowsInSection:(NSInteger)section
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString* CellIdentifier = @"ToDoListCell";
-    
-    ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+{    
+    ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:[ToDoListCell className]
                           forIndexPath:indexPath];
     
     ToDo* todo = self.todos[indexPath.row];
