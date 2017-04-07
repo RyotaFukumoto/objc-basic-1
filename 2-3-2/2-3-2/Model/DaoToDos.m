@@ -59,6 +59,12 @@ BOOL const kDebugMode = YES;
     return self;
 }
 
+
+/**
+ DBとテスト用のテーブルの実在を確定させて、テスト用のテーブルのレコードがあれば全て削除する
+
+ @return <#return value description#>
+ */
 -(id)initForTest{
     self = [super init];
     if( self )
@@ -66,7 +72,7 @@ BOOL const kDebugMode = YES;
         FMDatabase* db = [self fetchFMDB];
         [db open];
         [db executeUpdate:[self createTableSQLQueryOf:test]];
-        [self deleteAllRecordIn:test];
+        [self removeAllRecordIn:test];
         [db close];
     }
     return self;
@@ -181,7 +187,7 @@ BOOL const kDebugMode = YES;
 
  @param tableName すべてのレコードを削除したいテーブル.testを想定。
  */
--(void)deleteAllRecordIn:(TableName)tableName
+-(void)removeAllRecordIn:(TableName)tableName
 {
     NSString* tableNameText = GetTableNameText(tableName);
     NSString* sql = [NSString stringWithFormat:@"DELETE FROM %@",tableNameText];
@@ -191,6 +197,34 @@ BOOL const kDebugMode = YES;
     [db close];
 }
 
+-(void)deleteToDoOf:(NSInteger)id{
+    if (kDebugMode) {
+        return [self deleteToDoOf:id in:develop];
+    }else{
+        return [self deleteToDoOf:id in:release];
+    }
+}
+
+-(void)deleteToDoOf:(NSInteger)id in:(TableName)tableName{
+    if (id < 0){
+        return;
+    }
+    
+    NSString* tableNameText = GetTableNameText(tableName);
+    NSMutableString* selectQueryMutableString = [NSMutableString string];
+    [selectQueryMutableString appendString:@"update "];
+    [selectQueryMutableString appendString:[NSString stringWithFormat:@"%@ ",tableNameText]];
+    [selectQueryMutableString appendString:@"set delete_flg = 1 "];
+    [selectQueryMutableString appendString:[NSString stringWithFormat:@"where todo_id = %zd;",id]];
+
+    NSString* sql = selectQueryMutableString.copy;
+    
+    FMDatabase* db = [self fetchFMDB];
+    [db open];
+    [db executeUpdate:sql];
+    [db close];
+    
+}
 #pragma mark - Private methods
 
 /**

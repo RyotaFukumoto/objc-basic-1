@@ -26,12 +26,18 @@ typedef NS_ENUM(NSUInteger, TableName){
 
 @interface DaoToDos : NSObject
 -(id _Nullable)initForTest;
+
+//セッタ
 - (nullable ToDo*)add:(ToDo *_Nonnull)todo;
 - (nullable ToDo*)add:(ToDo *_Nonnull)todo
                    to:(TableName)tableName;
-
+//ゲッタ
 -(nullable NSArray*)todos;
 -(NSArray*_Nullable)todosFrom:(TableName)tableName;
--(void)deleteAllRecordIn:(TableName)tableName;
+
+//削除
+-(void)removeAllRecordIn:(TableName)tableName;
+-(void)deleteToDoOf:(NSInteger)id;
+-(void)deleteToDoOf:(NSInteger)id in:(TableName)tableName;
 
 @end
