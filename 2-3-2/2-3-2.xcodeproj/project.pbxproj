@@ -19,6 +19,9 @@
 		10755F401E96354A00099C9D /* ToDoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10755F3D1E96354A00099C9D /* ToDoListCell.xib */; };
 		10755F451E9635D300099C9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10755F421E9635D300099C9D /* Assets.xcassets */; };
 		10755F471E9635D300099C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10755F441E9635D300099C9D /* main.m */; };
+		10C203DB1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C203DA1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m */; };
+		10C203DC1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C203DA1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m */; };
+		10C203DD1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C203DA1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m */; };
 		1F2A568E1E91D1B20074EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */; };
 		1F46C3421E8E4E8D00876521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C3411E8E4E8D00876521 /* AppDelegate.m */; };
 		1F46C3481E8E4E8D00876521 /* ToDoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C3461E8E4E8D00876521 /* ToDoListViewController.storyboard */; };
@@ -72,6 +75,8 @@
 		10755F421E9635D300099C9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Support & Resources/Assets.xcassets"; sourceTree = "<group>"; };
 		10755F441E9635D300099C9D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Support & Resources/main.m"; sourceTree = "<group>"; };
 		10755F481E96371300099C9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C203D91E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoListViewController+UITableViewDelegate.h"; sourceTree = "<group>"; };
+		10C203DA1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoListViewController+UITableViewDelegate.m"; sourceTree = "<group>"; };
 		139AF39ACDA973CFDD357405 /* Pods-2-3-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-3-2.release.xcconfig"; path = "Pods/Target Support Files/Pods-2-3-2/Pods-2-3-2.release.xcconfig"; sourceTree = "<group>"; };
 		1F2A568D1E91D1B20074EE9A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		1F46C33A1E8E4E8D00876521 /* 2-3-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-3-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +141,8 @@
 				10755F311E96350800099C9D /* ToDoListViewController+ToDoListViewDelegate.m */,
 				10755F321E96350800099C9D /* ToDoListViewController+UITableViewDataSource.h */,
 				10755F331E96350800099C9D /* ToDoListViewController+UITableViewDataSource.m */,
+				10C203D91E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.h */,
+				10C203DA1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m */,
 			);
 			name = ToDoList;
 			sourceTree = "<group>";
@@ -568,6 +575,7 @@
 				10755F351E96350800099C9D /* ToDoListViewController+ToDoListViewDelegate.m in Sources */,
 				10755F471E9635D300099C9D /* main.m in Sources */,
 				10755F391E96352400099C9D /* ToDoDetailViewController.m in Sources */,
+				10C203DB1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F46C3581E8E4E8D00876521 /* __3_2Tests.m in Sources */,
+				10C203DC1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F46C3631E8E4E8D00876521 /* __3_2UITests.m in Sources */,
+				10C203DD1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

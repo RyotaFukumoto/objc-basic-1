@@ -18,11 +18,10 @@ NSString* const kColumnName_Modified = @"modified";
 NSString* const kColumnName_Limit_Date = @"limit_date";
 NSString* const kColumnName_delete_flg = @"delete_flg";
 
-//TODO: 状況フラグはマクロに移行
 //どのテーブルにレコードを記録するかこの定数で決定している
 //YES: developテーブル
 //NO: releaseテーブル
-BOOL const kDebugMode = YES;
+BOOL const kDebugMode = NO;
 
 @interface DaoToDos()
 @property (nonatomic, copy) NSString* dbPath; //データベース　ファイルへのパス
@@ -115,7 +114,7 @@ BOOL const kDebugMode = YES;
     NSString* utcLimitDateString = [DateTrimmer utcDateString:todo.limit_date];
     if( [db executeUpdate:insertQuery, todo.todo_title, todo.todo_contents, utcLimitDateString] )
     {
-        todo.todo_id = [db lastInsertRowId];
+        todo.todo_id = (NSInteger)[db lastInsertRowId];
     }
     else
     {
@@ -137,6 +136,16 @@ BOOL const kDebugMode = YES;
     }
 }
 
+
+-(void)insertDammyTasks{
+    for (int i = 1; i < 5; i++) {
+        ToDo* todo = [[ToDo alloc] init];
+        todo.todo_title = [NSString stringWithFormat:@"%d",i];
+        todo.todo_contents = [NSString stringWithFormat:@"dammy content %d",i];
+        todo.limit_date = [NSDate dateWithTimeIntervalSinceNow:i*24*60*60];
+        [self add:todo];
+    }
+}
 
 /**
  削除フラグが立っていないtodoを、DBから期限が近い順に取得して返す

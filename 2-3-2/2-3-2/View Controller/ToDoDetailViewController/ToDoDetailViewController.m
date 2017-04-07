@@ -61,9 +61,6 @@
         return;
     }
     
-//    [self dismissViewControllerAnimated:YES
-//                             completion:nil];
-    
     if ([self.delegate respondsToSelector:@selector(createdNewTask)]) {
         [self.delegate createdNewTask];
     }
