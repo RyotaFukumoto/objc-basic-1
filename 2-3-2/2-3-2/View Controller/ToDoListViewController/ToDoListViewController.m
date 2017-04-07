@@ -8,6 +8,7 @@
 
 #import "ToDoListViewController.h"
 #import "ToDoDetailViewController.h"
+#import "ToDoListViewController+ToDoListViewDelegate.h"
 
 @interface ToDoListViewController ()
 
@@ -19,6 +20,12 @@
     [super viewDidLoad];
     
     self.daoToDos = [[DaoToDos alloc] init];
+    
+    //開発中はダミータスクを入れる
+    if (kDebugMode){
+        [self.daoToDos insertDammyTasks];
+    }
+    
     NSArray<ToDo*>* existToDos = [self.daoToDos todos];
     
     self.todos = [NSMutableArray arrayWithArray:existToDos];
@@ -26,6 +33,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:[ToDoListCell className]
                                                bundle:nil]
          forCellReuseIdentifier:[ToDoListCell className]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

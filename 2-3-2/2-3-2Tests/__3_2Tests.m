@@ -57,7 +57,7 @@ DaoToDos* daoToDos;
  DaoToDosクラスのtodosメソッドをテストしたいメソッド
  */
 -(void)testFetchToDos{
-    [daoToDos deleteAllRecordIn:test];
+    [daoToDos removeAllRecordIn:test];
     
     //モックデータを入れて同じデータが返ってくるかを見る
     //addメソッドで加えて出してくる
@@ -84,6 +84,39 @@ DaoToDos* daoToDos;
         XCTAssertEqualObjects(todo.todo_contents, dbTodo.todo_contents);
         
         XCTAssertEqualObjects([DateTrimmer utcDateString:todo.limit_date], [DateTrimmer utcDateString:dbTodo.limit_date]);
+    }
+}
+
+
+/**
+ 追加したタスクをdelete_flgを建てた場合、通常のタスク一覧画面用の取得メソッドでは取得されないことを確認。
+ このテストを実行した後は、ダミータスクとフラグの立ったタスクがDBに追加されている
+ */
+-(void)testDeleteTask{
+    //タスクを追加してdelete_flgを立てて、selectで出てこないことを確認
+    
+    //念のため、ダミータスクも追加
+    ToDo* dammyToDo = [[ToDo alloc] init];
+    dammyToDo.todo_title = @"ダミータスク";
+    dammyToDo.todo_contents = @"卵、牛乳";
+    dammyToDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:5*24*60*60];
+    [daoToDos add:dammyToDo to:test];
+    
+    //タスクをDBに追加
+    ToDo* toDo = [[ToDo alloc] init];
+    toDo.todo_title = @"削除したいタスク";
+    toDo.todo_contents = @"今日はこの課題を終わらせたい";
+    toDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:3*24*60*60];
+    ToDo* toDoWithID = [daoToDos add:toDo to:test];
+    NSInteger todoID = toDoWithID.todo_id;
+    
+    //追加したモデルのフラグを更新
+    [daoToDos deleteToDoOf:todoID in:test];
+    
+    //通常のタスク取得メソッドで取り出してきて、idで一致するものがないことを確認
+    NSArray<ToDo*> *dbArray = [[[DaoToDos alloc] init] todosFrom:test];
+    for (ToDo* todo in dbArray) {
+        XCTAssertNotEqual(todoID, todo.todo_id);
     }
 }
 

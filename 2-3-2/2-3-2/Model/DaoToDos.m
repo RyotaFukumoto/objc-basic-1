@@ -18,11 +18,10 @@ NSString* const kColumnName_Modified = @"modified";
 NSString* const kColumnName_Limit_Date = @"limit_date";
 NSString* const kColumnName_delete_flg = @"delete_flg";
 
-//TODO: 状況フラグはマクロに移行
 //どのテーブルにレコードを記録するかこの定数で決定している
 //YES: developテーブル
 //NO: releaseテーブル
-BOOL const kDebugMode = YES;
+BOOL const kDebugMode = NO;
 
 @interface DaoToDos()
 @property (nonatomic, copy) NSString* dbPath; //データベース　ファイルへのパス
@@ -59,6 +58,12 @@ BOOL const kDebugMode = YES;
     return self;
 }
 
+
+/**
+ DBとテスト用のテーブルの実在を確定させて、テスト用のテーブルのレコードがあれば全て削除する
+
+ @return <#return value description#>
+ */
 -(id)initForTest{
     self = [super init];
     if( self )
@@ -66,7 +71,7 @@ BOOL const kDebugMode = YES;
         FMDatabase* db = [self fetchFMDB];
         [db open];
         [db executeUpdate:[self createTableSQLQueryOf:test]];
-        [self deleteAllRecordIn:test];
+        [self removeAllRecordIn:test];
         [db close];
     }
     return self;
@@ -109,7 +114,7 @@ BOOL const kDebugMode = YES;
     NSString* utcLimitDateString = [DateTrimmer utcDateString:todo.limit_date];
     if( [db executeUpdate:insertQuery, todo.todo_title, todo.todo_contents, utcLimitDateString] )
     {
-        todo.todo_id = [db lastInsertRowId];
+        todo.todo_id = (NSInteger)[db lastInsertRowId];
     }
     else
     {
@@ -131,6 +136,16 @@ BOOL const kDebugMode = YES;
     }
 }
 
+
+-(void)insertDammyTasks{
+    for (int i = 1; i < 5; i++) {
+        ToDo* todo = [[ToDo alloc] init];
+        todo.todo_title = [NSString stringWithFormat:@"%d",i];
+        todo.todo_contents = [NSString stringWithFormat:@"dammy content %d",i];
+        todo.limit_date = [NSDate dateWithTimeIntervalSinceNow:i*24*60*60];
+        [self add:todo];
+    }
+}
 
 /**
  削除フラグが立っていないtodoを、DBから期限が近い順に取得して返す
@@ -181,7 +196,7 @@ BOOL const kDebugMode = YES;
 
  @param tableName すべてのレコードを削除したいテーブル.testを想定。
  */
--(void)deleteAllRecordIn:(TableName)tableName
+-(void)removeAllRecordIn:(TableName)tableName
 {
     NSString* tableNameText = GetTableNameText(tableName);
     NSString* sql = [NSString stringWithFormat:@"DELETE FROM %@",tableNameText];
@@ -191,6 +206,34 @@ BOOL const kDebugMode = YES;
     [db close];
 }
 
+-(void)deleteToDoOf:(NSInteger)id{
+    if (kDebugMode) {
+        return [self deleteToDoOf:id in:develop];
+    }else{
+        return [self deleteToDoOf:id in:release];
+    }
+}
+
+-(void)deleteToDoOf:(NSInteger)id in:(TableName)tableName{
+    if (id < 0){
+        return;
+    }
+    
+    NSString* tableNameText = GetTableNameText(tableName);
+    NSMutableString* selectQueryMutableString = [NSMutableString string];
+    [selectQueryMutableString appendString:@"update "];
+    [selectQueryMutableString appendString:[NSString stringWithFormat:@"%@ ",tableNameText]];
+    [selectQueryMutableString appendString:@"set delete_flg = 1 "];
+    [selectQueryMutableString appendString:[NSString stringWithFormat:@"where todo_id = %zd;",id]];
+
+    NSString* sql = selectQueryMutableString.copy;
+    
+    FMDatabase* db = [self fetchFMDB];
+    [db open];
+    [db executeUpdate:sql];
+    [db close];
+    
+}
 #pragma mark - Private methods
 
 /**
