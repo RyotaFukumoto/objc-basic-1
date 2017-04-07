@@ -754,7 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-3-2.app/2-3-2";
 			};
 			name = Debug;
@@ -769,7 +769,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--3-2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-3-2.app/2-3-2";
 			};
 			name = Release;
