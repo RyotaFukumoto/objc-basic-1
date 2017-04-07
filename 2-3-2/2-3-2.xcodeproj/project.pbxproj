@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1042F6CB1E97791F007B242B /* NSDate+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1042F6CA1E97791F007B242B /* NSDate+DateFormat.m */; };
 		10755F2B1E96342500099C9D /* DaoToDos.m in Sources */ = {isa = PBXBuildFile; fileRef = 10755F261E96342500099C9D /* DaoToDos.m */; };
 		10755F2C1E96342500099C9D /* DateTrimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 10755F281E96342500099C9D /* DateTrimmer.m */; };
 		10755F2D1E96342500099C9D /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10755F2A1E96342500099C9D /* ToDo.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1042F6C91E97791F007B242B /* NSDate+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFormat.h"; sourceTree = "<group>"; };
+		1042F6CA1E97791F007B242B /* NSDate+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFormat.m"; sourceTree = "<group>"; };
 		10755F251E96342500099C9D /* DaoToDos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaoToDos.h; path = Model/DaoToDos.h; sourceTree = "<group>"; };
 		10755F261E96342500099C9D /* DaoToDos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaoToDos.m; path = Model/DaoToDos.m; sourceTree = "<group>"; };
 		10755F271E96342500099C9D /* DateTrimmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateTrimmer.h; path = Model/DateTrimmer.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				10755F281E96342500099C9D /* DateTrimmer.m */,
 				10755F291E96342500099C9D /* ToDo.h */,
 				10755F2A1E96342500099C9D /* ToDo.m */,
+				1042F6C91E97791F007B242B /* NSDate+DateFormat.h */,
+				1042F6CA1E97791F007B242B /* NSDate+DateFormat.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				10755F471E9635D300099C9D /* main.m in Sources */,
 				10755F391E96352400099C9D /* ToDoDetailViewController.m in Sources */,
 				10C203DB1E9740B100069EBA /* ToDoListViewController+UITableViewDelegate.m in Sources */,
+				1042F6CB1E97791F007B242B /* NSDate+DateFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

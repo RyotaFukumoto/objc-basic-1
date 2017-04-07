@@ -50,11 +50,11 @@
     }
     
     ToDo* todo = [[ToDo alloc] init];
-    todo.todo_title = self.titleTextField.text;
-    todo.todo_contents = self.contentTextField.text;
-    todo.limit_date = self.datePicker.date;
+    todo.todoTitle = self.titleTextField.text;
+    todo.todoContents = self.contentTextField.text;
+    todo.limitDate = self.datePicker.date;
     
-    ToDo* completedTodo = [[[DaoToDos alloc] init] add:todo];
+    ToDo* completedTodo = [[DaoToDos shared] add:todo];
     
     if (completedTodo == nil) {
         [self showAlert:FailedToSave];

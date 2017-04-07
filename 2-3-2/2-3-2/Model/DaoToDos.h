@@ -30,12 +30,8 @@ extern BOOL const kDebugMode;
 
 @interface DaoToDos : NSObject
 
-/**
- テスト用のテーブルを作成し、レコードがあれば削除する
-
- @return DBを扱うオブジェクト
- */
 -(id _Nullable)initForTest;
++ (DaoToDos*_Nullable)shared;
 
 //セッタ
 - (nullable ToDo*)add:(ToDo *_Nonnull)todo;
@@ -45,8 +41,8 @@ extern BOOL const kDebugMode;
 -(void)insertDammyTasks;
 
 //ゲッタ
--(nullable NSArray*)todos;
--(NSArray*_Nullable)todosFrom:(TableName)tableName;
+-(nullable NSArray<ToDo*>*)todos;
+-(NSArray<ToDo*>* _Nullable)todosFrom:(TableName)tableName;
 
 //削除
 -(void)removeAllRecordIn:(TableName)tableName;

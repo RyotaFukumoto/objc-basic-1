@@ -22,7 +22,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //データを更新（削除フラグを立てる）
         ToDo* todo = self.todos[indexPath.row];
-        [self.daoToDos deleteToDoOf:todo.todo_id];
+        [self.daoToDos deleteToDoOf:todo.todoID];
         
         //表の再描画
         self.todos = [NSMutableArray arrayWithArray:[self.daoToDos todos]];

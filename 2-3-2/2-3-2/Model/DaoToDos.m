@@ -77,6 +77,15 @@ BOOL const kDebugMode = NO;
     return self;
 }
 
++ (DaoToDos*)shared{
+    static DaoToDos* shared;
+    if (shared == nil) {
+        shared = [[DaoToDos alloc] init];
+    }
+    
+    return shared;
+}
+
 #pragma mark - Public methods
 /**
  * タスクを追加します。
@@ -111,10 +120,10 @@ BOOL const kDebugMode = NO;
     
     //limit_dateをdataformatterでUTCのタイムゾーンでNSStringに変換してからDBに保存する
     //※NSStringに変換せずにNSDateのままでinsertを実行すると、DBには数値で保存される
-    NSString* utcLimitDateString = [DateTrimmer utcDateString:todo.limit_date];
-    if( [db executeUpdate:insertQuery, todo.todo_title, todo.todo_contents, utcLimitDateString] )
+    NSString* utcLimitDateString = [DateTrimmer utcDateString:todo.limitDate];
+    if( [db executeUpdate:insertQuery, todo.todoTitle, todo.todoContents, utcLimitDateString] )
     {
-        todo.todo_id = (NSInteger)[db lastInsertRowId];
+        todo.todoID = (NSInteger)[db lastInsertRowId];
     }
     else
     {
@@ -126,7 +135,7 @@ BOOL const kDebugMode = NO;
     return todo;
 }
 
--(NSArray*)todos
+-(NSArray<ToDo*>*)todos
 {
     //開発段階では、developテーブルからレコードを取り出す
     if (kDebugMode) {
@@ -140,9 +149,9 @@ BOOL const kDebugMode = NO;
 -(void)insertDammyTasks{
     for (int i = 1; i < 5; i++) {
         ToDo* todo = [[ToDo alloc] init];
-        todo.todo_title = [NSString stringWithFormat:@"%d",i];
-        todo.todo_contents = [NSString stringWithFormat:@"dammy content %d",i];
-        todo.limit_date = [NSDate dateWithTimeIntervalSinceNow:i*24*60*60];
+        todo.todoTitle = [NSString stringWithFormat:@"%d",i];
+        todo.todoContents = [NSString stringWithFormat:@"dammy content %d",i];
+        todo.limitDate = [NSDate dateWithTimeIntervalSinceNow:i*24*60*60];
         [self add:todo];
     }
 }
@@ -171,9 +180,9 @@ BOOL const kDebugMode = NO;
     NSMutableArray* todos = [NSMutableArray array];
     while ([results next]) {
         ToDo* todo = [[ToDo alloc] init];
-        todo.todo_id = [results intForColumn:kColumnName_ToDo_ID];
-        todo.todo_title = [results stringForColumn:kColumnName_ToDo_Title];
-        todo.todo_contents = [results stringForColumn:kColumnName_ToDo_Contents];
+        todo.todoID = [results intForColumn:kColumnName_ToDo_ID];
+        todo.todoTitle = [results stringForColumn:kColumnName_ToDo_Title];
+        todo.todoContents = [results stringForColumn:kColumnName_ToDo_Contents];
         
         //todo.created = [results dateForColumn:kColumnName_Created];
         todo.created = [DateTrimmer dateFrom:[results stringForColumn:kColumnName_Created]];
@@ -181,7 +190,7 @@ BOOL const kDebugMode = NO;
         //todo.modified = [results dateForColumn:kColumnName_Modified];
         todo.modified = [DateTrimmer dateFrom:[results stringForColumn:kColumnName_Modified]];
         //todo.limit_date = [results dateForColumn:kColumnName_Limit_Date];
-        todo.limit_date = [DateTrimmer dateFrom:[results stringForColumn:kColumnName_Limit_Date]];
+        todo.limitDate = [DateTrimmer dateFrom:[results stringForColumn:kColumnName_Limit_Date]];
         
         [todos addObject:todo];
     }
@@ -280,7 +289,7 @@ BOOL const kDebugMode = NO;
  */
 + (NSString*)composeDbFilePath
 {
-    NSArray*  paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSArray<NSString*>*  paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     
     NSString* dir   = [paths objectAtIndex:0];
     

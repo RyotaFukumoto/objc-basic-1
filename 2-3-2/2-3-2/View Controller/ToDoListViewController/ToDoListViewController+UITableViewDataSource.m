@@ -10,13 +10,7 @@
 #import "ToDoListCell.h"
 #import "DateTrimmer.h"
 
-NSInteger const numberOfSection = 1;
-
 @implementation ToDoListViewController (UITableViewDataSource)
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return numberOfSection;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
@@ -27,14 +21,11 @@ numberOfRowsInSection:(NSInteger)section
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* CellIdentifier = @"ToDoListCell";
-    
-    ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+    ToDoListCell* cell = [tableView dequeueReusableCellWithIdentifier:[ToDoListCell className]
                           forIndexPath:indexPath];
     
     ToDo* todo = self.todos[indexPath.row];
-    cell.titleLabel.text = todo.todo_title;
-    cell.expirationDateLabel.text = [DateTrimmer systemDateString:todo.limit_date];
+    [cell setCell:todo];
     
     return cell;
 }

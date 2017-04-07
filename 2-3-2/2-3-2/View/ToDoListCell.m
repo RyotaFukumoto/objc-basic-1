@@ -7,6 +7,7 @@
 //
 
 #import "ToDoListCell.h"
+#import "NSDate+DateFormat.h"
 
 @implementation ToDoListCell
 
@@ -20,6 +21,12 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setCell:(ToDo*)todo{
+    self.titleLabel.text = todo.todoTitle;
+    self.expirationDateLabel.text = [todo.limitDate systemDateString];
+}
+
 #pragma mark utility
 + (NSString*)className {
     return NSStringFromClass([ToDoListCell class]);

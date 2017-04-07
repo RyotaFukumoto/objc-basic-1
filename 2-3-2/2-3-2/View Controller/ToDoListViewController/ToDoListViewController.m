@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.daoToDos = [[DaoToDos alloc] init];
+    self.daoToDos = [DaoToDos shared];
     
     //開発中はダミータスクを入れる
     if (kDebugMode){

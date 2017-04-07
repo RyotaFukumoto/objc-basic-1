@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "DaoToDos.h"
+#import "NSDate+DateFormat.h"
 
 @interface __3_2Tests : XCTestCase
 @end
@@ -24,6 +25,8 @@ DaoToDos* daoToDos;
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    [daoToDos removeAllRecordIn:test];
 }
 
 - (void)testExample {
@@ -35,12 +38,12 @@ DaoToDos* daoToDos;
 //正常な値をDBに入れて、DB側でidが発行されて返ってくるかを確認
 - (void)testAddTask{
     ToDo* toDo = [[ToDo alloc] init];
-    toDo.todo_title = @"買い物";
-    toDo.todo_contents = @"卵、牛乳";
+    toDo.todoTitle = @"買い物";
+    toDo.todoContents = @"卵、牛乳";
     
     //期限の日時は、完成形ではdate pickerからNSDateで渡ってくる
     //ここでは今から3日後のNSDateを作成して渡している
-    toDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:3*60*60];
+    toDo.limitDate = [NSDate dateWithTimeIntervalSinceNow:3*24*60*60];
     
     //ここでは、IDはない状態でDBに送って、IDがDBで正しく発行されているかを見ている
     //DBへの書き込みが成功した場合、IDが発行されたタスクオブジェクトが返ってくる
@@ -48,8 +51,12 @@ DaoToDos* daoToDos;
     ToDo *completedToDo = [daoToDos add:toDo
                                      to:test];
     XCTAssertNotNil(completedToDo);
-    NSLog(@"タスクのIDは%zdが発行されました",completedToDo.todo_id);
-    //DB Browserでレコードが発行されているか、タイトル、コンテンツ、書式はあっているか確認のこと
+    NSInteger id = completedToDo.todoID;
+    NSString* IDString = [NSString stringWithFormat:@"%zd",id];
+    XCTAssertNotEqual(IDString, @"");
+    XCTAssertEqual(completedToDo.todoTitle, toDo.todoTitle);
+    XCTAssertEqual(completedToDo.todoContents, toDo.todoContents);
+    XCTAssertEqual(completedToDo.limitDate, toDo.limitDate);
 }
 
 
@@ -65,9 +72,9 @@ DaoToDos* daoToDos;
     
     for (int i = 1; i <5; i++) {
         ToDo* toDo = [[ToDo alloc] init];
-        toDo.todo_title = [NSString stringWithFormat:@"number%d",i];
-        toDo.todo_contents = [NSString stringWithFormat:@"number%d content",i];
-        toDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:i*60*60];
+        toDo.todoTitle = [NSString stringWithFormat:@"number%d",i];
+        toDo.todoContents = [NSString stringWithFormat:@"number%d content",i];
+        toDo.limitDate = [NSDate dateWithTimeIntervalSinceNow:i*60*60];
         [daoToDos add:toDo
                    to:test];
         [todoArray addObject:toDo];
@@ -75,15 +82,16 @@ DaoToDos* daoToDos;
     
     NSArray<ToDo*> *dbArray = [[[DaoToDos alloc] init] todosFrom:test];
     
+
     XCTAssertEqual(todoArray.count,dbArray.count);
     
     for (int i = 0; i < todoArray.count; i++) {
         ToDo* todo = todoArray[i];
         ToDo* dbTodo = dbArray[i];
-        XCTAssertEqualObjects(todo.todo_title, dbTodo.todo_title);
-        XCTAssertEqualObjects(todo.todo_contents, dbTodo.todo_contents);
+        XCTAssertEqualObjects(todo.todoTitle, dbTodo.todoTitle);
+        XCTAssertEqualObjects(todo.todoContents, dbTodo.todoContents);
         
-        XCTAssertEqualObjects([DateTrimmer utcDateString:todo.limit_date], [DateTrimmer utcDateString:dbTodo.limit_date]);
+        XCTAssertEqualObjects([DateTrimmer utcDateString:todo.limitDate], [DateTrimmer utcDateString:dbTodo.limitDate]);
     }
 }
 
@@ -97,18 +105,18 @@ DaoToDos* daoToDos;
     
     //念のため、ダミータスクも追加
     ToDo* dammyToDo = [[ToDo alloc] init];
-    dammyToDo.todo_title = @"ダミータスク";
-    dammyToDo.todo_contents = @"卵、牛乳";
-    dammyToDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:5*24*60*60];
+    dammyToDo.todoTitle = @"ダミータスク";
+    dammyToDo.todoContents = @"卵、牛乳";
+    dammyToDo.limitDate = [NSDate dateWithTimeIntervalSinceNow:5*24*60*60];
     [daoToDos add:dammyToDo to:test];
     
     //タスクをDBに追加
     ToDo* toDo = [[ToDo alloc] init];
-    toDo.todo_title = @"削除したいタスク";
-    toDo.todo_contents = @"今日はこの課題を終わらせたい";
-    toDo.limit_date = [NSDate dateWithTimeIntervalSinceNow:3*24*60*60];
+    toDo.todoTitle = @"削除したいタスク";
+    toDo.todoContents = @"今日はこの課題を終わらせたい";
+    toDo.limitDate = [NSDate dateWithTimeIntervalSinceNow:3*24*60*60];
     ToDo* toDoWithID = [daoToDos add:toDo to:test];
-    NSInteger todoID = toDoWithID.todo_id;
+    NSInteger todoID = toDoWithID.todoID;
     
     //追加したモデルのフラグを更新
     [daoToDos deleteToDoOf:todoID in:test];
@@ -116,8 +124,24 @@ DaoToDos* daoToDos;
     //通常のタスク取得メソッドで取り出してきて、idで一致するものがないことを確認
     NSArray<ToDo*> *dbArray = [[[DaoToDos alloc] init] todosFrom:test];
     for (ToDo* todo in dbArray) {
-        XCTAssertNotEqual(todoID, todo.todo_id);
+        XCTAssertNotEqual(todoID, todo.todoID);
     }
+}
+
+- (void)testDateFromUTCDateString{
+    NSString* testString = @"2011-11-03 15:13:57";
+    NSDate* date = [NSDate dateFrom:testString];
+    XCTAssertEqualObjects([DateTrimmer utcDateString:date], testString);
+}
+
+- (void)testSystemDateString{
+    NSDate* date = [NSDate date];
+    XCTAssertEqualObjects([DateTrimmer systemDateString:date], [date systemDateString]);
+}
+
+- (void)testUTCDateString{
+    NSDate* date = [NSDate date];
+    XCTAssertEqualObjects([DateTrimmer utcDateString:date], [date utcDateString]);
 }
 
 - (void)testPerformanceExample {
