@@ -24,6 +24,8 @@ DaoToDos* daoToDos;
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    [daoToDos removeAllRecordIn:test];
 }
 
 - (void)testExample {
@@ -48,8 +50,12 @@ DaoToDos* daoToDos;
     ToDo *completedToDo = [daoToDos add:toDo
                                      to:test];
     XCTAssertNotNil(completedToDo);
-    NSLog(@"タスクのIDは%zdが発行されました",completedToDo.todoID);
-    //DB Browserでレコードが発行されているか、タイトル、コンテンツ、書式はあっているか確認のこと
+    NSInteger id = completedToDo.todoID;
+    NSString* IDString = [NSString stringWithFormat:@"%zd",id];
+    XCTAssertNotEqual(IDString, @"");
+    XCTAssertEqual(completedToDo.todoTitle, toDo.todoTitle);
+    XCTAssertEqual(completedToDo.todoContents, toDo.todoContents);
+    XCTAssertEqual(completedToDo.limitDate, toDo.limitDate);
 }
 
 
