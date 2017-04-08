@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 
+NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+
 @interface ViewController ()
 
 @end
