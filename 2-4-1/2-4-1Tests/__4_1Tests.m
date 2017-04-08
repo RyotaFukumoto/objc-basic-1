@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AFNetworking.h"
 
 @interface __4_1Tests : XCTestCase
 
