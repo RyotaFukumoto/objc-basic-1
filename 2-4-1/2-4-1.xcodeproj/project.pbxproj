@@ -72,7 +72,7 @@
 		104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastFetcher.m; path = Model/Networking/WeatherForecastFetcher.m; sourceTree = "<group>"; };
 		104A664B1E9B36C900A3970B /* DaoWeatherForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaoWeatherForecast.h; path = Model/Database/DaoWeatherForecast.h; sourceTree = "<group>"; };
 		104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaoWeatherForecast.m; path = Model/Database/DaoWeatherForecast.m; sourceTree = "<group>"; };
-		104A664F1E9B562A00A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2-4-1-prefix.pch"; path = "Supporting Files/2-4-1-prefix.pch"; sourceTree = "<group>"; };
+		104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2-4-1-prefix.pch"; path = "SupportingFiles/2-4-1-prefix.pch"; sourceTree = "<group>"; };
 		1FA243701E978E41002B11B4 /* 2-4-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-4-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA243741E978E41002B11B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA243761E978E41002B11B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		1FA243731E978E41002B11B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				104A664F1E9B562A00A3970B /* 2-4-1-prefix.pch */,
+				104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */,
 				1FA2437F1E978E41002B11B4 /* Assets.xcassets */,
 				1FA243811E978E41002B11B4 /* LaunchScreen.storyboard */,
 				1FA243841E978E41002B11B4 /* Info.plist */,
@@ -628,7 +628,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				GCC_PREFIX_HEADER = "2-4-1/Supporting Files/2-4-1-prefix.pch";
+				GCC_PREFIX_HEADER = "2-4-1/SupportingFiles/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
@@ -642,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				GCC_PREFIX_HEADER = "2-4-1/Supporting Files/2-4-1-prefix.pch";
+				GCC_PREFIX_HEADER = "2-4-1/SupportingFiles/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
