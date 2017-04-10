@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import "NSString+decodeJSONString.h"
 
 NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
 
@@ -31,7 +32,7 @@ NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/for
              
              //今日明日明後日の情報を配列に格納する
              self.forecastsArray = dict[@"forecasts"];
-             DLog(@"%@",self.forecastsArray.description);
+             DLog(@"%@",self.forecastsArray.description.decodeJSONString);
          }
      
          failure:^(NSURLSessionTask *operation, NSError *error) {
