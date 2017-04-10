@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D9D569D8C5BE0A1961450AE /* libPods-2-4-1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE12ECA7DECACC506EBCD638 /* libPods-2-4-1Tests.a */; };
+		104A661E1E9B195C00A3970B /* NSString+decodeJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */; };
+		104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */; };
 		17C990AD0C6C524381B58BC2 /* libPods-2-4-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC325CF7DAA4AAF898FDF2E5 /* libPods-2-4-1.a */; };
 		1FA243751E978E41002B11B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243741E978E41002B11B4 /* main.m */; };
 		1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243771E978E41002B11B4 /* AppDelegate.m */; };
@@ -30,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		0F9768021AC166E3EC6534F9 /* Pods-2-4-1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-4-1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2-4-1Tests/Pods-2-4-1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		104A66181E9B128200A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "2-4-1-prefix.pch"; sourceTree = "<group>"; };
+		104A661C1E9B195C00A3970B /* NSString+decodeJSONString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+decodeJSONString.h"; sourceTree = "<group>"; };
+		104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+decodeJSONString.m"; sourceTree = "<group>"; };
 		1FA243701E978E41002B11B4 /* 2-4-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-4-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA243741E978E41002B11B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA243761E978E41002B11B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,7 +114,10 @@
 		1FA243731E978E41002B11B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				104A661C1E9B195C00A3970B /* NSString+decodeJSONString.h */,
+				104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */,
 				1FA243741E978E41002B11B4 /* main.m */,
+				104A66181E9B128200A3970B /* 2-4-1-prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 			files = (
 				1FA2437B1E978E41002B11B4 /* ViewController.m in Sources */,
 				1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */,
+				104A661E1E9B195C00A3970B /* NSString+decodeJSONString.m in Sources */,
 				1FA243751E978E41002B11B4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */,
 				1FA2438E1E978E41002B11B4 /* __4_1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				GCC_PREFIX_HEADER = "2-4-1/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
@@ -499,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				GCC_PREFIX_HEADER = "2-4-1/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
@@ -553,6 +565,7 @@
 				1FA243941E978E41002B11B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FA243951E978E41002B11B4 /* Build configuration list for PBXNativeTarget "2-4-1Tests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +574,7 @@
 				1FA243971E978E41002B11B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
