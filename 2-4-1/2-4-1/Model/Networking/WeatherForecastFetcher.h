@@ -18,6 +18,9 @@
 @property NSString* urlString;
 @property NSDictionary* parsedDictionary;
 @property (nonatomic,weak) id <WeatherForecastFetcherDelegate> delegate;
+
+-(WeatherForecastFetcher*)initWithURL:(NSString*)urlString;
+-(WeatherForecastFetcher*)initWithURL:(NSString*)urlString delegate:(id)delegate;
 -(void)fetchWeatherForecast;
 @end
 

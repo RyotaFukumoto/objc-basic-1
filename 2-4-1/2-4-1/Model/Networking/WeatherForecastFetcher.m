@@ -9,18 +9,29 @@
 #import "WeatherForecastFetcher.h"
 #import "AFNetworking.h"
 
-
-//TODO:ちゃんとこの定義でデリゲートメソッドが動くのか？確認
-//@interface句より前にプロトコルを定義したい、かつ引数に自分自身のインスタンスを含むメソッドを定義したい場合、空のプロトコル宣言をヘッダファイルに置き、自身のクラスを@class句で定義する必要がある。
-//@class WeatherForecastFetcher;
-
-//@protocol WeatherForecastFetcherDelegate <NSObject>
-//@optional
-//- (void)fetcherDidFinishFetching: (WeatherForecastFetcher*)fetcher;
-//- (void)fetcher:(WeatherForecastFetcher*)fetcher didFailWithError:(NSError*)error;
-//@end
-
 @implementation WeatherForecastFetcher
+#pragma mark initializer
+-(WeatherForecastFetcher*)initWithURL:(NSString*)urlString{
+    self = [super init];
+    
+    if (self != nil) {
+        self.urlString = urlString;
+    }
+    
+    return self;
+}
+
+-(WeatherForecastFetcher *)initWithURL:(NSString *)urlString delegate:(id)delegate{
+    self = [super init];
+    
+    if (self != nil){
+        self.urlString = urlString;
+        self.delegate = delegate;
+    }
+    
+    return self;
+}
+
 -(void)fetchWeatherForecast{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -37,7 +48,9 @@
      
          failure:^(NSURLSessionTask *operation, NSError *error) {
              // エラーの場合の処理
-             DLog(@"error");
+             if ([self.delegate respondsToSelector:@selector(fetcher:didFailWithError:)]) {
+                 [self.delegate fetcher:self didFailWithError:error];
+             }
          }
      ];
 }
