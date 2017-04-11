@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherForecastFetcher.h"
 
-@interface WeatherForecastConnector : NSObject
+extern NSString* const WeatherForecastConnectorDidFinishFetchWeatherForecast;
+extern NSString* const WeatherForecastConnectorDidFailFetchWeatherForecast;
 
+@interface WeatherForecastConnector : NSObject<WeatherForecastFetcherDelegate>
+@property NSMutableArray<WeatherForecastFetcher*> *retrieveFetchers;
+@property (readonly) BOOL isFetchingWeatherForecast;
+@property (readonly) BOOL isNetworkAccessing;
+
++ (WeatherForecastConnector*)sharedConnector;
+-(void)fetchWeatherForecastFrom:(NSString*)urlString;
 @end

@@ -8,8 +8,11 @@
 
 #import <XCTest/XCTest.h>
 #import "AFNetworking.h"
-#import "WeatherForecastFetcher.h"
 #import "NSString+decodeJSONString.h"
+#import "WeatherForecastFetcher.h"
+#import "WeatherForecastConnector.h"
+#import "WeatherForecastManager.h"
+#import "ViewController.h"
 
 @interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate>
 @property XCTestExpectation* expectation;
@@ -27,33 +30,28 @@
     [super tearDown];
 }
 
-#pragma mark test
+#pragma mark fetcher test
 - (void)testFetchWeatherInfo{
-    WeatherForecastFetcher* fetcher = [[WeatherForecastFetcher alloc] initWithURL:@"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010"];
+    WeatherForecastFetcher* fetcher = [[WeatherForecastFetcher alloc] initWithURL:kWeatherReportAPIURLForTokyo];
     fetcher.delegate = self;
 
     self.expectation = [self expectationWithDescription:@"CallWeatherFetchDelegate"];
     
     [fetcher fetchWeatherForecast];
     [self waitForExpectationsWithTimeout:60 handler:^(NSError * _Nullable error){
-        XCTAssertNil(error,@"has error.");
+        if (error != nil) {
+            NSLog(@"%@",error.description);
+        }
+        
+        XCTFail(@"has error.");
     }];
     
 }
-
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
 #pragma mark WeatherFerecastFetcherDelegate
 
 /**
  通信がうまく行ったら呼ばれる。
-
+ 
  @param fetcher parsedDictinaryプロパティに、通信結果がパースされて詰まっているはず
  */
 -(void)fetcherDidFinishFetching:(WeatherForecastFetcher *)fetcher{
@@ -68,15 +66,89 @@
 
 
 /**
- 通信が失敗したら呼ばれる。かならずアサートを出すようにしてある。
-
+ 通信が失敗したら呼ばれる。
+ 
  @param fetcher 通信が失敗したフェッチャー
  @param error エラーの内容
  */
 -(void)fetcher:(WeatherForecastFetcher *)fetcher
 didFailWithError:(NSError *)error{
     [self.expectation fulfill];
-    XCTFail(@"%@",error);
+    
+    if (error != nil) {
+        NSLog(@"An error has happened. description:%@",error.description);
+    }
+    
 }
+
+#pragma mark connector test
+/**
+ connectorが正しくAPIの情報を取ってくることができるか、通信エラーを出すことを確認。
+ なお、connectorがfetchWeatherForecastFrom:を実行した際は、
+ ・通信が成功した場合、expectationForNotification:のハンドラが呼ばれる
+ ・通信が失敗した場合、connectorDidFailFetching:メソッドが呼ばれる
+ ・connector・fetcherからのコールバックがない場合、waitForExpectationsWithTimeout:メソッドのハンドラが呼ばれる
+ */
+- (void)testConnectorToFetch{
+    //TODO: 通知の登録と、解除を記述する。解除は、通知を受け取って呼ばれるメソッドで行う。
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(connectorDidFailFetching:)
+                                                 name:WeatherForecastConnectorDidFailFetchWeatherForecast
+                                               object:nil];
+    self.expectation = [self expectationWithDescription:@"CallConnector,possible to fail"];
+
+    WeatherForecastConnector* connector = [WeatherForecastConnector sharedConnector];
+    
+    XCTAssertFalse(connector.isNetworkAccessing);
+    XCTAssertFalse(connector.isFetchingWeatherForecast);
+    
+    [self expectationForNotification:WeatherForecastConnectorDidFinishFetchWeatherForecast
+                              object:nil
+                             handler:^BOOL(NSNotification *notification){
+                                 NSDictionary* parsedDictionary = notification.userInfo;
+                                 NSString* weatherSummaryString = parsedDictionary[@"description"][@"text"];
+                                 NSArray<NSDictionary*>* forecasts = parsedDictionary[@"forecasts"];
+                                 
+                                 XCTAssertNotNil(weatherSummaryString);
+                                 XCTAssertNotNil(forecasts);
+                                 
+                                 NSLog(@"summary is %@",weatherSummaryString.decodeJSONString);
+                                 NSLog(@"forecasts are %@",forecasts.description.decodeJSONString);
+                                 
+                                 [[NSNotificationCenter defaultCenter] removeObserver:self];
+                                 
+                                 [self.expectation fulfill];
+                                 return YES;
+                             }];
+    
+    [connector fetchWeatherForecastFrom:kWeatherReportAPIURLForTokyo];
+    
+    [self waitForExpectationsWithTimeout:30.0
+                                 handler:^(NSError *error){
+                                     
+                                     NSLog(@"%s, %@",__func__,error.localizedDescription);
+                                     [[NSNotificationCenter defaultCenter] removeObserver:self];
+                                 }];
+}
+
+//通信エラーで返ってきたとき
+-(void)connectorDidFailFetching:(NSNotification*)notification{
+    [self.expectation fulfill];
+    
+    NSError *error = notification.userInfo[@"error"];
+    NSLog(@"%s, %@",__func__,error.localizedDescription);
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark performance test
+- (void)testPerformanceExample {
+    // This is an example of a performance test case.
+    [self measureBlock:^{
+        // Put the code you want to measure the time of here.
+    }];
+}
+
+
 
 @end
