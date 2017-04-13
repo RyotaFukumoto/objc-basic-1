@@ -8,6 +8,8 @@
 
 #import "WeatherForecastCell.h"
 #import "NSString+DateFormat.h"
+#import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation WeatherForecastCell
 
@@ -26,6 +28,18 @@
     self.dateLabel.text = [NSString dateString:weatherForecast.date];
     self.weatherLabel.text = weatherForecast.telop;
     
+    NSString *urlString = weatherForecast.weatherImage.imageURL;
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    UIImage *placeholderImage = [UIImage imageNamed:@"no_image"];
+    
+    [self.weatherImageView setImageWithURLRequest:request
+                                 placeholderImage:placeholderImage
+                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                              //FIXME: selfの扱いはweakで修正
+                                              self.weatherImageView.image = image;
+                                              [self setNeedsLayout];
+                                          }failure:nil];
 }
 
 #pragma mark utility
