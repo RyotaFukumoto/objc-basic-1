@@ -12,7 +12,8 @@
 #import "WeatherForecastFetcher.h"
 #import "WeatherForecastConnector.h"
 #import "WeatherForecastManager.h"
-#import "ViewController.h"
+#import "Const.h"
+#import "NSString+DateFormat.h"
 
 @interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate>
 @property XCTestExpectation* expectation;
@@ -38,12 +39,13 @@
     self.expectation = [self expectationWithDescription:@"CallWeatherFetchDelegate"];
     
     [fetcher fetchWeatherForecast];
-    [self waitForExpectationsWithTimeout:60 handler:^(NSError * _Nullable error){
+    
+    [self waitForExpectationsWithTimeout:120
+                                 handler:^(NSError * _Nullable error){
         if (error != nil) {
             NSLog(@"%@",error.description);
+            XCTFail();
         }
-        
-        XCTFail(@"has error.");
     }];
     
 }
@@ -61,7 +63,7 @@
     //通信結果を確認
     NSString* weatherInfoString  = fetcher.parsedDictionary.description;
     XCTAssertNotNil(weatherInfoString);
-    NSLog(@"parsedDictionary is %@",weatherInfoString.decodeJSONString);
+    //NSLog(@"parsedDictionary is %@",weatherInfoString.decodeJSONString);
 }
 
 
@@ -90,21 +92,24 @@ didFailWithError:(NSError *)error{
  ・connector・fetcherからのコールバックがない場合、waitForExpectationsWithTimeout:メソッドのハンドラが呼ばれる
  */
 - (void)testConnectorToFetch{
-    //TODO: 通知の登録と、解除を記述する。解除は、通知を受け取って呼ばれるメソッドで行う。
+    [self.expectation fulfill];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFailFetching:)
-                                                 name:WeatherForecastConnectorDidFailFetchWeatherForecast
+                                                 name:kConnectorDidFailFetchWeatherForecast
                                                object:nil];
-    self.expectation = [self expectationWithDescription:@"CallConnector,possible to fail"];
 
     WeatherForecastConnector* connector = [WeatherForecastConnector sharedConnector];
     
     XCTAssertFalse(connector.isNetworkAccessing);
     XCTAssertFalse(connector.isFetchingWeatherForecast);
     
-    [self expectationForNotification:WeatherForecastConnectorDidFinishFetchWeatherForecast
+    [connector fetchWeatherForecastFrom:kWeatherReportAPIURLForTokyo];
+
+    [self expectationForNotification:kConnectorDidFinishFetchWeatherForecast
                               object:nil
                              handler:^BOOL(NSNotification *notification){
+                                 
                                  NSDictionary* parsedDictionary = notification.userInfo;
                                  NSString* weatherSummaryString = parsedDictionary[@"description"][@"text"];
                                  NSArray<NSDictionary*>* forecasts = parsedDictionary[@"forecasts"];
@@ -112,18 +117,17 @@ didFailWithError:(NSError *)error{
                                  XCTAssertNotNil(weatherSummaryString);
                                  XCTAssertNotNil(forecasts);
                                  
+                                 NSLog(@"%@",parsedDictionary);
                                  NSLog(@"summary is %@",weatherSummaryString.decodeJSONString);
                                  NSLog(@"forecasts are %@",forecasts.description.decodeJSONString);
                                  
                                  [[NSNotificationCenter defaultCenter] removeObserver:self];
                                  
-                                 [self.expectation fulfill];
                                  return YES;
                              }];
     
-    [connector fetchWeatherForecastFrom:kWeatherReportAPIURLForTokyo];
     
-    [self waitForExpectationsWithTimeout:30.0
+    [self waitForExpectationsWithTimeout:600.0
                                  handler:^(NSError *error){
                                      
                                      NSLog(@"%s, %@",__func__,error.localizedDescription);
@@ -139,6 +143,69 @@ didFailWithError:(NSError *)error{
     NSLog(@"%s, %@",__func__,error.localizedDescription);
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+//JSONをパースしたものを正しくモデルに詰め替えることができているか
+- (void)testComposeForecastsModel{
+    //JSONデータをパースしたものを用意する
+    NSError *error0 = nil;
+    NSBundle* bundle = [NSBundle mainBundle];
+    NSString* path = [bundle pathForResource:@"v1"
+                                      ofType:@"json"];
+    NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path
+                                                           encoding:NSUTF8StringEncoding
+                                                              error:&error0];
+    NSData* jsonData = [jsonString dataUsingEncoding:NSUnicodeStringEncoding];
+    
+    if (error0) {
+        NSLog(@"読み込みエラー");
+        return;
+    }
+    
+    NSError *error1 = nil;
+    NSDictionary* parsedDictionary = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:NSJSONReadingAllowFragments error:&error1];
+    if(error1){
+        NSLog(@"パースエラー");
+    }
+    
+    //パースしたデータから必要なところだけ取り出す
+    NSArray<NSDictionary*>* forecastsRowData = parsedDictionary[@"forecasts"];
+    NSLog(@"forecastsRowData are %@",forecastsRowData.description.decodeJSONString);
+    
+    //Managerクラスに変換させる
+    NSArray<WeatherForecast*>* forecastArray = [[WeatherForecastManager sharedManager] composeForecastsFrom:forecastsRowData];
+    
+    XCTAssertNotNil(forecastArray);
+    XCTAssertNotEqual(forecastArray.count, 0);
+    
+    XCTAssertEqual(forecastArray.count, forecastsRowData.count);
+    
+    //モデルクラスの配列forecastArrayの各要素について、変換前のデータと比較する
+    [forecastArray enumerateObjectsUsingBlock:^(WeatherForecast* forecast, NSUInteger index, BOOL *stop){
+        
+        //日時の比較(辞書には文字列で入っているので、タイムゾーンがGMTのNSDateに変換して比較する
+        NSDictionary* forecastDict = forecastsRowData[index];
+        NSString* dateString = forecastDict[@"date"];
+
+        XCTAssertEqualObjects(forecast.date, [dateString dateObject]);
+
+        //image URLの比較
+        NSString *dictURL = forecastDict[@"image"][@"url"];
+        XCTAssertEqualObjects(forecast.weatherImage.imageURL, dictURL);
+        
+        //天気の比較
+        XCTAssertEqualObjects(forecast.telop, forecastDict[@"telop"]);
+
+        //温度の比較
+        XCTAssertEqual(forecast.maxTemprature, [forecastDict[@"temerature"][@"max"][@"celsius"] integerValue]);
+        XCTAssertEqual(forecast.minTemprature, [forecastDict[@"temerature"][@"min"][@"celsius"] integerValue]);
+        
+        //最後の要素に来たら、終了フラグを立てないと終了できない
+        if (index == forecastArray.count) {
+            *stop = YES;
+        }
+    }];
 }
 
 #pragma mark performance test

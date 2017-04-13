@@ -7,6 +7,7 @@
 //
 
 #import "WeatherForecastCell.h"
+#import "NSString+DateFormat.h"
 
 @implementation WeatherForecastCell
 
@@ -21,5 +22,14 @@
     // Configure the view for the selected state
 }
 
+-(void)setCellFor:(WeatherForecast *)weatherForecast{
+    self.dateLabel.text = [NSString dateString:weatherForecast.date];
+    self.weatherLabel.text = weatherForecast.telop;
+    
+}
 
+#pragma mark utility
++ (NSString*)className {
+    return NSStringFromClass([WeatherForecastCell class]);
+}
 @end

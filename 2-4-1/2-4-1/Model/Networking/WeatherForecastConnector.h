@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "WeatherForecastFetcher.h"
 
-extern NSString* const WeatherForecastConnectorDidFinishFetchWeatherForecast;
-extern NSString* const WeatherForecastConnectorDidFailFetchWeatherForecast;
+extern NSString* const kConnectorDidFinishFetchWeatherForecast;
+extern NSString* const kConnectorDidFailFetchWeatherForecast;
 
 @interface WeatherForecastConnector : NSObject<WeatherForecastFetcherDelegate>
 @property NSMutableArray<WeatherForecastFetcher*> *retrieveFetchers;

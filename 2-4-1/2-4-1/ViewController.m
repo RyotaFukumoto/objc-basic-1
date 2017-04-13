@@ -9,11 +9,16 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "NSString+decodeJSONString.h"
-
-NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+#import "Const.h"
+#import "WeatherForecastDataSource.h"
+#import "WeatherForecastCell.h"
+#import "WeatherSummaryCell.h"
+#import "WeatherForecastManager.h"
 
 @interface ViewController ()
 @property NSArray<NSDictionary*>* forecastsArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) WeatherForecastDataSource *dataSource;
 @end
 
 @implementation ViewController
@@ -21,24 +26,19 @@ NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/for
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *url = kWeatherReportAPIURLForTokyo;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //事前にお天気情報を取得しておく
+    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
+    [manager callConnectorToFetchWeatherForecast];
     
-    [manager GET:url parameters:nil progress:nil
-         success:^(NSURLSessionTask *task, id responseObject) {
-             // json取得に成功した場合の処理
-             //responseObjectはNSDictionary型
-             NSDictionary *dict = (NSDictionary*)responseObject;
-             
-             //今日明日明後日の情報を配列に格納する
-             self.forecastsArray = dict[@"forecasts"];
-         }
-     
-         failure:^(NSURLSessionTask *operation, NSError *error) {
-             // エラーの場合の処理
-             DLog(@"error");
-         }
-     ];
+    [self configureTableView];
+    
+    //APIからの取得が終わったときにTable Viewを再描画する。そのための準備
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(connectorDidFinishFetchWeatherForecast:)
+                                                 name:kConnectorDidFinishFetchWeatherForecast
+                                               object:nil];
+    
+    
 }
 
 
@@ -47,38 +47,38 @@ NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/for
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark ログに表示
 /**
- action sheetで今日、明日、明後日を選ぶようにする
- 参考：http://nlogic.jp/?p=261
- @param sender Infoボタン
+ Connectorクラスの天気予報取得が完了すると呼ばれる
+ 
+ @param notification パース済みの天気予報APIからのレスポンス
  */
-- (IBAction)infoButtonTapped:(UIButton *)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"日を選んでください"
-                                                                             message:@"天気予報"
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
-    //今日、明日ボタンを設置。ボタンを押したらその日の天気をログに表示
-    NSArray* array = @[@"今日",@"明日"];
-    [array enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger index, BOOL *stop){
-        UIAlertAction *action = [UIAlertAction actionWithTitle:obj
-                                                         style:UIAlertActionStyleDefault
-                                                       handler:^(UIAlertAction *action) {
-                                                           DLog(@"clicked Button title: %@", action.title);
-                                                           //レスポンスはユニコードエスケープされているので、一旦エスケープを処理してからログに出す
-                                                           DLog(@"%@の天気予報:%@",action.title,self.forecastsArray[index].description.decodeJSONString);
-                                                       }];
-        [alertController addAction:action];
-    }];
+- (void)connectorDidFinishFetchWeatherForecast:(NSNotification*)notification{
+    [self.tableView reloadData];
+}
+
+/**
+ テーブルビューの初期設定をする
+ */
+- (void)configureTableView{
+    //事前にお天気情報を取得しておく
+    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
+    [manager callConnectorToFetchWeatherForecast];
     
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel"
-                                                     style:UIAlertActionStyleCancel
-                                                   handler:^(UIAlertAction *action) {
-                                                       DLog(@"clicked Button title: %@", action.title);
-                                                   }];
-    [alertController addAction:action];
+    //TableViewの表示のための設定
+    [self.tableView registerNib:[UINib nibWithNibName:[WeatherSummaryCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[WeatherSummaryCell className]];
     
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
+    [self.tableView registerNib:[UINib nibWithNibName:[WeatherForecastCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[WeatherForecastCell className]];
+    
+    self.dataSource = [[WeatherForecastDataSource alloc] init];
+    self.tableView.dataSource = self.dataSource;
+    
+    ///セルの高さを可変にする
+    ///参考：http://tomoyaonishi.hatenablog.jp/entry/2014/09/27/161152
+    self.tableView.estimatedRowHeight = 150.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 @end

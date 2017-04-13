@@ -7,7 +7,9 @@
 //
 
 #import "WeatherSummaryCell.h"
-
+@interface WeatherSummaryCell()
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@end
 @implementation WeatherSummaryCell
 
 - (void)awakeFromNib {
@@ -21,4 +23,12 @@
     // Configure the view for the selected state
 }
 
+-(void)setCellFor:(NSString *)weatherSummary{
+    self.summaryLabel.text = weatherSummary;
+}
+
+#pragma mark utility
++ (NSString*)className {
+    return NSStringFromClass([WeatherSummaryCell class]);
+}
 @end

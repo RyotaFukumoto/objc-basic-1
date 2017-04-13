@@ -11,7 +11,7 @@
 
 @interface WeatherForecast : NSObject
 @property NSDate* date;
-@property WeatherImage* image;
+@property WeatherImage* weatherImage;
 @property NSString* telop;
 @property NSInteger maxTemprature;
 @property NSInteger minTemprature;

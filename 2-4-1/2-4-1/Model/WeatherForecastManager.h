@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherForecastConnector.h"
+#import "WeatherForecast.h"
 
 @interface WeatherForecastManager : NSObject
+@property (nonatomic,readonly)NSArray<WeatherForecast*> *forecasts;
+@property (nonatomic,readonly)NSString* forecastSummary;
 
++(WeatherForecastManager*)sharedManager;
+-(void)callConnectorToFetchWeatherForecast;
+-(NSMutableArray<WeatherForecast*>*)composeForecastsFrom:(NSArray<NSDictionary*>*)forecastsArray;
 @end

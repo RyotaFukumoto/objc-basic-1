@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherForecast.h"
 
 @interface WeatherForecastCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
-
+-(void)setCellFor:(WeatherForecast*)weatherForecast;
++ (NSString*)className;
 @end

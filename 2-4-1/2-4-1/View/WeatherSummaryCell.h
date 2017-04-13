@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherSummaryCell : UITableViewCell
-
+-(void)setCellFor:(NSString*)weatherSummary;
++ (NSString*)className;
 @end

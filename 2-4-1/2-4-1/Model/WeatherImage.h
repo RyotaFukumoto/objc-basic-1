@@ -11,4 +11,6 @@
 @interface WeatherImage : UIImage
 @property NSString* imageURL;
 @property NSString* title;
+@property NSInteger width;
+@property NSInteger height;
 @end

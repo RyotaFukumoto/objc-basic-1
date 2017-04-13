@@ -8,8 +8,8 @@
 
 #import "WeatherForecastConnector.h"
 
-NSString* const WeatherForecastConnectorDidFinishFetchWeatherForecast = @"WeatherForecastConnectorDidFinishFetchWeatherForecast";
-NSString* const WeatherForecastConnectorDidFailFetchWeatherForecast = @"WeatherForecastConnectorDidFailFetchWeatherForecast";
+NSString* const kConnectorDidFinishFetchWeatherForecast = @"kConnectorDidFinishFetchWeatherForecast";
+NSString* const kConnectorDidFailFetchWeatherForecast = @"kConnectorDidFailFetchWeatherForecast";
 
 @implementation WeatherForecastConnector
 
@@ -47,30 +47,37 @@ static WeatherForecastConnector *_sharedInstance = nil;
 }
 
 #pragma mark WeatherForecastFetcherDelegate
+
+/**
+ 通知のuserInfoが、JSONをパースしたものになる。
+
+ @param fetcher パースが完了したフェッチャー
+ */
 -(void)fetcherDidFinishFetching:(WeatherForecastFetcher *)fetcher{
     NSDictionary* dictionary = fetcher.parsedDictionary;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:WeatherForecastConnectorDidFinishFetchWeatherForecast
+    [[NSNotificationCenter defaultCenter] postNotificationName:kConnectorDidFinishFetchWeatherForecast
                                                         object:self
                                                       userInfo:dictionary];
     
-    //処理が完了したので、保持をなくす
-    for (WeatherForecastFetcher* fetcherInArray in self.retrieveFetchers) {
-        if (fetcherInArray == fetcher) {
-            [self.retrieveFetchers removeObject:fetcherInArray];
-            return;
-        }
-    }
+    [self release:fetcher];
 }
 
 -(void)fetcher:(WeatherForecastFetcher *)fetcher
 didFailWithError:(NSError *)error{
     NSDictionary* userInfo = @{@"error":error};
-    [[NSNotificationCenter defaultCenter] postNotificationName:WeatherForecastConnectorDidFailFetchWeatherForecast
+    [[NSNotificationCenter defaultCenter] postNotificationName:kConnectorDidFailFetchWeatherForecast
                                                         object:self
                                                       userInfo:userInfo];
     
-    //処理が完了したので、保持をなくす
+    [self release:fetcher];
+}
+
+-(void)release:(WeatherForecastFetcher*)fetcher{
+    if (self.retrieveFetchers.count == 0){
+        return;
+    }
+         
     for (WeatherForecastFetcher* fetcherInArray in self.retrieveFetchers) {
         if (fetcherInArray == fetcher) {
             [self.retrieveFetchers removeObject:fetcherInArray];
