@@ -41,7 +41,9 @@ static WeatherForecastConnector *_sharedInstance = nil;
     
     WeatherForecastFetcher* fetcher = [[WeatherForecastFetcher alloc] initWithURL:urlString
                                                                          delegate:self];
-    [fetcher fetchWeatherForecast];
+    
+    NSDictionary<NSString*,NSString*> *queryParam = @{@"city":@"130010"};
+    [fetcher fetchWeatherForecastOn:queryParam];
     
     [self.retrieveFetchers addObject:fetcher];
 }

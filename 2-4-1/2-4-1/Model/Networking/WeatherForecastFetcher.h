@@ -21,6 +21,6 @@
 
 -(WeatherForecastFetcher*)initWithURL:(NSString*)urlString;
 -(WeatherForecastFetcher*)initWithURL:(NSString*)urlString delegate:(id)delegate;
--(void)fetchWeatherForecast;
+-(void)fetchWeatherForecastOn:(NSDictionary*)parameters;
 @end
 

@@ -8,7 +8,7 @@
 
 #import "Const.h"
 
-NSString* const kWeatherReportAPIURLForTokyo = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+NSString* const kWeatherReportAPIBaseURL = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
 
 @implementation Const
 

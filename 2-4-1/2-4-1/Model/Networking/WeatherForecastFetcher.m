@@ -32,10 +32,17 @@
     return self;
 }
 
--(void)fetchWeatherForecast{
+
+/**
+ パラメタに基づいてLiveDoorのお天気情報API(URLはself.urlStringに依存）のクエリを生成、取得したJSONをパースしてデリゲート先に（自分ごと）渡す
+ デリゲート先は、デリゲートメソッドのfetcher.urlStringを参照すればクエリ先を取得できる
+
+ @param parameters {パラメタ名：値} ex: {"city":"410020"}
+ */
+-(void)fetchWeatherForecastOn:(NSDictionary*)parameters{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:self.urlString parameters:nil progress:nil
+    [manager GET:self.urlString parameters:parameters progress:nil
          success:^(NSURLSessionTask *task, id responseObject) {
              // json取得に成功した場合の処理
              //responseObjectはNSDictionary型

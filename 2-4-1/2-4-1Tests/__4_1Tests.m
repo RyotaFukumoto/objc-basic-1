@@ -33,12 +33,13 @@
 
 #pragma mark fetcher test
 - (void)testFetchWeatherInfo{
-    WeatherForecastFetcher* fetcher = [[WeatherForecastFetcher alloc] initWithURL:kWeatherReportAPIURLForTokyo];
+    WeatherForecastFetcher* fetcher = [[WeatherForecastFetcher alloc] initWithURL:kWeatherReportAPIBaseURL];
     fetcher.delegate = self;
 
     self.expectation = [self expectationWithDescription:@"CallWeatherFetchDelegate"];
     
-    [fetcher fetchWeatherForecast];
+    NSDictionary<NSString*,NSString*> *queryParam = @{@"city":@"130010"};
+    [fetcher fetchWeatherForecastOn:queryParam];
     
     [self waitForExpectationsWithTimeout:120
                                  handler:^(NSError * _Nullable error){
@@ -104,7 +105,7 @@ didFailWithError:(NSError *)error{
     XCTAssertFalse(connector.isNetworkAccessing);
     XCTAssertFalse(connector.isFetchingWeatherForecast);
     
-    [connector fetchWeatherForecastFrom:kWeatherReportAPIURLForTokyo];
+    [connector fetchWeatherForecastFrom:kWeatherReportAPIBaseURL];
 
     [self expectationForNotification:kConnectorDidFinishFetchWeatherForecast
                               object:nil

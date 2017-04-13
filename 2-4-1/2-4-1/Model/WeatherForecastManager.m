@@ -52,7 +52,7 @@ static WeatherForecastManager* _sharedManager;
                                                object:nil];
 
     WeatherForecastConnector* connector = [WeatherForecastConnector sharedConnector];
-    [connector fetchWeatherForecastFrom:kWeatherReportAPIURLForTokyo];
+    [connector fetchWeatherForecastFrom:kWeatherReportAPIBaseURL];
 }
 
 /**

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString* const kWeatherReportAPIURLForTokyo;
+extern NSString* const kWeatherReportAPIBaseURL;
 @interface Const : NSObject
 
 @end
