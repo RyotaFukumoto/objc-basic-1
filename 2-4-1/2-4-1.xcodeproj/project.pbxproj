@@ -8,8 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		0D9D569D8C5BE0A1961450AE /* libPods-2-4-1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE12ECA7DECACC506EBCD638 /* libPods-2-4-1Tests.a */; };
+		104384BE1E9C752400F18FC2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 104384BD1E9C752400F18FC2 /* Const.m */; };
+		104384BF1E9C752400F18FC2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 104384BD1E9C752400F18FC2 /* Const.m */; };
 		104A661E1E9B195C00A3970B /* NSString+decodeJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */; };
 		104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */; };
+		104A66271E9B241700A3970B /* WeatherForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66251E9B241700A3970B /* WeatherForecastCell.m */; };
+		104A66281E9B241700A3970B /* WeatherForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66251E9B241700A3970B /* WeatherForecastCell.m */; };
+		104A66291E9B241700A3970B /* WeatherForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A66261E9B241700A3970B /* WeatherForecastCell.xib */; };
+		104A662A1E9B241700A3970B /* WeatherForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A66261E9B241700A3970B /* WeatherForecastCell.xib */; };
+		104A662E1E9B278600A3970B /* WeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A662D1E9B278600A3970B /* WeatherForecast.m */; };
+		104A662F1E9B278600A3970B /* WeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A662D1E9B278600A3970B /* WeatherForecast.m */; };
+		104A66331E9B289400A3970B /* WeatherSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66311E9B289400A3970B /* WeatherSummaryCell.m */; };
+		104A66341E9B289400A3970B /* WeatherSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66311E9B289400A3970B /* WeatherSummaryCell.m */; };
+		104A66351E9B289400A3970B /* WeatherSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A66321E9B289400A3970B /* WeatherSummaryCell.xib */; };
+		104A66361E9B289400A3970B /* WeatherSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A66321E9B289400A3970B /* WeatherSummaryCell.xib */; };
+		104A663B1E9B2E5300A3970B /* WeatherImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A663A1E9B2E5300A3970B /* WeatherImage.m */; };
+		104A663C1E9B2E5300A3970B /* WeatherImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A663A1E9B2E5300A3970B /* WeatherImage.m */; };
+		104A66411E9B360F00A3970B /* WeatherForecastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66401E9B360F00A3970B /* WeatherForecastManager.m */; };
+		104A66421E9B360F00A3970B /* WeatherForecastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66401E9B360F00A3970B /* WeatherForecastManager.m */; };
+		104A66451E9B364B00A3970B /* WeatherForecastConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66441E9B364B00A3970B /* WeatherForecastConnector.m */; };
+		104A66461E9B364B00A3970B /* WeatherForecastConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66441E9B364B00A3970B /* WeatherForecastConnector.m */; };
+		104A66491E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */; };
+		104A664A1E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */; };
+		104A664D1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */; };
+		104A664E1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */; };
+		106BAEE21E9CAF6E001C48B9 /* v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 106BAEE11E9CAF6E001C48B9 /* v1.json */; };
+		106BAEE31E9CAF6E001C48B9 /* v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 106BAEE11E9CAF6E001C48B9 /* v1.json */; };
+		106BAEEA1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */; };
+		106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */; };
+		106BAEEE1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
+		106BAEEF1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
 		17C990AD0C6C524381B58BC2 /* libPods-2-4-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC325CF7DAA4AAF898FDF2E5 /* libPods-2-4-1.a */; };
 		1FA243751E978E41002B11B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243741E978E41002B11B4 /* main.m */; };
 		1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243771E978E41002B11B4 /* AppDelegate.m */; };
@@ -32,9 +60,34 @@
 
 /* Begin PBXFileReference section */
 		0F9768021AC166E3EC6534F9 /* Pods-2-4-1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-4-1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2-4-1Tests/Pods-2-4-1Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		104A66181E9B128200A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "2-4-1-prefix.pch"; sourceTree = "<group>"; };
+		104384BC1E9C752400F18FC2 /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Const.h; path = SupportingFiles/Const.h; sourceTree = "<group>"; };
+		104384BD1E9C752400F18FC2 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Const.m; path = SupportingFiles/Const.m; sourceTree = "<group>"; };
 		104A661C1E9B195C00A3970B /* NSString+decodeJSONString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+decodeJSONString.h"; sourceTree = "<group>"; };
 		104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+decodeJSONString.m"; sourceTree = "<group>"; };
+		104A66241E9B241700A3970B /* WeatherForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastCell.h; path = View/WeatherForecastCell.h; sourceTree = "<group>"; };
+		104A66251E9B241700A3970B /* WeatherForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastCell.m; path = View/WeatherForecastCell.m; sourceTree = "<group>"; };
+		104A66261E9B241700A3970B /* WeatherForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherForecastCell.xib; path = View/WeatherForecastCell.xib; sourceTree = "<group>"; };
+		104A662C1E9B278600A3970B /* WeatherForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecast.h; path = Model/WeatherForecast.h; sourceTree = "<group>"; };
+		104A662D1E9B278600A3970B /* WeatherForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecast.m; path = Model/WeatherForecast.m; sourceTree = "<group>"; };
+		104A66301E9B289400A3970B /* WeatherSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherSummaryCell.h; path = View/WeatherSummaryCell.h; sourceTree = "<group>"; };
+		104A66311E9B289400A3970B /* WeatherSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherSummaryCell.m; path = View/WeatherSummaryCell.m; sourceTree = "<group>"; };
+		104A66321E9B289400A3970B /* WeatherSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherSummaryCell.xib; path = View/WeatherSummaryCell.xib; sourceTree = "<group>"; };
+		104A66391E9B2E5300A3970B /* WeatherImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherImage.h; path = Model/WeatherImage.h; sourceTree = "<group>"; };
+		104A663A1E9B2E5300A3970B /* WeatherImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherImage.m; path = Model/WeatherImage.m; sourceTree = "<group>"; };
+		104A663F1E9B360F00A3970B /* WeatherForecastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastManager.h; path = Model/WeatherForecastManager.h; sourceTree = "<group>"; };
+		104A66401E9B360F00A3970B /* WeatherForecastManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WeatherForecastManager.m; path = Model/WeatherForecastManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		104A66431E9B364B00A3970B /* WeatherForecastConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WeatherForecastConnector.h; path = Model/Networking/WeatherForecastConnector.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		104A66441E9B364B00A3970B /* WeatherForecastConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WeatherForecastConnector.m; path = Model/Networking/WeatherForecastConnector.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		104A66471E9B367C00A3970B /* WeatherForecastFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastFetcher.h; path = Model/Networking/WeatherForecastFetcher.h; sourceTree = "<group>"; };
+		104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastFetcher.m; path = Model/Networking/WeatherForecastFetcher.m; sourceTree = "<group>"; };
+		104A664B1E9B36C900A3970B /* DaoWeatherForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaoWeatherForecast.h; path = Model/Database/DaoWeatherForecast.h; sourceTree = "<group>"; };
+		104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaoWeatherForecast.m; path = Model/Database/DaoWeatherForecast.m; sourceTree = "<group>"; };
+		104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2-4-1-prefix.pch"; path = "SupportingFiles/2-4-1-prefix.pch"; sourceTree = "<group>"; };
+		106BAEE11E9CAF6E001C48B9 /* v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v1.json; sourceTree = "<group>"; };
+		106BAEE81E9CC260001C48B9 /* WeatherForecastDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastDataSource.h; path = View/WeatherForecastDataSource.h; sourceTree = "<group>"; };
+		106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastDataSource.m; path = View/WeatherForecastDataSource.m; sourceTree = "<group>"; };
+		106BAEEC1E9CC584001C48B9 /* NSString+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DateFormat.h"; path = "SupportingFiles/NSString+DateFormat.h"; sourceTree = "<group>"; };
+		106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DateFormat.m"; path = "SupportingFiles/NSString+DateFormat.m"; sourceTree = "<group>"; };
 		1FA243701E978E41002B11B4 /* 2-4-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-4-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA243741E978E41002B11B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA243761E978E41002B11B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,7 +99,7 @@
 		1FA243821E978E41002B11B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FA243841E978E41002B11B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FA243891E978E41002B11B4 /* 2-4-1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-4-1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FA2438D1E978E41002B11B4 /* __4_1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __4_1Tests.m; sourceTree = "<group>"; };
+		1FA2438D1E978E41002B11B4 /* __4_1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = __4_1Tests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1FA2438F1E978E41002B11B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2FE1025DFD2E793FC1D4EC /* Pods-2-4-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-4-1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2-4-1/Pods-2-4-1.debug.xcconfig"; sourceTree = "<group>"; };
 		41C2761DCD022B799A4D5472 /* Pods-2-4-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2-4-1.release.xcconfig"; path = "Pods/Target Support Files/Pods-2-4-1/Pods-2-4-1.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +128,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104A66201E9B20C300A3970B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1FA2437C1E978E41002B11B4 /* Main.storyboard */,
+				104A66381E9B28F900A3970B /* WeatherForecastCell */,
+				104A66371E9B28CC00A3970B /* WeatherSummaryCell */,
+				106BAEE81E9CC260001C48B9 /* WeatherForecastDataSource.h */,
+				106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		104A66211E9B20CA00A3970B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FA243791E978E41002B11B4 /* ViewController.h */,
+				1FA2437A1E978E41002B11B4 /* ViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		104A662B1E9B276600A3970B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				104A663E1E9B35BA00A3970B /* Database */,
+				104A663D1E9B35A800A3970B /* Networking */,
+				104A662C1E9B278600A3970B /* WeatherForecast.h */,
+				104A662D1E9B278600A3970B /* WeatherForecast.m */,
+				104A66391E9B2E5300A3970B /* WeatherImage.h */,
+				104A663A1E9B2E5300A3970B /* WeatherImage.m */,
+				104A663F1E9B360F00A3970B /* WeatherForecastManager.h */,
+				104A66401E9B360F00A3970B /* WeatherForecastManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		104A66371E9B28CC00A3970B /* WeatherSummaryCell */ = {
+			isa = PBXGroup;
+			children = (
+				104A66321E9B289400A3970B /* WeatherSummaryCell.xib */,
+				104A66301E9B289400A3970B /* WeatherSummaryCell.h */,
+				104A66311E9B289400A3970B /* WeatherSummaryCell.m */,
+			);
+			name = WeatherSummaryCell;
+			sourceTree = "<group>";
+		};
+		104A66381E9B28F900A3970B /* WeatherForecastCell */ = {
+			isa = PBXGroup;
+			children = (
+				104A66241E9B241700A3970B /* WeatherForecastCell.h */,
+				104A66251E9B241700A3970B /* WeatherForecastCell.m */,
+				104A66261E9B241700A3970B /* WeatherForecastCell.xib */,
+			);
+			name = WeatherForecastCell;
+			sourceTree = "<group>";
+		};
+		104A663D1E9B35A800A3970B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				104A66431E9B364B00A3970B /* WeatherForecastConnector.h */,
+				104A66441E9B364B00A3970B /* WeatherForecastConnector.m */,
+				104A66471E9B367C00A3970B /* WeatherForecastFetcher.h */,
+				104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		104A663E1E9B35BA00A3970B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				104A664B1E9B36C900A3970B /* DaoWeatherForecast.h */,
+				104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		1FA243671E978E41002B11B4 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +229,9 @@
 			children = (
 				1FA243761E978E41002B11B4 /* AppDelegate.h */,
 				1FA243771E978E41002B11B4 /* AppDelegate.m */,
-				1FA243791E978E41002B11B4 /* ViewController.h */,
-				1FA2437A1E978E41002B11B4 /* ViewController.m */,
-				1FA2437C1E978E41002B11B4 /* Main.storyboard */,
-				1FA2437F1E978E41002B11B4 /* Assets.xcassets */,
-				1FA243811E978E41002B11B4 /* LaunchScreen.storyboard */,
-				1FA243841E978E41002B11B4 /* Info.plist */,
+				104A662B1E9B276600A3970B /* Model */,
+				104A66211E9B20CA00A3970B /* View Controller */,
+				104A66201E9B20C300A3970B /* View */,
 				1FA243731E978E41002B11B4 /* Supporting Files */,
 			);
 			path = "2-4-1";
@@ -114,10 +240,18 @@
 		1FA243731E978E41002B11B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				106BAEE11E9CAF6E001C48B9 /* v1.json */,
+				104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */,
+				1FA2437F1E978E41002B11B4 /* Assets.xcassets */,
+				1FA243811E978E41002B11B4 /* LaunchScreen.storyboard */,
+				1FA243841E978E41002B11B4 /* Info.plist */,
 				104A661C1E9B195C00A3970B /* NSString+decodeJSONString.h */,
 				104A661D1E9B195C00A3970B /* NSString+decodeJSONString.m */,
 				1FA243741E978E41002B11B4 /* main.m */,
-				104A66181E9B128200A3970B /* 2-4-1-prefix.pch */,
+				104384BC1E9C752400F18FC2 /* Const.h */,
+				104384BD1E9C752400F18FC2 /* Const.m */,
+				106BAEEC1E9CC584001C48B9 /* NSString+DateFormat.h */,
+				106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,8 +375,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106BAEE21E9CAF6E001C48B9 /* v1.json in Resources */,
 				1FA243831E978E41002B11B4 /* LaunchScreen.storyboard in Resources */,
 				1FA243801E978E41002B11B4 /* Assets.xcassets in Resources */,
+				104A66291E9B241700A3970B /* WeatherForecastCell.xib in Resources */,
+				104A66351E9B289400A3970B /* WeatherSummaryCell.xib in Resources */,
 				1FA2437E1E978E41002B11B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +388,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106BAEE31E9CAF6E001C48B9 /* v1.json in Resources */,
+				104A662A1E9B241700A3970B /* WeatherForecastCell.xib in Resources */,
+				104A66361E9B289400A3970B /* WeatherSummaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +495,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA2437B1E978E41002B11B4 /* ViewController.m in Sources */,
+				104A66271E9B241700A3970B /* WeatherForecastCell.m in Sources */,
+				104A664D1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */,
 				1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */,
 				104A661E1E9B195C00A3970B /* NSString+decodeJSONString.m in Sources */,
+				104A66491E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */,
+				104A66411E9B360F00A3970B /* WeatherForecastManager.m in Sources */,
+				104A66451E9B364B00A3970B /* WeatherForecastConnector.m in Sources */,
+				106BAEEE1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */,
+				104A663B1E9B2E5300A3970B /* WeatherImage.m in Sources */,
 				1FA243751E978E41002B11B4 /* main.m in Sources */,
+				104A66331E9B289400A3970B /* WeatherSummaryCell.m in Sources */,
+				104384BE1E9C752400F18FC2 /* Const.m in Sources */,
+				106BAEEA1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */,
+				104A662E1E9B278600A3970B /* WeatherForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +516,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104A66281E9B241700A3970B /* WeatherForecastCell.m in Sources */,
 				104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */,
 				1FA2438E1E978E41002B11B4 /* __4_1Tests.m in Sources */,
+				104A66341E9B289400A3970B /* WeatherSummaryCell.m in Sources */,
+				106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */,
+				104A664E1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */,
+				104384BF1E9C752400F18FC2 /* Const.m in Sources */,
+				104A66421E9B360F00A3970B /* WeatherForecastManager.m in Sources */,
+				104A664A1E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */,
+				104A663C1E9B2E5300A3970B /* WeatherImage.m in Sources */,
+				104A662F1E9B278600A3970B /* WeatherForecast.m in Sources */,
+				106BAEEF1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */,
+				104A66461E9B364B00A3970B /* WeatherForecastConnector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +658,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				GCC_PREFIX_HEADER = "2-4-1/2-4-1-prefix.pch";
+				GCC_PREFIX_HEADER = "2-4-1/SupportingFiles/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
@@ -510,7 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				GCC_PREFIX_HEADER = "2-4-1/2-4-1-prefix.pch";
+				GCC_PREFIX_HEADER = "2-4-1/SupportingFiles/2-4-1-prefix.pch";
 				INFOPLIST_FILE = "2-4-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-1";
