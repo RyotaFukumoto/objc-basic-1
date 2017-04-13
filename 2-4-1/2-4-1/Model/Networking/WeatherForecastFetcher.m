@@ -41,24 +41,23 @@
  */
 -(void)fetchWeatherForecastOn:(NSDictionary*)parameters{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    __weak typeof(self) wself = self;
-    
+        
     [manager GET:self.urlString parameters:parameters progress:nil
          success:^(NSURLSessionTask *task, id responseObject) {
+             
              // json取得に成功した場合の処理
              //responseObjectはNSDictionary型
-             wself.parsedDictionary = (NSDictionary*)responseObject;
+             self.parsedDictionary = (NSDictionary*)responseObject;
              
-             if ([wself.delegate respondsToSelector:@selector(fetcherDidFinishFetching:)]) {
-                 [wself.delegate fetcherDidFinishFetching:wself];
+             if ([self.delegate respondsToSelector:@selector(fetcherDidFinishFetching:)]) {
+                 [self.delegate fetcherDidFinishFetching:self];
              }
          }
      
          failure:^(NSURLSessionTask *operation, NSError *error) {
              // エラーの場合の処理
-             if ([wself.delegate respondsToSelector:@selector(fetcher:didFailWithError:)]) {
-                 [wself.delegate fetcher:wself didFailWithError:error];
+             if ([self.delegate respondsToSelector:@selector(fetcher:didFailWithError:)]) {
+                 [self.delegate fetcher:self didFailWithError:error];
              }
          }
      ];

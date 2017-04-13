@@ -17,6 +17,7 @@
 
 @interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate>
 @property XCTestExpectation* expectation;
+@property WeatherForecastConnector* connector;
 @end
 
 @implementation __4_1Tests
@@ -29,6 +30,8 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    [self.connector.retrieveFetchers removeAllObjects];
 }
 
 #pragma mark fetcher test
@@ -64,7 +67,6 @@
     //通信結果を確認
     NSString* weatherInfoString  = fetcher.parsedDictionary.description;
     XCTAssertNotNil(weatherInfoString);
-    //NSLog(@"parsedDictionary is %@",weatherInfoString.decodeJSONString);
 }
 
 
@@ -100,12 +102,12 @@ didFailWithError:(NSError *)error{
                                                  name:kConnectorDidFailFetchWeatherForecast
                                                object:nil];
 
-    WeatherForecastConnector* connector = [WeatherForecastConnector sharedConnector];
+    self.connector = [WeatherForecastConnector sharedConnector];
     
-    XCTAssertFalse(connector.isNetworkAccessing);
-    XCTAssertFalse(connector.isFetchingWeatherForecast);
+    XCTAssertFalse(self.connector.isNetworkAccessing);
+    XCTAssertFalse(self.connector.isFetchingWeatherForecast);
     
-    [connector fetchWeatherForecastFrom:kWeatherReportAPIBaseURL];
+    [self.connector fetchWeatherForecastFrom:kWeatherReportAPIBaseURL];
 
     [self expectationForNotification:kConnectorDidFinishFetchWeatherForecast
                               object:nil
@@ -128,7 +130,7 @@ didFailWithError:(NSError *)error{
                              }];
     
     
-    [self waitForExpectationsWithTimeout:600.0
+    [self waitForExpectationsWithTimeout:20.0
                                  handler:^(NSError *error){
                                      
                                      NSLog(@"%s, %@",__func__,error.localizedDescription);

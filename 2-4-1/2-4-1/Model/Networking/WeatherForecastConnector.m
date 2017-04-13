@@ -10,6 +10,8 @@
 
 NSString* const kConnectorDidFinishFetchWeatherForecast = @"kConnectorDidFinishFetchWeatherForecast";
 NSString* const kConnectorDidFailFetchWeatherForecast = @"kConnectorDidFailFetchWeatherForecast";
+@interface WeatherForecastConnector()
+@end
 
 @implementation WeatherForecastConnector
 
@@ -35,6 +37,7 @@ static WeatherForecastConnector *_sharedInstance = nil;
 
 #pragma mark fetch Weather Forecast
 -(void)fetchWeatherForecastFrom:(NSString *)urlString{
+    
     if (self.isFetchingWeatherForecast) {
         return;
     }
@@ -51,7 +54,7 @@ static WeatherForecastConnector *_sharedInstance = nil;
 #pragma mark WeatherForecastFetcherDelegate
 
 /**
- 通知のuserInfoが、JSONをパースしたものになる。
+ 通信が成功した際に呼ばれる。通知のuserInfoが、JSONをパースしたものになる。
 
  @param fetcher パースが完了したフェッチャー
  */
