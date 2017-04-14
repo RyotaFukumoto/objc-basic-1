@@ -14,7 +14,12 @@
 #import "WeatherForecastManager.h"
 #import "Const.h"
 #import "NSString+DateFormat.h"
+#import "DaoWeatherForecasts.h"
 
+//NSString* const kColumnNameForecastDate = @"forecast_date";
+//NSString* const kColumnNameForecastWeather = @"forecast_weather";
+//NSString* const kColumnNameImageURL = @"image_url";
+//
 @interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate>
 @property XCTestExpectation* expectation;
 @property WeatherForecastConnector* connector;
@@ -24,7 +29,9 @@
 #pragma mark setting & clean up
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    DaoWeatherForecasts* dao = [DaoWeatherForecasts shared];
+    [dao removeAllRecordIn:test];
 }
 
 - (void)tearDown {
@@ -32,6 +39,9 @@
     [super tearDown];
     
     [self.connector.retrieveFetchers removeAllObjects];
+    
+    DaoWeatherForecasts* dao = [DaoWeatherForecasts shared];
+    [dao removeAllRecordIn:test];
 }
 
 #pragma mark fetcher test
@@ -209,6 +219,29 @@ didFailWithError:(NSError *)error{
             *stop = YES;
         }
     }];
+}
+
+#pragma mark DB I/O
+- (void)testInsertRecordToDB{
+    //保存したいモデルを作る
+    WeatherRecord* weatherRecord = @{kColumnNameForecastDate:@"2017-04-18",
+                                     kColumnNameForecastWeather:@"曇り",
+                                     kColumnNameImageURL:@"example.com"
+                                     };
+    
+    //保存するメソッドを呼ぶ
+    DaoWeatherForecasts* dao = [[DaoWeatherForecasts alloc] initForTest];
+    XCTAssertNotNil([dao addRecord:weatherRecord to:test]);
+    
+    //取り出してくる
+    NSArray<WeatherRecord*>* weatherRecords = [dao weatherForecastsFrom:test];
+    
+    //比較する
+    for (WeatherRecord* weatherRecord in weatherRecords) {
+        XCTAssertEqualObjects(weatherRecord[kColumnNameForecastDate], @"2017-04-18");
+        XCTAssertEqualObjects(weatherRecord[kColumnNameForecastWeather], @"曇り");
+        XCTAssertEqualObjects(weatherRecord[kColumnNameImageURL], @"example.com");
+    }
 }
 
 #pragma mark performance test

@@ -20,6 +20,10 @@ NSString* const kColumnNameImageURL = @"image_url";
 //YES: developテーブル
 //NO: releaseテーブル
 BOOL const kDebugMode = YES;
+
+///キーは上で定義した列名を使用
+typedef NSDictionary<NSString*,NSString*> WeatherRecord;
+
 @interface DaoWeatherForecasts()
 @property (nonatomic, copy) NSString* dbPath; //データベース　ファイルへのパス
 
@@ -62,7 +66,7 @@ BOOL const kDebugMode = YES;
 }
 
 /**
- DBとテスト用のテーブルの実在を確定させて、テスト用のテーブルのレコードがあれば全て削除する
+ テスト用の初期化メソッド。DBとテスト用のテーブルの実在を確定させて、テスト用のテーブルのレコードがあれば全て削除する
  
  @return <#return value description#>
  */
@@ -87,30 +91,7 @@ BOOL const kDebugMode = YES;
 }
 
 
-/**
- 通信結果をDBに保存する。保存項目は予報日、天気、アイコンのURL
 
- @param notification userInfoにパース結果が入っている
- */
--(void)connectorDidFinishFetchWeatherForecast:(NSNotification*)notification{
-    //データを受け取る
-    
-    //DBに保存する
-    
-    //天気予報APIのレスポンス、JSONをパースしたもの
-    NSDictionary* parsedDictionary = notification.userInfo;
-    
-    //天気予報の概要
-    NSString* weatherSummaryString = parsedDictionary[@"description"][@"text"];
-    
-    //各日の天気予報
-    NSArray<NSDictionary*>* forecasts = parsedDictionary[@"forecasts"];
-    for (NSDictionary* forecastDict in forecasts) {
-        NSDate* date = forecastDict[@"date"];
-        
-    }
-
-}
 
 + (DaoWeatherForecasts*)shared{
     static DaoWeatherForecasts* shared;
@@ -127,9 +108,9 @@ BOOL const kDebugMode = YES;
 
 #pragma mark - Public methods
 /**
- * タスクを追加します。
+ * モデルクラスをDBに追加します。Managerクラスからの利用を想定
  *
- * @param forecast 書籍。
+ * @param forecast WeatherForecaset型。予報日・天気・アイコンのURLを文字列で保持
  *
  * @return 成功時は識別子を割り当てられたタスク、失敗時は nilが返る。
  */
@@ -174,6 +155,111 @@ BOOL const kDebugMode = YES;
 }
 
 /**
+ * 天気情報のレコードを追加します。本番用
+ *
+ * @param forecastDict 予報日・天気・アイコンのURLを文字列で保持するNSDictionaryのtypedef
+ *
+ * @return 成功時は保存に成功したforecastDict、失敗時は nilが返る。
+ */
+- (nullable WeatherRecord*)addRecord:(WeatherRecord *)forecastDict
+{
+    //開発段階では、developテーブルに加える
+    if (kDebugMode) {
+        return [self addRecord:forecastDict to:develop];
+    }else{
+        return [self addRecord:forecastDict to:release];
+    }
+}
+
+/**
+ このメソッドがpublicになっているのは、テストクラスから呼びたいから
+
+ @param forecastDict テーブルの列名と同じキーでアクセスできます
+ @param tableName 本番：release,開発：develop、テスト：test
+ @return 保存できた場合だけ保存に成功したオブジェクトを返します
+ */
+- (nullable WeatherRecord *)addRecord:(WeatherRecord *)forecastDict
+                              to:(TableName)tableName
+{
+    FMDatabase* db = [self fetchFMDB];
+    [db open];
+    [db setShouldCacheStatements:YES];
+    
+    NSString* tableNameText = GetTableNameText(tableName);
+    NSMutableString* insertQueryMutableString = [NSMutableString string];
+    [insertQueryMutableString appendString:[NSString stringWithFormat:@"insert into %@",tableNameText]];
+    [insertQueryMutableString appendString:[NSString stringWithFormat:@"(%@,%@,%@) ",kColumnNameForecastDate,kColumnNameForecastWeather,kColumnNameImageURL]];
+    [insertQueryMutableString appendString:@"values(?, ?, ?);"];
+    NSString* insertQuery = insertQueryMutableString.copy;
+    
+    //NSDateオブジェクトはUTCのタイムゾーンでNSStringに変換してからDBに保存する
+    //※NSStringに変換せずにNSDateのままでinsertを実行すると、DBには数値で保存される
+    if( [db executeUpdate:insertQuery, forecastDict[kColumnNameForecastDate], forecastDict[kColumnNameForecastWeather], forecastDict[kColumnNameImageURL]])
+    {
+        NSLog(@"save successfully forecast in %@",forecastDict[kColumnNameForecastDate]);
+        [db close];
+        return forecastDict;
+    }
+    else
+    {
+        NSLog(@"Error has happened when saving forecast in %@",forecastDict[kColumnNameForecastDate]);
+        [db close];
+        return nil;
+    }
+    
+}
+
+-(NSArray<WeatherRecord*>* _Nullable)WeatherForecasts{
+    //開発段階では、developテーブルからレコードを取り出す
+    if (kDebugMode) {
+        return [self weatherForecastsFrom:develop];
+    }else{
+        return [self weatherForecastsFrom:release];
+    }
+}
+
+/**
+ 特に条件なくすべてのレコードを取り出してくる
+
+ @param tableName ableName 本番：release,開発：develop、テスト：test
+ @return 取り出してきたレコードをWeatherRecoroオブジェクトに詰めたもの、の配列
+ */
+-(NSArray<WeatherRecord*>* _Nullable)weatherForecastsFrom:(TableName)tableName{
+    FMDatabase* db = [self fetchFMDB];
+    [db open];
+    
+    //SQLクエリの組み立て
+    NSString* tableNameText = GetTableNameText(tableName);
+    NSMutableString* selectQueryMutableString = [NSMutableString string];
+    [selectQueryMutableString appendString:@"select * from "];
+    [selectQueryMutableString appendString:[NSString stringWithFormat:@"%@ ",tableNameText]];
+    NSString* selectQuery = selectQueryMutableString.copy;
+    
+    //DBから取り出した結果を、モデルオブジェクトに詰める
+    FMResultSet* results = [db executeQuery:selectQuery];
+    NSMutableArray<WeatherRecord*>* records = [NSMutableArray array];
+    
+    while ([results next]) {
+        
+        
+        NSString* date = [results stringForColumn:kColumnNameForecastDate];
+        NSString* weather = [results stringForColumn:kColumnNameForecastWeather];
+        NSString* imageURLString = [results stringForColumn:kColumnNameImageURL];
+        
+        WeatherRecord* weatherRecord = @{kColumnNameForecastDate:date,
+                                         kColumnNameForecastWeather:weather,
+                                         kColumnNameImageURL:imageURLString};
+        
+        [records addObject:weatherRecord];
+    }
+    
+    [db close];
+    
+    NSArray *forecastsArray = [records copy];
+    return forecastsArray;
+}
+
+/**
  テスト用に追加した。取扱注意。
  
  @param tableName すべてのレコードを削除したいテーブル.testを想定。
@@ -189,10 +275,34 @@ BOOL const kDebugMode = YES;
 }
 
 #pragma mark - Private methods
+/**
+ 通信結果をDBに保存する。保存項目は予報日、天気、アイコンのURL
+ 
+ @param notification userInfoにパース結果が入っている
+ */
+-(void)connectorDidFinishFetchWeatherForecast:(NSNotification*)notification{
+    //DBに保存する
+    
+    //天気予報APIのレスポンス、JSONをパースしたもの
+    NSDictionary* parsedDictionary = notification.userInfo;
+    
+    //    //天気予報の概要
+    //    NSString* weatherSummaryString = parsedDictionary[@"description"][@"text"];
+    //
+    //各日の天気予報
+    NSArray<NSDictionary*>* forecasts = parsedDictionary[@"forecasts"];
+    for (NSDictionary* forecastDict in forecasts) {
+        NSString* dateString = forecastDict[@"date"];
+        NSString* weatherString = forecastDict[@"telop"];
+        NSString* imageURLString = forecastDict[@"image"][@"url"];
+        
+    }
+    
+}
 
 /**
  引数に基づいたテーブルを作成するSQL文を返す。FMDBのexecuteUpdate:メソッドに与える引数を返すことを意識して実装した
- 
+ 例：@"CREATE TABLE IF NOT EXISTS tr_forecast_test(forecast_date, forecast_weather, image_url);
  @param tableName テーブルを指定
  @return スキーマの要件を満たすcreate文
  */
@@ -203,14 +313,10 @@ BOOL const kDebugMode = YES;
     NSMutableString* createTableQuery = [NSMutableString string];
     [createTableQuery appendString:@"CREATE TABLE IF NOT EXISTS "];
     [createTableQuery appendString:[NSString stringWithFormat:@"%@(", tableNameText]];
-    [createTableQuery appendString:@"todo_id INTEGER PRIMARY KEY AUTOINCREMENT,"];
-    [createTableQuery appendString:@"todo_title TEXT NOT NULL,"];
-    [createTableQuery appendString:@"todo_contents TEXT,"];
-    [createTableQuery appendString:@"created DATETIME default current_timestamp,"];
-    [createTableQuery appendString:@"modified DATETIME default current_timestamp,"];
-    [createTableQuery appendString:@"limit_date DATETIME,"];
-    [createTableQuery appendString:@"delete_flg BOOL default 0);"];
-    
+    [createTableQuery appendString:[NSString stringWithFormat:@"%@, ",kColumnNameForecastDate]];
+    [createTableQuery appendString:[NSString stringWithFormat:@"%@, ",kColumnNameForecastWeather]];
+    [createTableQuery appendString:[NSString stringWithFormat:@"%@);",kColumnNameImageURL]];
+        
     return createTableQuery.copy;
 }
 
@@ -238,7 +344,7 @@ BOOL const kDebugMode = YES;
     
     NSString* dir   = [paths objectAtIndex:0];
     
-    DLog(@"DB Path = %@",dir);
+    NSLog(@"DB Path = %@",dir);
     
     return [dir stringByAppendingPathComponent:kDBFileName];
 }

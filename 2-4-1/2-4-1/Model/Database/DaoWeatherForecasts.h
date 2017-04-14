@@ -18,6 +18,10 @@ typedef NS_ENUM(NSUInteger, TableName){
     test,
     develop
 };
+
+///キーは上で定義した列名を使用
+typedef NSDictionary<NSString*,NSString*> WeatherRecord;
+
 #define TableNameTextList @[@"tr_forecast",@"tr_forecast_test",@"tr_forecast_develop"]      //テーブル名のリテラル
 //TableName型から文字列
 #define GetTableNameText(type) TableNameTextList[type]
@@ -27,6 +31,10 @@ typedef NS_ENUM(NSUInteger, TableName){
 //開発中はYESにしてtr_forecast_developテーブルを使用する
 extern BOOL const kDebugMode;
 
+extern NSString* _Nonnull const kColumnNameForecastDate;
+extern NSString* _Nonnull const kColumnNameForecastWeather;
+extern NSString* _Nonnull const kColumnNameImageURL;
+
 @interface DaoWeatherForecasts : NSObject
 -(id _Nullable)initForTest;
 + (DaoWeatherForecasts*_Nullable)shared;
@@ -35,15 +43,17 @@ extern BOOL const kDebugMode;
 - (nullable WeatherForecast*)add:(WeatherForecast *_Nonnull)WeatherForecast;
 - (nullable WeatherForecast*)add:(WeatherForecast *_Nonnull)WeatherForecast
                    to:(TableName)tableName;
-
-//-(void)insertDammyTasks;
+- (nullable WeatherRecord *)addRecord:(WeatherRecord *_Nonnull)forecastDict;
+- (nullable WeatherRecord *)addRecord:(WeatherRecord *_Nonnull)forecastDict
+                                   to:(TableName)tableName;
+//-(void)insertDammyForecasts;
 
 //ゲッタ
-//-(nullable NSArray<WeatherForecast*>*)WeatherForecasts;
-//-(NSArray<WeatherForecast*>* _Nullable)WeatherForecastsFrom:(TableName)tableName;
+-(NSArray<WeatherRecord*>* _Nullable)WeatherForecasts;
+-(NSArray<WeatherRecord*>* _Nullable)weatherForecastsFrom:(TableName)tableName;
 
 //削除
-//-(void)removeAllRecordIn:(TableName)tableName;
+-(void)removeAllRecordIn:(TableName)tableName;
 //-(void)deleteWeatherForecastOf:(NSInteger)id;
 //-(void)deleteWeatherForecastOf:(NSInteger)id in:(TableName)tableName;
 

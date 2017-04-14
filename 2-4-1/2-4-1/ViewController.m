@@ -48,7 +48,7 @@
 }
 
 /**
- Connectorクラスの天気予報取得が完了すると呼ばれる
+ Connectorクラスの天気予報取得が完了すると呼ばれる。
  
  @param notification パース済みの天気予報APIからのレスポンス
  */
