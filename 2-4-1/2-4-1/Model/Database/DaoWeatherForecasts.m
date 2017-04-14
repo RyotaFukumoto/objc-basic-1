@@ -9,6 +9,7 @@
 #import "DaoWeatherForecasts.h"
 #import "NSDate+DateFormat.h"
 #import "WeatherForecastConnector.h"
+#import "Const.h"
 
 NSString* const kDBFileName = @"app.db";
 
@@ -276,28 +277,43 @@ typedef NSDictionary<NSString*,NSString*> WeatherRecord;
 
 #pragma mark - Private methods
 /**
- 通信結果をDBに保存する。保存項目は予報日、天気、アイコンのURL
+ コネクタがデータを取得できたタイミングで、通信結果をDBに保存する。保存項目は予報日、天気、アイコンのURL。セーブできたレコードをuserInfoにつけてNSNotificationを投げる
  
  @param notification userInfoにパース結果が入っている
  */
 -(void)connectorDidFinishFetchWeatherForecast:(NSNotification*)notification{
-    //DBに保存する
-    
     //天気予報APIのレスポンス、JSONをパースしたもの
     NSDictionary* parsedDictionary = notification.userInfo;
+    NSMutableArray* mWeatherRecordArray = [NSMutableArray array];
     
-    //    //天気予報の概要
-    //    NSString* weatherSummaryString = parsedDictionary[@"description"][@"text"];
-    //
     //各日の天気予報
     NSArray<NSDictionary*>* forecasts = parsedDictionary[@"forecasts"];
     for (NSDictionary* forecastDict in forecasts) {
         NSString* dateString = forecastDict[@"date"];
         NSString* weatherString = forecastDict[@"telop"];
         NSString* imageURLString = forecastDict[@"image"][@"url"];
+        WeatherRecord* record = @{kColumnNameForecastDate:dateString,
+                                  kColumnNameForecastWeather:weatherString,
+                                  kColumnNameImageURL:imageURLString};
         
+        DaoWeatherForecasts* dao = [DaoWeatherForecasts shared];
+        WeatherRecord* savedRecord = [dao addRecord:record];
+        [mWeatherRecordArray addObject:savedRecord];
     }
     
+    NSArray* savedRecords = [mWeatherRecordArray copy];
+    NSDictionary* dictionary = @{@"savedRecords":savedRecords};
+    
+    //セーブできたレコードをつけて投げる
+    /*[[NSNotificationCenter defaultCenter] postNotificationName:kDaoDidFinishSaveParsedData
+                                                        object:self
+                                                      userInfo:dictionary];
+    
+    */
+    
+    if ([self.delegate respondsToSelector:@selector(daoDidSaveRecord:userInfo:)]) {
+        [self.delegate daoDidSaveRecord:self userInfo:dictionary];
+    }
 }
 
 /**

@@ -35,7 +35,17 @@ extern NSString* _Nonnull const kColumnNameForecastDate;
 extern NSString* _Nonnull const kColumnNameForecastWeather;
 extern NSString* _Nonnull const kColumnNameImageURL;
 
+@class DaoWeatherForecasts;
+@protocol DaoDelegate <NSObject>
+
+@optional
+- (void)daoDidSaveRecord:(DaoWeatherForecasts*_Nonnull)dao
+                userInfo:(NSDictionary*_Nullable)userInfo;
+
+@end
+
 @interface DaoWeatherForecasts : NSObject
+@property (nonatomic,weak,nullable) id<DaoDelegate> delegate;
 -(id _Nullable)initForTest;
 + (DaoWeatherForecasts*_Nullable)shared;
 

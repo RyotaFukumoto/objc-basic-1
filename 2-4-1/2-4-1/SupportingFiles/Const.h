@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 extern NSString* const kWeatherReportAPIBaseURL;
+extern NSString* const kDaoDidFinishSaveParsedData;
+
 @interface Const : NSObject
 
 @end

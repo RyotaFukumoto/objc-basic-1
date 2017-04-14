@@ -9,6 +9,7 @@
 #import "Const.h"
 
 NSString* const kWeatherReportAPIBaseURL = @"http://weather.livedoor.com/forecast/webservice/json/v1";
+NSString* const kDaoDidFinishSaveParsedData = @"DaoDidFinishSaveParsedData";
 
 @implementation Const
 

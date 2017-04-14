@@ -14,11 +14,13 @@
 #import "WeatherForecastCell.h"
 #import "WeatherSummaryCell.h"
 #import "WeatherForecastManager.h"
+#import "DaoWeatherForecasts.h"
 
 @interface ViewController ()
 @property NSArray<NSDictionary*>* forecastsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) WeatherForecastDataSource *dataSource;
+@property (nonatomic) DaoWeatherForecasts* dao;
 @end
 
 @implementation ViewController
@@ -27,8 +29,8 @@
     [super viewDidLoad];
     
     //事前にお天気情報を取得しておく
-    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
-    [manager callConnectorToFetchWeatherForecast];
+    //WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
+    //[manager callConnectorToFetchWeatherForecast];
     
     [self configureTableView];
     
@@ -36,8 +38,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFinishFetchWeatherForecast:)
                                                  name:kConnectorDidFinishFetchWeatherForecast
-                                               object:nil];
+                                               object:[WeatherForecastConnector sharedConnector]];
     
+    self.dao = [DaoWeatherForecasts shared];
     
 }
 
