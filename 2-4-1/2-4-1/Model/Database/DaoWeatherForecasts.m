@@ -69,7 +69,7 @@ typedef NSDictionary<NSString*,NSString*> WeatherRecord;
 /**
  テスト用の初期化メソッド。DBとテスト用のテーブルの実在を確定させて、テスト用のテーブルのレコードがあれば全て削除する
  
- @return <#return value description#>
+ @return テスト用のテーブルを生成したDao.
  */
 -(id)initForTest{
     self = [super init];

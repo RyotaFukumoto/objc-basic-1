@@ -28,10 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //事前にお天気情報を取得しておく
-    //WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
-    //[manager callConnectorToFetchWeatherForecast];
-    
     [self configureTableView];
     
     //APIからの取得が終わったときにTable Viewを再描画する。そのための準備
@@ -40,8 +36,11 @@
                                                  name:kConnectorDidFinishFetchWeatherForecast
                                                object:[WeatherForecastConnector sharedConnector]];
     
-    self.dao = [DaoWeatherForecasts shared];
+    //事前にお天気情報を取得しておく
+    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
+    [manager callConnectorToFetchWeatherForecast];
     
+    self.dao = [DaoWeatherForecasts shared];
 }
 
 
@@ -63,9 +62,6 @@
  テーブルビューの初期設定をする
  */
 - (void)configureTableView{
-    //事前にお天気情報を取得しておく
-    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
-    [manager callConnectorToFetchWeatherForecast];
     
     //TableViewの表示のための設定
     [self.tableView registerNib:[UINib nibWithNibName:[WeatherSummaryCell className]

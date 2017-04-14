@@ -19,10 +19,11 @@ typedef NS_ENUM(NSUInteger, TableName){
     develop
 };
 
-///キーは上で定義した列名を使用
+///キー名は別に定義したテーブルの列名を使用
 typedef NSDictionary<NSString*,NSString*> WeatherRecord;
 
-#define TableNameTextList @[@"tr_forecast",@"tr_forecast_test",@"tr_forecast_develop"]      //テーブル名のリテラル
+//テーブル名のリテラル
+#define TableNameTextList @[@"tr_forecast",@"tr_forecast_test",@"tr_forecast_develop"]
 //TableName型から文字列
 #define GetTableNameText(type) TableNameTextList[type]
 //文字列からTableName型
@@ -46,6 +47,7 @@ extern NSString* _Nonnull const kColumnNameImageURL;
 
 @interface DaoWeatherForecasts : NSObject
 @property (nonatomic,weak,nullable) id<DaoDelegate> delegate;
+
 -(id _Nullable)initForTest;
 + (DaoWeatherForecasts*_Nullable)shared;
 
@@ -64,7 +66,5 @@ extern NSString* _Nonnull const kColumnNameImageURL;
 
 //削除
 -(void)removeAllRecordIn:(TableName)tableName;
-//-(void)deleteWeatherForecastOf:(NSInteger)id;
-//-(void)deleteWeatherForecastOf:(NSInteger)id in:(TableName)tableName;
 
 @end
