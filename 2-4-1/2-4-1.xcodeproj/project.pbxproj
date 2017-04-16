@@ -38,6 +38,8 @@
 		106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */; };
 		106BAEEE1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
 		106BAEEF1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
+		10A87C8A1EA31C7C00106F58 /* WeatherTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A87C891EA31C7C00106F58 /* WeatherTableView.m */; };
+		10A87C8B1EA31C7C00106F58 /* WeatherTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A87C891EA31C7C00106F58 /* WeatherTableView.m */; };
 		10F9AEA51E9F6B95000D83C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */; };
 		10F9AEA61E9F6BBD000D83C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */; };
 		10F9AEA91E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */; };
@@ -93,6 +95,8 @@
 		106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastDataSource.m; path = View/WeatherForecastDataSource.m; sourceTree = "<group>"; };
 		106BAEEC1E9CC584001C48B9 /* NSString+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DateFormat.h"; path = "SupportingFiles/NSString+DateFormat.h"; sourceTree = "<group>"; };
 		106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DateFormat.m"; path = "SupportingFiles/NSString+DateFormat.m"; sourceTree = "<group>"; };
+		10A87C881EA31C7C00106F58 /* WeatherTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherTableView.h; path = View/WeatherTableView.h; sourceTree = "<group>"; };
+		10A87C891EA31C7C00106F58 /* WeatherTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherTableView.m; path = View/WeatherTableView.m; sourceTree = "<group>"; };
 		10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		10F9AEA71E9F72E8000D83C6 /* NSDate+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFormat.h"; sourceTree = "<group>"; };
 		10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFormat.m"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				104A66371E9B28CC00A3970B /* WeatherSummaryCell */,
 				106BAEE81E9CC260001C48B9 /* WeatherForecastDataSource.h */,
 				106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */,
+				10A87C881EA31C7C00106F58 /* WeatherTableView.h */,
+				10A87C891EA31C7C00106F58 /* WeatherTableView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				104A66491E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */,
 				104A66411E9B360F00A3970B /* WeatherForecastManager.m in Sources */,
 				104A66451E9B364B00A3970B /* WeatherForecastConnector.m in Sources */,
+				10A87C8A1EA31C7C00106F58 /* WeatherTableView.m in Sources */,
 				106BAEEE1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */,
 				104A663B1E9B2E5300A3970B /* WeatherImage.m in Sources */,
 				1FA243751E978E41002B11B4 /* main.m in Sources */,
@@ -537,6 +544,7 @@
 				104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */,
 				1FA2438E1E978E41002B11B4 /* __4_1Tests.m in Sources */,
 				10F9AEAA1E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */,
+				10A87C8B1EA31C7C00106F58 /* WeatherTableView.m in Sources */,
 				104A66341E9B289400A3970B /* WeatherSummaryCell.m in Sources */,
 				106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */,
 				104A664E1E9B36C900A3970B /* DaoWeatherForecasts.m in Sources */,

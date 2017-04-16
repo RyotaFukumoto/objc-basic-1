@@ -15,10 +15,11 @@
 #import "WeatherSummaryCell.h"
 #import "WeatherForecastManager.h"
 #import "DaoWeatherForecasts.h"
+#import "WeatherTableView.h"
 
 @interface ViewController ()
 @property NSArray<NSDictionary*>* forecastsArray;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet WeatherTableView *tableView;
 @property (nonatomic) WeatherForecastDataSource *dataSource;
 @property (nonatomic) DaoWeatherForecasts* dao;
 @end
