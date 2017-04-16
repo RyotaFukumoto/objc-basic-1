@@ -7,15 +7,39 @@
 //
 
 #import "WeatherTableView.h"
+#import "WeatherSummaryCell.h"
+#import "WeatherForecastCell.h"
+#import "WeatherForecastDataSource.h"
+
+@interface WeatherTableView ()
+@property (nonatomic) WeatherForecastDataSource *wDataSource;
+
+@end
 
 @implementation WeatherTableView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+/**
+ テーブルビューの初期設定をする
+ */
+- (void)configureView{
+    
+    //TableViewの表示のための設定
+    [self registerNib:[UINib nibWithNibName:[WeatherSummaryCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[WeatherSummaryCell className]];
+    
+    [self registerNib:[UINib nibWithNibName:[WeatherForecastCell className]
+                                               bundle:nil]
+         forCellReuseIdentifier:[WeatherForecastCell className]];
+    
+    //NOTE:WeatherForecastDatasourceオブジェクトをdatasourceに直接代入すると、datasourceオブジェクトが開放されてしまう。
+    self.wDataSource = [[WeatherForecastDataSource alloc] init];
+    self.dataSource = self.wDataSource;
+    
+    ///セルの高さを可変にする
+    ///参考：http://tomoyaonishi.hatenablog.jp/entry/2014/09/27/161152
+    self.estimatedRowHeight = 150.0;
+    self.rowHeight = UITableViewAutomaticDimension;
 }
-*/
 
 @end

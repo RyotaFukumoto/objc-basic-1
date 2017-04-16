@@ -19,7 +19,7 @@
 
 @interface ViewController ()
 @property NSArray<NSDictionary*>* forecastsArray;
-@property (weak, nonatomic) IBOutlet WeatherTableView *tableView;
+@property (weak, nonatomic) IBOutlet WeatherTableView *weatherTableView;
 @property (nonatomic) WeatherForecastDataSource *dataSource;
 @property (nonatomic) DaoWeatherForecasts* dao;
 @end
@@ -35,7 +35,7 @@
     WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
     [manager callConnectorToFetchWeatherForecast];
     
-    [self configureTableView];
+    [self.weatherTableView configureView];
     
     //APIからの取得が終わったときにTable Viewを再描画する。そのための準備
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -56,29 +56,6 @@
  @param notification パース済みの天気予報APIからのレスポンス
  */
 - (void)connectorDidFinishFetchWeatherForecast:(NSNotification*)notification{
-    [self.tableView reloadData];
-}
-
-/**
- テーブルビューの初期設定をする
- */
-- (void)configureTableView{
-    
-    //TableViewの表示のための設定
-    [self.tableView registerNib:[UINib nibWithNibName:[WeatherSummaryCell className]
-                                               bundle:nil]
-         forCellReuseIdentifier:[WeatherSummaryCell className]];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:[WeatherForecastCell className]
-                                               bundle:nil]
-         forCellReuseIdentifier:[WeatherForecastCell className]];
-    
-    self.dataSource = [[WeatherForecastDataSource alloc] init];
-    self.tableView.dataSource = self.dataSource;
-    
-    ///セルの高さを可変にする
-    ///参考：http://tomoyaonishi.hatenablog.jp/entry/2014/09/27/161152
-    self.tableView.estimatedRowHeight = 150.0;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.weatherTableView reloadData];
 }
 @end

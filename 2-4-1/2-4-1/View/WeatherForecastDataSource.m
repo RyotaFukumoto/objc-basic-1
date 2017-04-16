@@ -63,6 +63,7 @@ numberOfRowsInSection:(NSInteger)section{
             [weatherSummaryCell setCellFor:manager.forecastSummary];
             return weatherSummaryCell;
         }
+            
         case DailyWeatherForecast:{
             WeatherForecastCell* weatherForecastCell = [tableView dequeueReusableCellWithIdentifier:[WeatherForecastCell className]
                                                                                        forIndexPath:indexPath];
@@ -71,6 +72,7 @@ numberOfRowsInSection:(NSInteger)section{
             
             return weatherForecastCell;
         }
+            
         default:{
             return nil;
         }

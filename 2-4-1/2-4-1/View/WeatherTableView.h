@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherTableView : UITableView
-
+- (void)configureView;
 @end
