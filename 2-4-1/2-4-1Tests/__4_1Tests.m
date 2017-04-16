@@ -246,7 +246,7 @@ didFailWithError:(NSError *)error{
         
     //通知に入れるレコードを作る
     //コネクタがパースを終えた時の通知を投げる
-    NSDictionary* userInfo =  @{@"forecasts":@[@{@"date":@"2999-11-13",
+    NSDictionary<NSString*,NSArray*>* userInfo =  @{@"forecasts":@[@{@"date":@"2999-11-13",
                                                @"telop":@"test weather",
                                                @"image":@{@"url":@"testurl.com"}
                                                }]

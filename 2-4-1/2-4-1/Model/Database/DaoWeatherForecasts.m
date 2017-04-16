@@ -302,8 +302,9 @@ typedef NSDictionary<NSString*,NSString*> WeatherRecord;
     }
     
     NSArray* savedRecords = [mWeatherRecordArray copy];
-    NSDictionary* dictionary = @{@"savedRecords":savedRecords};
+    NSDictionary<NSString*,NSArray*>* dictionary = @{@"savedRecords":savedRecords};
     
+    //NOTE: 当初の実装ではNSNotificationを使った以下の実装だったものの、テストクラスでの受信ができなかったため、デリゲートに変更した。
     //セーブできたレコードをつけて投げる
     /*[[NSNotificationCenter defaultCenter] postNotificationName:kDaoDidFinishSaveParsedData
                                                         object:self
