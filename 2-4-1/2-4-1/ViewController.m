@@ -14,11 +14,13 @@
 #import "WeatherForecastCell.h"
 #import "WeatherSummaryCell.h"
 #import "WeatherForecastManager.h"
+#import "DaoWeatherForecasts.h"
 
 @interface ViewController ()
 @property NSArray<NSDictionary*>* forecastsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) WeatherForecastDataSource *dataSource;
+@property (nonatomic) DaoWeatherForecasts* dao;
 @end
 
 @implementation ViewController
@@ -26,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dao = [DaoWeatherForecasts shared];
+
     //事前にお天気情報を取得しておく
     WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
     [manager callConnectorToFetchWeatherForecast];
@@ -36,9 +40,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFinishFetchWeatherForecast:)
                                                  name:kConnectorDidFinishFetchWeatherForecast
-                                               object:nil];
-    
-    
+                                               object:[WeatherForecastConnector sharedConnector]];
 }
 
 
@@ -48,7 +50,7 @@
 }
 
 /**
- Connectorクラスの天気予報取得が完了すると呼ばれる
+ Connectorクラスの天気予報取得が完了すると呼ばれる。
  
  @param notification パース済みの天気予報APIからのレスポンス
  */
@@ -60,9 +62,6 @@
  テーブルビューの初期設定をする
  */
 - (void)configureTableView{
-    //事前にお天気情報を取得しておく
-    WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
-    [manager callConnectorToFetchWeatherForecast];
     
     //TableViewの表示のための設定
     [self.tableView registerNib:[UINib nibWithNibName:[WeatherSummaryCell className]

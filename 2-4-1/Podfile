@@ -7,10 +7,12 @@ target '2-4-1' do
 
   # Pods for 2-4-1
 	pod 'AFNetworking'
+    pod 'FMDB'
   target '2-4-1Tests' do
     inherit! :search_paths
     # Pods for testing
 	pod 'AFNetworking'
+    pod 'FMDB'
   end
 
 end

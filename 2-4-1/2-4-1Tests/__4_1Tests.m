@@ -14,17 +14,23 @@
 #import "WeatherForecastManager.h"
 #import "Const.h"
 #import "NSString+DateFormat.h"
+#import "DaoWeatherForecasts.h"
 
-@interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate>
+@interface __4_1Tests : XCTestCase<WeatherForecastFetcherDelegate,DaoDelegate>
 @property XCTestExpectation* expectation;
 @property WeatherForecastConnector* connector;
+@property DaoWeatherForecasts *dao;
 @end
 
 @implementation __4_1Tests
 #pragma mark setting & clean up
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    //テストをする前に、テスト用のテーブルからレコードをすべて削除する
+    self.dao = [DaoWeatherForecasts shared];
+    [self.dao removeAllRecordIn:test];
+    [self.dao removeAllRecordIn:develop];
+    self.dao.delegate = self;
 }
 
 - (void)tearDown {
@@ -32,6 +38,9 @@
     [super tearDown];
     
     [self.connector.retrieveFetchers removeAllObjects];
+    
+    [self.dao removeAllRecordIn:test];
+    [self.dao removeAllRecordIn:develop];
 }
 
 #pragma mark fetcher test
@@ -95,7 +104,6 @@ didFailWithError:(NSError *)error{
  ・connector・fetcherからのコールバックがない場合、waitForExpectationsWithTimeout:メソッドのハンドラが呼ばれる
  */
 - (void)testConnectorToFetch{
-    [self.expectation fulfill];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFailFetching:)
@@ -211,13 +219,83 @@ didFailWithError:(NSError *)error{
     }];
 }
 
-#pragma mark performance test
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+#pragma mark DB I/O
+- (void)testInsertRecordToDB{
+    //保存したいモデルを作る
+    WeatherRecord* weatherRecord = @{kColumnNameForecastDate:@"2017-04-18",
+                                     kColumnNameForecastWeather:@"曇り",
+                                     kColumnNameImageURL:@"example.com"
+                                     };
+    
+    //保存するメソッドを呼ぶ
+    DaoWeatherForecasts* dao = [[DaoWeatherForecasts alloc] initForTest];
+    XCTAssertNotNil([dao addRecord:weatherRecord to:test]);
+    
+    //取り出してくる
+    NSArray<WeatherRecord*>* weatherRecords = [dao weatherForecastsFrom:test];
+    
+    //比較する
+    for (WeatherRecord* weatherRecord in weatherRecords) {
+        XCTAssertEqualObjects(weatherRecord[kColumnNameForecastDate], @"2017-04-18");
+        XCTAssertEqualObjects(weatherRecord[kColumnNameForecastWeather], @"曇り");
+        XCTAssertEqualObjects(weatherRecord[kColumnNameImageURL], @"example.com");
+    }
 }
+///コネクタがデータをパースして、通知を投げた時、そのデータをDBに正しく保存できているかを試す
+- (void)testSaveRecordWhenConnectorSencNotification{
+        
+    //通知に入れるレコードを作る
+    //コネクタがパースを終えた時の通知を投げる
+    NSDictionary<NSString*,NSArray*>* userInfo =  @{@"forecasts":@[@{@"date":@"2999-11-13",
+                                               @"telop":@"test weather",
+                                               @"image":@{@"url":@"testurl.com"}
+                                               }]
+                                };
+    self.expectation = [self expectationWithDescription:@"CallDaoDelegate"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kConnectorDidFinishFetchWeatherForecast
+                                                        object:nil
+                                                      userInfo:userInfo];
+    
+    [self waitForExpectationsWithTimeout:20.0
+                                 handler:^(NSError *error){
+                                     
+                                     NSLog(@"%s, %@",__func__,error.localizedDescription);
+                                     [[NSNotificationCenter defaultCenter] removeObserver:self];
+                                 }];
+}
+
+-(void)daoDidSaveRecord:(DaoWeatherForecasts *)dao
+               userInfo:(NSDictionary *)userInfo{
+    
+    [self.expectation fulfill];
+    
+    //DBのdevelopテーブル（ここは設定による）に保存しているはずなので、取り出してきて比べる
+    NSArray<WeatherRecord*>* weatherRecords = [self.dao weatherForecastsFrom:develop];
+    
+    //比較する
+    for (WeatherRecord* weatherRecord in weatherRecords) {
+        
+        //通知を呼ぶことで、他のクラスも動作してレコードを作るので、テストケースで挿入したレコードがあればOKとする。
+        if ([weatherRecord[kColumnNameForecastDate] isEqualToString:@"2999-11-13"]) {
+            XCTAssertEqualObjects(weatherRecord[kColumnNameForecastWeather],
+                                  @"test weather");
+            XCTAssertEqualObjects(weatherRecord[kColumnNameImageURL],
+                                  @"testurl.com");
+        }
+        return;
+    }
+    
+    
+}
+
+#pragma mark performance test
+//- (void)testPerformanceExample {
+//    // This is an example of a performance test case.
+//    [self measureBlock:^{
+//        // Put the code you want to measure the time of here.
+//    }];
+//}
 
 
 

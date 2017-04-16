@@ -30,14 +30,19 @@
 		104A66461E9B364B00A3970B /* WeatherForecastConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66441E9B364B00A3970B /* WeatherForecastConnector.m */; };
 		104A66491E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */; };
 		104A664A1E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */; };
-		104A664D1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */; };
-		104A664E1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */; };
+		104A664D1E9B36C900A3970B /* DaoWeatherForecasts.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecasts.m */; };
+		104A664E1E9B36C900A3970B /* DaoWeatherForecasts.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A664C1E9B36C900A3970B /* DaoWeatherForecasts.m */; };
 		106BAEE21E9CAF6E001C48B9 /* v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 106BAEE11E9CAF6E001C48B9 /* v1.json */; };
 		106BAEE31E9CAF6E001C48B9 /* v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 106BAEE11E9CAF6E001C48B9 /* v1.json */; };
 		106BAEEA1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */; };
 		106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */; };
 		106BAEEE1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
 		106BAEEF1E9CC584001C48B9 /* NSString+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */; };
+		10F9AEA51E9F6B95000D83C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */; };
+		10F9AEA61E9F6BBD000D83C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */; };
+		10F9AEA91E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */; };
+		10F9AEAA1E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */; };
+		10F9AEAC1E9F75F9000D83C6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F9AEAB1E9F75F9000D83C6 /* libsqlite3.dylib */; };
 		17C990AD0C6C524381B58BC2 /* libPods-2-4-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC325CF7DAA4AAF898FDF2E5 /* libPods-2-4-1.a */; };
 		1FA243751E978E41002B11B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243741E978E41002B11B4 /* main.m */; };
 		1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA243771E978E41002B11B4 /* AppDelegate.m */; };
@@ -80,14 +85,18 @@
 		104A66441E9B364B00A3970B /* WeatherForecastConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WeatherForecastConnector.m; path = Model/Networking/WeatherForecastConnector.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		104A66471E9B367C00A3970B /* WeatherForecastFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastFetcher.h; path = Model/Networking/WeatherForecastFetcher.h; sourceTree = "<group>"; };
 		104A66481E9B367C00A3970B /* WeatherForecastFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastFetcher.m; path = Model/Networking/WeatherForecastFetcher.m; sourceTree = "<group>"; };
-		104A664B1E9B36C900A3970B /* DaoWeatherForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaoWeatherForecast.h; path = Model/Database/DaoWeatherForecast.h; sourceTree = "<group>"; };
-		104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaoWeatherForecast.m; path = Model/Database/DaoWeatherForecast.m; sourceTree = "<group>"; };
+		104A664B1E9B36C900A3970B /* DaoWeatherForecasts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaoWeatherForecasts.h; path = Model/Database/DaoWeatherForecasts.h; sourceTree = "<group>"; };
+		104A664C1E9B36C900A3970B /* DaoWeatherForecasts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaoWeatherForecasts.m; path = Model/Database/DaoWeatherForecasts.m; sourceTree = "<group>"; };
 		104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2-4-1-prefix.pch"; path = "SupportingFiles/2-4-1-prefix.pch"; sourceTree = "<group>"; };
 		106BAEE11E9CAF6E001C48B9 /* v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v1.json; sourceTree = "<group>"; };
 		106BAEE81E9CC260001C48B9 /* WeatherForecastDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherForecastDataSource.h; path = View/WeatherForecastDataSource.h; sourceTree = "<group>"; };
 		106BAEE91E9CC260001C48B9 /* WeatherForecastDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherForecastDataSource.m; path = View/WeatherForecastDataSource.m; sourceTree = "<group>"; };
 		106BAEEC1E9CC584001C48B9 /* NSString+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DateFormat.h"; path = "SupportingFiles/NSString+DateFormat.h"; sourceTree = "<group>"; };
 		106BAEED1E9CC584001C48B9 /* NSString+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DateFormat.m"; path = "SupportingFiles/NSString+DateFormat.m"; sourceTree = "<group>"; };
+		10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		10F9AEA71E9F72E8000D83C6 /* NSDate+DateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFormat.h"; sourceTree = "<group>"; };
+		10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFormat.m"; sourceTree = "<group>"; };
+		10F9AEAB1E9F75F9000D83C6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		1FA243701E978E41002B11B4 /* 2-4-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-4-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA243741E978E41002B11B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA243761E978E41002B11B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,7 +122,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F9AEA51E9F6B95000D83C6 /* libsqlite3.0.tbd in Frameworks */,
 				17C990AD0C6C524381B58BC2 /* libPods-2-4-1.a in Frameworks */,
+				10F9AEAC1E9F75F9000D83C6 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F9AEA61E9F6BBD000D83C6 /* libsqlite3.0.tbd in Frameworks */,
 				0D9D569D8C5BE0A1961450AE /* libPods-2-4-1Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,8 +210,8 @@
 		104A663E1E9B35BA00A3970B /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				104A664B1E9B36C900A3970B /* DaoWeatherForecast.h */,
-				104A664C1E9B36C900A3970B /* DaoWeatherForecast.m */,
+				104A664B1E9B36C900A3970B /* DaoWeatherForecasts.h */,
+				104A664C1E9B36C900A3970B /* DaoWeatherForecasts.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -240,6 +252,8 @@
 		1FA243731E978E41002B11B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				10F9AEA71E9F72E8000D83C6 /* NSDate+DateFormat.h */,
+				10F9AEA81E9F72E8000D83C6 /* NSDate+DateFormat.m */,
 				106BAEE11E9CAF6E001C48B9 /* v1.json */,
 				104A66501E9B5A2B00A3970B /* 2-4-1-prefix.pch */,
 				1FA2437F1E978E41002B11B4 /* Assets.xcassets */,
@@ -268,6 +282,8 @@
 		2148CDF07EF5117C8ADD3E5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10F9AEAB1E9F75F9000D83C6 /* libsqlite3.dylib */,
+				10F9AEA41E9F6B95000D83C6 /* libsqlite3.0.tbd */,
 				BC325CF7DAA4AAF898FDF2E5 /* libPods-2-4-1.a */,
 				BE12ECA7DECACC506EBCD638 /* libPods-2-4-1Tests.a */,
 			);
@@ -439,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CD1E270FE17D04853F925064 /* [CP] Copy Pods Resources */ = {
@@ -484,7 +500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -496,7 +512,7 @@
 			files = (
 				1FA2437B1E978E41002B11B4 /* ViewController.m in Sources */,
 				104A66271E9B241700A3970B /* WeatherForecastCell.m in Sources */,
-				104A664D1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */,
+				104A664D1E9B36C900A3970B /* DaoWeatherForecasts.m in Sources */,
 				1FA243781E978E41002B11B4 /* AppDelegate.m in Sources */,
 				104A661E1E9B195C00A3970B /* NSString+decodeJSONString.m in Sources */,
 				104A66491E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */,
@@ -509,6 +525,7 @@
 				104384BE1E9C752400F18FC2 /* Const.m in Sources */,
 				106BAEEA1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */,
 				104A662E1E9B278600A3970B /* WeatherForecast.m in Sources */,
+				10F9AEA91E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,9 +536,10 @@
 				104A66281E9B241700A3970B /* WeatherForecastCell.m in Sources */,
 				104A661F1E9B197A00A3970B /* NSString+decodeJSONString.m in Sources */,
 				1FA2438E1E978E41002B11B4 /* __4_1Tests.m in Sources */,
+				10F9AEAA1E9F72E8000D83C6 /* NSDate+DateFormat.m in Sources */,
 				104A66341E9B289400A3970B /* WeatherSummaryCell.m in Sources */,
 				106BAEEB1E9CC260001C48B9 /* WeatherForecastDataSource.m in Sources */,
-				104A664E1E9B36C900A3970B /* DaoWeatherForecast.m in Sources */,
+				104A664E1E9B36C900A3970B /* DaoWeatherForecasts.m in Sources */,
 				104384BF1E9C752400F18FC2 /* Const.m in Sources */,
 				104A66421E9B360F00A3970B /* WeatherForecastManager.m in Sources */,
 				104A664A1E9B367C00A3970B /* WeatherForecastFetcher.m in Sources */,

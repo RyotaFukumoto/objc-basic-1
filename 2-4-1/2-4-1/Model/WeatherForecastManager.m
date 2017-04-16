@@ -49,7 +49,7 @@ static WeatherForecastManager* _sharedManager;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFinishFetchWeatherForecast:)
                                                  name:kConnectorDidFinishFetchWeatherForecast
-                                               object:nil];
+                                               object:[WeatherForecastConnector sharedConnector]];
 
     WeatherForecastConnector* connector = [WeatherForecastConnector sharedConnector];
     [connector fetchWeatherForecastFrom:kWeatherReportAPIBaseURL];
