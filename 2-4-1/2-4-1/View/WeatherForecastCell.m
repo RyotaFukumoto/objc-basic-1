@@ -28,9 +28,15 @@
     self.dateLabel.text = [NSString dateString:weatherForecast.date];
     self.weatherLabel.text = weatherForecast.telop;
     
+    //urlからキャッシュを参照して、キャッシュがない場合だけダウンロードしてくる
+    //cf. https://gist.github.com/sahara-ooga/f8698c4cc8344d9c2bef54483c1320d2
     NSString *urlString = weatherForecast.weatherImage.imageURL;
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url
+                                             cachePolicy:NSURLRequestReloadRevalidatingCacheData
+                                         timeoutInterval:120];
+    
+    //NSURLRequest* request = [NSURLRequest requestWithURL:url];
     UIImage *placeholderImage = [UIImage imageNamed:@"no_image"];
     
     [self.weatherImageView setImageWithURLRequest:request
@@ -39,7 +45,8 @@
                                               //FIXME: selfの扱いはweakで修正
                                               self.weatherImageView.image = image;
                                               [self setNeedsLayout];
-                                          }failure:nil];
+                                          }
+                                          failure:nil];
 }
 
 #pragma mark utility
