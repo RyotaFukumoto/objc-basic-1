@@ -42,4 +42,8 @@
     self.rowHeight = UITableViewAutomaticDimension;
 }
 
+-(void)daoDidSaveRecord:(DaoWeatherForecasts *)dao
+               userInfo:(NSDictionary *)userInfo{
+    
+}
 @end

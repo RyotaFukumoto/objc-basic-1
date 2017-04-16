@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoWeatherForecasts.h"
 
-@interface WeatherTableView : UITableView
+@interface WeatherTableView : UITableView<DaoDelegate>
 - (void)configureView;
+-(void)daoDidSaveRecord:(DaoWeatherForecasts *)dao
+               userInfo:(NSDictionary *)userInfo;
 @end
