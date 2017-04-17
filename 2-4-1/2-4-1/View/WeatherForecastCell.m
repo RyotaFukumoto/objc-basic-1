@@ -12,13 +12,25 @@
 #import "UIImageView+AFNetworking.h"
 
 @implementation WeatherForecastCell
-
+#pragma mark life Cycle
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+
+/**
+ セルのキャッシュを使いまわさないように、セルの再表示前に最初期化する
+ */
+-(void)prepareForReuse{
+    self.dateLabel.text = @"";
+    self.weatherLabel.text = @"";
+    self.weatherImageView.image = [UIImage imageNamed:@"no_image"];
+}
+
+#pragma mark Configure View
+- (void)setSelected:(BOOL)selected
+           animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
