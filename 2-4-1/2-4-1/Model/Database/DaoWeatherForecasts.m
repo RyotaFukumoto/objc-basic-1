@@ -19,8 +19,8 @@ NSString* const kColumnNameImageURL = @"image_url";
 
 //どのテーブルにレコードを記録するかこの定数で決定している
 //YES: developテーブル
-//NO: releaseテーブル
-BOOL const kDebugMode = YES;
+//NO: release用のテーブル
+BOOL const kDebugMode = NO;
 
 ///キーは上で定義した列名を使用
 typedef NSDictionary<NSString*,NSString*> WeatherRecord;
@@ -210,7 +210,7 @@ typedef NSDictionary<NSString*,NSString*> WeatherRecord;
     
 }
 
--(NSArray<WeatherRecord*>* _Nullable)WeatherForecasts{
+-(NSArray<WeatherRecord*>* _Nullable)weatherForecasts{
     //開発段階では、developテーブルからレコードを取り出す
     if (kDebugMode) {
         return [self weatherForecastsFrom:develop];
@@ -359,7 +359,9 @@ typedef NSDictionary<NSString*,NSString*> WeatherRecord;
     
     NSString* dir   = [paths objectAtIndex:0];
     
-    NSLog(@"DB Path = %@",dir);
+    if (kDebugMode) {
+        NSLog(@"DB Path = %@",dir);
+    }
     
     return [dir stringByAppendingPathComponent:kDBFileName];
 }

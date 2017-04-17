@@ -35,9 +35,9 @@
     WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
     [manager callConnectorToFetchWeatherForecast];
     
+    //テーブルビューの表示設定を行う
     [self.weatherTableView configureView];
     
-    //APIからの取得が終わったときにTable Viewを再描画する。そのための準備
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(connectorDidFinishFetchWeatherForecast:)
                                                  name:kConnectorDidFinishFetchWeatherForecast
@@ -51,7 +51,7 @@
 }
 
 /**
- Connectorクラスの天気予報取得が完了すると呼ばれる。
+ Connectorクラスの天気予報取得が完了すると呼ばれる。テーブルビューの再描画を行う。
  
  @param notification パース済みの天気予報APIからのレスポンス
  */
