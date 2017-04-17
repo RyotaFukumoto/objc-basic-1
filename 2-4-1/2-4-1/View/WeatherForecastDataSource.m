@@ -10,6 +10,7 @@
 #import "WeatherForecastManager.h"
 #import "WeatherSummaryCell.h"
 #import "WeatherForecastCell.h"
+#import "DaoWeatherForecasts.h"
 
 typedef NS_ENUM(NSUInteger, Section){
     Summary = 0,
@@ -51,29 +52,30 @@ numberOfRowsInSection:(NSInteger)section{
  @return セクションが０なら天気概要のセル、セクションが１なら各日の天気のセル
  */
 -(UITableViewCell *)tableView:(UITableView *)tableView
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DaoWeatherForecasts* dao = [DaoWeatherForecasts shared];
     WeatherForecastManager* manager = [WeatherForecastManager sharedManager];
-
+    
     switch (indexPath.section) {
-        case Summary:
-        {
+        case Summary:{
             WeatherSummaryCell* weatherSummaryCell = [tableView dequeueReusableCellWithIdentifier:[WeatherSummaryCell className]
                                                                                      forIndexPath:indexPath];
             [weatherSummaryCell setCellFor:manager.forecastSummary];
             return weatherSummaryCell;
         }
+            
         case DailyWeatherForecast:{
             WeatherForecastCell* weatherForecastCell = [tableView dequeueReusableCellWithIdentifier:[WeatherForecastCell className]
                                                                                        forIndexPath:indexPath];
             
-            [weatherForecastCell setCellFor:manager.forecasts[indexPath.row]];
+            //[weatherForecastCell setCellFor:dao.weatherForecasts[indexPath.row]];//manager.forecasts[indexPath.row]];
+            [weatherForecastCell configureCellFor:dao.weatherForecasts[indexPath.row]];
             
             return weatherForecastCell;
         }
-        default:{
+        default:
             return nil;
-        }
     }
 }
 @end

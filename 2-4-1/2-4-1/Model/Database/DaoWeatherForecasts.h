@@ -61,7 +61,7 @@ extern NSString* _Nonnull const kColumnNameImageURL;
 //-(void)insertDammyForecasts;
 
 //ゲッタ
--(NSArray<WeatherRecord*>* _Nullable)WeatherForecasts;
+-(NSArray<WeatherRecord*>* _Nullable)weatherForecasts;
 -(NSArray<WeatherRecord*>* _Nullable)weatherForecastsFrom:(TableName)tableName;
 
 //削除

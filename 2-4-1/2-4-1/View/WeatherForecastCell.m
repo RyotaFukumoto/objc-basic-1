@@ -49,6 +49,31 @@
                                           failure:nil];
 }
 
+-(void)configureCellFor:(WeatherRecord*)weatherRecord{
+    self.dateLabel.text = weatherRecord[kColumnNameForecastDate];
+    self.weatherLabel.text = weatherRecord[kColumnNameForecastWeather];
+    
+    //urlからキャッシュを参照して、キャッシュがない場合だけダウンロードしてくる
+    //cf. https://gist.github.com/sahara-ooga/f8698c4cc8344d9c2bef54483c1320d2
+    NSString *urlString = weatherRecord[kColumnNameImageURL];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url
+                                             cachePolicy:NSURLRequestReloadRevalidatingCacheData
+                                         timeoutInterval:120];
+    
+    //NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    UIImage *placeholderImage = [UIImage imageNamed:@"no_image"];
+    
+    [self.weatherImageView setImageWithURLRequest:request
+                                 placeholderImage:placeholderImage
+                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                              //FIXME: selfの扱いはweakで修正
+                                              self.weatherImageView.image = image;
+                                              [self setNeedsLayout];
+                                          }
+                                          failure:nil];
+}
+
 #pragma mark utility
 + (NSString*)className {
     return NSStringFromClass([WeatherForecastCell class]);
