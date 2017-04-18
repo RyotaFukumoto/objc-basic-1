@@ -42,8 +42,8 @@
 		1FA6FA961EA49C3100F19849 /* 2-4-8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-4-8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA6FA9A1EA49C3100F19849 /* __4_8Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __4_8Tests.m; sourceTree = "<group>"; };
 		1FA6FA9C1EA49C3100F19849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FA6FAA51EA49CE300F19849 /* PostInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostInstagram.h; path = VC/PostInstagram.h; sourceTree = "<group>"; };
-		1FA6FAA61EA49CE300F19849 /* PostInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostInstagram.m; path = VC/PostInstagram.m; sourceTree = "<group>"; };
+		1FA6FAA51EA49CE300F19849 /* PostInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostInstagram.h; path = PostInstagram.h; sourceTree = "<group>"; };
+		1FA6FAA61EA49CE300F19849 /* PostInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostInstagram.m; path = PostInstagram.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +85,10 @@
 		1FA6FA7F1EA49C3100F19849 /* 2-4-8 */ = {
 			isa = PBXGroup;
 			children = (
-				1FA6FAA91EA49CF100F19849 /* VC */,
-				1FA6FAAE1EA4A49A00F19849 /* View */,
 				1FA6FAAA1EA4A47800F19849 /* Resources */,
 				1FA6FA801EA49C3100F19849 /* Supporting Files */,
+				1FA6FAA91EA49CF100F19849 /* VC */,
+				1FA6FAAE1EA4A49A00F19849 /* View */,
 			);
 			path = "2-4-8";
 			sourceTree = "<group>";
@@ -101,13 +101,14 @@
 				1FA6FA811EA49C3100F19849 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1FA6FA991EA49C3100F19849 /* 2-4-8Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FA6FA9A1EA49C3100F19849 /* __4_8Tests.m */,
 				1FA6FA9C1EA49C3100F19849 /* Info.plist */,
+				1FA6FA9A1EA49C3100F19849 /* __4_8Tests.m */,
 			);
 			path = "2-4-8Tests";
 			sourceTree = "<group>";
@@ -115,22 +116,24 @@
 		1FA6FAA91EA49CF100F19849 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				1FA6FA861EA49C3100F19849 /* ViewController.h */,
-				1FA6FA871EA49C3100F19849 /* ViewController.m */,
 				1FA6FAA51EA49CE300F19849 /* PostInstagram.h */,
 				1FA6FAA61EA49CE300F19849 /* PostInstagram.m */,
+				1FA6FA861EA49C3100F19849 /* ViewController.h */,
+				1FA6FA871EA49C3100F19849 /* ViewController.m */,
 			);
 			name = VC;
+			path = VC;
 			sourceTree = "<group>";
 		};
 		1FA6FAAA1EA4A47800F19849 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				1FA6FA8C1EA49C3100F19849 /* Assets.xcassets */,
-				1FA6FA8E1EA49C3100F19849 /* LaunchScreen.storyboard */,
 				1FA6FA911EA49C3100F19849 /* Info.plist */,
+				1FA6FA8E1EA49C3100F19849 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1FA6FAAE1EA4A49A00F19849 /* View */ = {
@@ -139,6 +142,7 @@
 				1FA6FA891EA49C3100F19849 /* Main.storyboard */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +282,7 @@
 				1FA6FA8A1EA49C3100F19849 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1FA6FA8E1EA49C3100F19849 /* LaunchScreen.storyboard */ = {
@@ -286,6 +291,7 @@
 				1FA6FA8F1EA49C3100F19849 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -386,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				INFOPLIST_FILE = "2-4-8/Info.plist";
+				INFOPLIST_FILE = "2-4-8/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-8";
@@ -399,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				INFOPLIST_FILE = "2-4-8/Info.plist";
+				INFOPLIST_FILE = "2-4-8/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--4-8";
