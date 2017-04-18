@@ -35,9 +35,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vv3-sE-rMx">
-                                <rect key="frame" x="36" y="30" width="248" height="441"/>
+                                <rect key="frame" x="36" y="30" width="248" height="248"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Vv3-sE-rMx" secondAttribute="height" multiplier="9:16" id="xm8-vU-fdI"/>
+                                    <constraint firstAttribute="width" secondItem="Vv3-sE-rMx" secondAttribute="height" multiplier="1:1" id="xm8-vU-fdI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -51,12 +51,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S2c-JT-yvH" secondAttribute="bottom" constant="10" id="xoH-Qo-zUO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pictureImage" destination="Vv3-sE-rMx" id="wwf-Qg-DXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="992" height="591"/>
+        <image name="camera" width="250" height="223"/>
     </resources>
 </document>

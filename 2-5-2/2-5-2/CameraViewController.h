@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
-@property UIPopoverController *popover;
-
 @end
 

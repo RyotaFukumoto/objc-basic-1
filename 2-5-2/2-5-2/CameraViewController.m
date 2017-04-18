@@ -9,7 +9,7 @@
 #import "CameraViewController.h"
 
 @interface CameraViewController ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *pictureImage;
 @end
 
 @implementation CameraViewController
@@ -44,6 +44,38 @@
     else
     {
         NSLog(@"camera invalid.");
+    }
+}
+
+
+// 写真撮影後、もしくはフォトライブラリでサムネイル選択後に呼ばれるDelegate
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // オリジナル画像
+    UIImage *originalImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // 編集画像
+    UIImage *editedImage = (UIImage *)[info objectForKey:UIImagePickerControllerEditedImage];
+    UIImage *saveImage;
+    
+    if(editedImage)
+    {
+        saveImage = editedImage;
+    }
+    else
+    {
+        saveImage = originalImage;
+    }
+    
+    // UIImageViewに画像を設定
+    self.pictureImage.image = saveImage;
+    
+    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera)
+    {
+        // カメラから呼ばれた場合は画像をフォトライブラリに保存してViewControllerを閉じる
+        UIImageWriteToSavedPhotosAlbum(saveImage, nil, nil, nil);
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 @end

@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>カメラの撮影に必須です。</string>
+	<string>カメラの撮影に必須な許可です。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>撮影した画像の保存に必要な許可です。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
