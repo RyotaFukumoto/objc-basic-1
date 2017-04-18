@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVFoundation/AVFoundation.h"
 
-@interface CameraViewController : UIViewController
+@interface CameraViewController : UIViewController<AVCapturePhotoCaptureDelegate>
 
 
 @end

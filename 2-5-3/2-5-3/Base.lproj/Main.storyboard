@@ -1,26 +1,74 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EEI-F6-iqR">
+                                <rect key="frame" x="-20" y="0.0" width="360" height="479.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EEI-F6-iqR" secondAttribute="height" multiplier="3:4" id="c8u-1b-3lg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrB-94-4sk">
+                                <rect key="frame" x="130" y="503" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="J3l-8c-5Xs"/>
+                                    <constraint firstAttribute="width" secondItem="GrB-94-4sk" secondAttribute="height" multiplier="1:1" id="dgq-Bk-uQE"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QxV-cb-eJR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="utb-cn-vDw">
+                                <rect key="frame" x="0.0" y="484.5" width="63" height="83.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="utb-cn-vDw" secondAttribute="height" multiplier="3:4" id="xnD-Qg-4Mv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EEI-F6-iqR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1gO-7E-e2Z"/>
+                            <constraint firstItem="EEI-F6-iqR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8Ra-hZ-SVH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GrB-94-4sk" secondAttribute="bottom" constant="5" id="EIb-XK-dkr"/>
+                            <constraint firstItem="utb-cn-vDw" firstAttribute="top" secondItem="EEI-F6-iqR" secondAttribute="bottom" constant="5" id="W6o-Us-T7I"/>
+                            <constraint firstItem="EEI-F6-iqR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="aQ2-aQ-dui"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="utb-cn-vDw" secondAttribute="bottom" id="jzS-H2-MrO"/>
+                            <constraint firstAttribute="trailing" secondItem="EEI-F6-iqR" secondAttribute="trailing" constant="-20" id="omT-Jf-ska"/>
+                            <constraint firstItem="utb-cn-vDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yJv-Uc-hDk"/>
+                            <constraint firstItem="GrB-94-4sk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zv8-WO-iOX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoView" destination="utb-cn-vDw" id="EPg-Nk-26Y"/>
+                        <outlet property="videoPreviewView" destination="EEI-F6-iqR" id="IHf-pZ-R5U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="250" height="223"/>
+    </resources>
 </document>
