@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-JT-yvH">
+                                <rect key="frame" x="110" y="458" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dg9-jN-tpH"/>
+                                    <constraint firstAttribute="height" constant="100" id="k9N-yn-tav"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="cameraButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jaB-SU-eMY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vv3-sE-rMx">
+                                <rect key="frame" x="36" y="30" width="248" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vv3-sE-rMx" secondAttribute="height" multiplier="1:1" id="xm8-vU-fdI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vv3-sE-rMx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="IEa-sQ-Af0"/>
+                            <constraint firstItem="S2c-JT-yvH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lht-XH-mRu"/>
+                            <constraint firstItem="Vv3-sE-rMx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PBn-Ew-KWF"/>
+                            <constraint firstItem="Vv3-sE-rMx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XiY-Qd-g3N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vv3-sE-rMx" secondAttribute="trailing" constant="20" id="mHr-dt-6BI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S2c-JT-yvH" secondAttribute="bottom" constant="10" id="xoH-Qo-zUO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pictureImage" destination="Vv3-sE-rMx" id="wwf-Qg-DXa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" width="250" height="223"/>
+    </resources>
+</document>
