@@ -9,13 +9,16 @@
 #import "CameraViewController.h"
 
 @interface CameraViewController ()
+
 //UI
 @property (weak, nonatomic) IBOutlet UIImageView *videoPreviewView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+
 //AV Foundation
 @property (nonatomic) AVCaptureSession  *captureSesssion;
 @property AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic) AVCapturePhotoOutput *stillImageOutput;
+
 @end
 
 @implementation CameraViewController
@@ -52,9 +55,8 @@
         }
     }
     @catch (NSException *ex){
-        NSLog(error);
+        NSLog(@"%@",error);
     }
-    
 }
 
 

@@ -68,8 +68,8 @@
 			children = (
 				1FC990FC1EA5D5BD006E0918 /* 2-5-3 */,
 				1FC991161EA5D5BD006E0918 /* 2-5-3Tests */,
-				1FC990FB1EA5D5BD006E0918 /* Products */,
 				1FC991221EA5D95D006E0918 /* Frameworks */,
+				1FC990FB1EA5D5BD006E0918 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,15 +85,12 @@
 		1FC990FC1EA5D5BD006E0918 /* 2-5-3 */ = {
 			isa = PBXGroup;
 			children = (
+				1FC991541EA60EA2006E0918 /* Resources */,
+				1FC990FD1EA5D5BD006E0918 /* Supporting Files */,
+				1FC991561EA60EC0006E0918 /* View */,
+				1FC991551EA60EB3006E0918 /* View Controller */,
 				1FC991001EA5D5BD006E0918 /* AppDelegate.h */,
 				1FC991011EA5D5BD006E0918 /* AppDelegate.m */,
-				1FC991031EA5D5BD006E0918 /* CameraViewController.h */,
-				1FC991041EA5D5BD006E0918 /* CameraViewController.m */,
-				1FC991061EA5D5BD006E0918 /* Main.storyboard */,
-				1FC991091EA5D5BD006E0918 /* Assets.xcassets */,
-				1FC9910B1EA5D5BD006E0918 /* LaunchScreen.storyboard */,
-				1FC9910E1EA5D5BD006E0918 /* Info.plist */,
-				1FC990FD1EA5D5BD006E0918 /* Supporting Files */,
 			);
 			path = "2-5-3";
 			sourceTree = "<group>";
@@ -104,13 +101,14 @@
 				1FC990FE1EA5D5BD006E0918 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1FC991161EA5D5BD006E0918 /* 2-5-3Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FC991171EA5D5BD006E0918 /* __5_3Tests.m */,
 				1FC991191EA5D5BD006E0918 /* Info.plist */,
+				1FC991171EA5D5BD006E0918 /* __5_3Tests.m */,
 			);
 			path = "2-5-3Tests";
 			sourceTree = "<group>";
@@ -121,6 +119,36 @@
 				1FC991231EA5D95D006E0918 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FC991541EA60EA2006E0918 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FC991091EA5D5BD006E0918 /* Assets.xcassets */,
+				1FC9910E1EA5D5BD006E0918 /* Info.plist */,
+				1FC9910B1EA5D5BD006E0918 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1FC991551EA60EB3006E0918 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FC991031EA5D5BD006E0918 /* CameraViewController.h */,
+				1FC991041EA5D5BD006E0918 /* CameraViewController.m */,
+			);
+			name = "View Controller";
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1FC991561EA60EC0006E0918 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1FC991061EA5D5BD006E0918 /* Main.storyboard */,
+			);
+			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +286,7 @@
 				1FC991071EA5D5BD006E0918 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1FC9910B1EA5D5BD006E0918 /* LaunchScreen.storyboard */ = {
@@ -266,6 +295,7 @@
 				1FC9910C1EA5D5BD006E0918 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				INFOPLIST_FILE = "2-5-3/Info.plist";
+				INFOPLIST_FILE = "2-5-3/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--5-3";
@@ -379,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
-				INFOPLIST_FILE = "2-5-3/Info.plist";
+				INFOPLIST_FILE = "2-5-3/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--5-3";
