@@ -27,7 +27,7 @@
 }
 
 #pragma mark Show Camera Roll
-- (IBAction)buttonTapped:(UIButton *)sender {
+- (IBAction)pickButtonTapped:(UIButton *)sender {
     [self pickImageFromLibrary];
 }
 
@@ -49,26 +49,27 @@
  画像をカメラロールで選択した際に呼ばれるデリゲートメソッド.
  画像をモノクロに変更してImageViewに表示する
 
- @param picker <#picker description#>
- @param info <#info description#>
+ @param info 選択した画像の情報
  */
 -(void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    
-    UIImage* pickedImage = (UIImage*)info[UIImagePickerControllerOriginalImage];
-    
-    if (pickedImage) {
-        UIImage* filteredImage = [self applyFilterFor:pickedImage
-                                           filterName:@"CIPhotoEffectMono"];
-        
-        self.cameraRollImageView.image = filteredImage;
-    }
-    
+didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{   
+    self.cameraRollImageView.image = (UIImage*)info[UIImagePickerControllerOriginalImage];
     [picker dismissViewControllerAnimated:YES
                                completion:nil];
 }
 
 #pragma mark Filter
+- (IBAction)monochromeButtonTapped:(UIButton *)sender {
+    UIImage* image = self.cameraRollImageView.image;
+    
+    if (image) {
+        UIImage* filteredImage = [self applyFilterFor:image
+                                           filterName:@"CIPhotoEffectMono"];
+        self.cameraRollImageView.image = filteredImage;
+    }
+}
+
 -(UIImage*)applyFilterFor:(UIImage*)image
                filterName:(NSString*)filterName{
     

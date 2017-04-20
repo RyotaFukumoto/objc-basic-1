@@ -23,28 +23,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="un6-5n-bhb">
-                                <rect key="frame" x="124.5" y="611" width="126" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Pick an image"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4w-Ip-lSi"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-5y-PET">
                                 <rect key="frame" x="-4" y="20" width="383" height="510.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jcI-5y-PET" secondAttribute="height" multiplier="3:4" id="K8V-Td-8EC"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-z0-LQs">
+                                <rect key="frame" x="100.5" y="631" width="173" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Make monochrome"/>
+                                <connections>
+                                    <action selector="monochromeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yps-O3-8bz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="un6-5n-bhb">
+                                <rect key="frame" x="124" y="585" width="126" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Pick an image"/>
+                                <connections>
+                                    <action selector="pickButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2p6-jf-7tp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="un6-5n-bhb" secondAttribute="bottom" constant="20" id="4b4-AI-EOY"/>
                             <constraint firstItem="jcI-5y-PET" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="CA0-nH-cu2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M1u-z0-LQs" secondAttribute="bottom" id="Ne1-Gp-VNe"/>
                             <constraint firstItem="jcI-5y-PET" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OV6-CR-hn1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jcI-5y-PET" secondAttribute="trailing" constant="-20" id="WA9-yw-Meg"/>
                             <constraint firstItem="un6-5n-bhb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g8v-fd-iHk"/>
+                            <constraint firstItem="M1u-z0-LQs" firstAttribute="top" secondItem="un6-5n-bhb" secondAttribute="bottom" constant="10" id="uMO-2R-8zG"/>
+                            <constraint firstItem="M1u-z0-LQs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="via-tO-Ygl"/>
                         </constraints>
                     </view>
                     <connections>
