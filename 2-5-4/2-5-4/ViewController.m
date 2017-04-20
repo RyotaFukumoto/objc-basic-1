@@ -17,7 +17,9 @@
 #pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //画像のアスペクト比を変えず、Viewをはみ出さずめいいっぱいに表示する
+    self.cameraRollImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,12 +36,23 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         UIImagePickerController* pickerController = [[UIImagePickerController alloc] init];
         pickerController.delegate = self;
-        
         pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         
         [self presentViewController:pickerController
                            animated:YES
                          completion:nil];
     }
+}
+
+#pragma mark UIImagePickerControllerDelegate
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    if (info[UIImagePickerControllerOriginalImage]) {
+        self.cameraRollImageView.image = (UIImage*)info[UIImagePickerControllerOriginalImage];
+    }
+    
+    [picker dismissViewControllerAnimated:YES
+                               completion:nil];
 }
 @end
