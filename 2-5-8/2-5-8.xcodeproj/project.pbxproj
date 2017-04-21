@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FAA90701EA9B75F00A1D583 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA906F1EA9B75F00A1D583 /* GoogleService-Info.plist */; };
+		1FAA90711EA9B75F00A1D583 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA906F1EA9B75F00A1D583 /* GoogleService-Info.plist */; };
+		1FAA90731EA9B92A00A1D583 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAA90721EA9B92A00A1D583 /* UserNotifications.framework */; };
 		1FF404161EA99E5500C8C026 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF404151EA99E5500C8C026 /* main.m */; };
 		1FF404191EA99E5500C8C026 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF404181EA99E5500C8C026 /* AppDelegate.m */; };
 		1FF4041C1EA99E5500C8C026 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4041B1EA99E5500C8C026 /* ViewController.m */; };
@@ -30,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		02A0C5E78FC3ED5DC44046BB /* libPods-2-5-8Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2-5-8Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FAA906F1EA9B75F00A1D583 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FAA90721EA9B92A00A1D583 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		1FF404111EA99E5500C8C026 /* 2-5-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-5-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF404151EA99E5500C8C026 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FF404171EA99E5500C8C026 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FAA90731EA9B92A00A1D583 /* UserNotifications.framework in Frameworks */,
 				62E54E42D482D64763DB53D5 /* libPods-2-5-8.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +100,7 @@
 		1FF404131EA99E5500C8C026 /* 2-5-8 */ = {
 			isa = PBXGroup;
 			children = (
+				1FAA906F1EA9B75F00A1D583 /* GoogleService-Info.plist */,
 				1FF404391EA99EA700C8C026 /* 2-5-8.entitlements */,
 				1FF404171EA99E5500C8C026 /* AppDelegate.h */,
 				1FF404181EA99E5500C8C026 /* AppDelegate.m */,
@@ -139,6 +146,7 @@
 		4960233D8F43F1BB4787A50C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FAA90721EA9B92A00A1D583 /* UserNotifications.framework */,
 				D8F3138B908414E38AC5C330 /* libPods-2-5-8.a */,
 				02A0C5E78FC3ED5DC44046BB /* libPods-2-5-8Tests.a */,
 			);
@@ -242,6 +250,7 @@
 			files = (
 				1FF404241EA99E5500C8C026 /* LaunchScreen.storyboard in Resources */,
 				1FF404211EA99E5500C8C026 /* Assets.xcassets in Resources */,
+				1FAA90701EA9B75F00A1D583 /* GoogleService-Info.plist in Resources */,
 				1FF4041F1EA99E5500C8C026 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FAA90711EA9B75F00A1D583 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +507,7 @@
 				INFOPLIST_FILE = "2-5-8/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "stv.--5-8.oga";
+				PRODUCT_BUNDLE_IDENTIFIER = stv.pushnotification.oga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -512,7 +522,7 @@
 				INFOPLIST_FILE = "2-5-8/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "stv.--5-8.oga";
+				PRODUCT_BUNDLE_IDENTIFIER = stv.pushnotification.oga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -564,6 +574,7 @@
 				1FF404351EA99E5500C8C026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FF404361EA99E5500C8C026 /* Build configuration list for PBXNativeTarget "2-5-8Tests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +583,7 @@
 				1FF404381EA99E5500C8C026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
