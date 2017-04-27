@@ -27,7 +27,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    // ViewContollerからの呼び出しを想定
+
     if ([PostInstagram canInstagramAppOpen]) {
         
         UIImage *image = [UIImage imageNamed:@"cookie"]; // <- 投稿したい画像を準備しておく

@@ -34,7 +34,10 @@
 }
 
 - (void)openInstagram {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/image.igo"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *DocumentsDirPath = [paths objectAtIndex:0];
+    NSString *filePath = [DocumentsDirPath stringByAppendingString:@"/image.igo"];
+    
     NSURL *fileURL = [NSURL fileURLWithPath:filePath];
     
     self.interactionController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
@@ -51,8 +54,11 @@
 
 - (void)setImage:(UIImage *)image
 {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *DocumentsDirPath = [paths objectAtIndex:0];
+    NSString *filePath = [DocumentsDirPath stringByAppendingString:@"/image.igo"];
+    
     NSData *imageData = UIImageJPEGRepresentation(image, 0.75f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/image.igo"];
     [imageData writeToFile:filePath atomically:YES];
 }
 
@@ -81,7 +87,7 @@
     [self closeView];
 }
 
-- (void) documentInteractionControllerDidDismissOpenInMenu: (UIDocumentInteractionController *) controller
+- (void) documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *) controller
 {
     // キャンセルで閉じたとき
     [self closeView];

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PostInstagram.h"
 
 @interface __4_8Tests : XCTestCase
 
@@ -25,8 +26,7 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
 }
 
 - (void)testPerformanceExample {
