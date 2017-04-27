@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Paths_Of_Glory</string>
+			<key>year</key>
+			<real>1957</real>
+			<key>starring</key>
+			<string>Kirk Douglas</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>2001:A Space Odessey</string>
+			<key>year</key>
+			<real>1968</real>
+			<key>starring</key>
+			<string>Keir Dullea</string>
+		</dict>
+	</array>
+</dict>
+</plist>
