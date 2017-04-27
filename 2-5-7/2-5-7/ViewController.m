@@ -22,6 +22,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self pinAtKamata];
+    [self setDisplayRange];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,5 +38,15 @@
     pin.coordinate = kamataCoordinate;
     pin.title = @"日本工学院専門学校蒲田校";
     [self.mapView addAnnotation:pin];
+}
+
+/**
+ 縮尺、表示する中心を設定する
+ */
+-(void)setDisplayRange{
+    MKCoordinateRegion cr = self.mapView.region;
+    cr.center = CLLocationCoordinate2DMake(35.564942,139.715643);
+    cr.span = MKCoordinateSpanMake(0.01, 0.01);
+    [self.mapView setRegion:cr animated:YES];
 }
 @end
