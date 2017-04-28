@@ -7,17 +7,17 @@
 //
 
 #import "KublicRoutes.h"
-#import "ViewControllerProtocol.h"
-#import "ViewControllerBase.h"
 #import "NSString+dictionaryFromQueryString.h"
-#import "ControllerBase.h"
+#import "ViewController.h"
+#import "DetailController.h"
+#import "BiographyController.h"
 
 @implementation KublicRoutes
 
 /**
  urlスキームのスキームがKublicだった場合に呼ばれる。クエリのホスト名を元に、各コントローラにクエリ（の処理）を振り分ける
 
- @param url 例：(kublic://)detail/show?title=paths_of_glory&key=year
+ @param url 例：kubrick://detail/show?title=Paths_Of_Glory&key=year
  @return 渡したクエリの処理が成功したらYES
  */
 - (BOOL)openURL:(NSURL *)url
@@ -32,11 +32,35 @@
     Class controllerClass = NSClassFromString([NSString stringWithFormat:@"%@Controller",controllerName]);
     
     if ([controllerClass isSubclassOfClass:[ControllerBase class]]) {
-        ControllerBase* controller = [[controllerClass alloc] init];
+        self.controllerBase = [[controllerClass alloc] init];
         
-        return [controller action:[url lastPathComponent]
+        //controllerが直接VCに処理を委譲するものだった場合、個別にDelegateを(VCに)設定する
+        if ([controllerClass isSubclassOfClass:[DetailController class]] || [controllerClass isSubclassOfClass:[BiographyController class]]) {
+            ViewController* vc = (ViewController*)[self getTopMostViewController];
+            self.controllerBase.controllerBaseDelegate = vc;
+        }
+        
+        return [self.controllerBase action:[url lastPathComponent]
                             query:[[url query] dictionaryFromQueryString]];
     }
+    
     return NO;
+}
+
+
+/**
+
+ @return 最前面のView Controller
+ */
+-(UIViewController*)getTopMostViewController{
+    UIViewController* tc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    //tcとしてUINavigation Contollerが取れると、presentedVCではうまくいかないので、別に処理する
+    if ([tc isKindOfClass:[UINavigationController class]]){
+        tc = tc.childViewControllers[0];
+    }
+    while (tc.presentedViewController != nil){
+        tc = tc.presentedViewController;
+    }
+    return tc;
 }
 @end

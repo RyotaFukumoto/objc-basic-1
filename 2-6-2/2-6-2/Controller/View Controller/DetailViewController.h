@@ -6,12 +6,12 @@
 //  Copyright © 2017年 stv. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "ViewControllerBase.h"
-#import "ViewControllerProtocol.h"
 
-@interface DetailViewController : ViewControllerBase<ViewControllerProtocol>
+@interface DetailViewController : UIViewController
 @property IBOutlet UILabel* titleLabel;
 @property IBOutlet UILabel* keyLabel;
 @property IBOutlet UILabel* valueLabel;
+@property NSDictionary<NSString*,NSString*>* query;
 
+-(BOOL)configureView:(NSDictionary<NSString*,NSString*>*)query;
 @end

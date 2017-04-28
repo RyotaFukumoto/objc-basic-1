@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ControllerBase.h"
 
 @interface KublicRoutes : NSObject
+
+@property ControllerBase* controllerBase;
 - (BOOL)openURL:(NSURL *)url;
+
 @end

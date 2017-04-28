@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F01B4841EB3093C006A2A63 /* Biography.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B4831EB3093C006A2A63 /* Biography.plist */; };
+		1F01B4851EB3093C006A2A63 /* Biography.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B4831EB3093C006A2A63 /* Biography.plist */; };
+		1F01B4881EB30995006A2A63 /* BiographyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B4871EB30995006A2A63 /* BiographyController.m */; };
+		1F01B4891EB30995006A2A63 /* BiographyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B4871EB30995006A2A63 /* BiographyController.m */; };
+		1F01B48D1EB30F53006A2A63 /* BiographyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */; };
+		1F01B48E1EB30F53006A2A63 /* BiographyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */; };
+		1F01B48F1EB30F53006A2A63 /* BiographyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */; };
+		1F01B4901EB30F53006A2A63 /* BiographyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */; };
 		1F83FD631EB18EB9000209AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD621EB18EB9000209AA /* main.m */; };
 		1F83FD661EB18EB9000209AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD651EB18EB9000209AA /* AppDelegate.m */; };
 		1F83FD691EB18EB9000209AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD681EB18EB9000209AA /* ViewController.m */; };
@@ -16,8 +24,6 @@
 		1F83FD7C1EB18EB9000209AA /* __6_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD7B1EB18EB9000209AA /* __6_2Tests.m */; };
 		1F83FD8B1EB1BDC8000209AA /* KublicRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */; };
 		1F83FD8C1EB1BDC8000209AA /* KublicRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */; };
-		1F83FD901EB1BF1F000209AA /* ViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD8F1EB1BF1F000209AA /* ViewControllerBase.m */; };
-		1F83FD911EB1BF1F000209AA /* ViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD8F1EB1BF1F000209AA /* ViewControllerBase.m */; };
 		1F83FD951EB1C695000209AA /* NSString+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD941EB1C695000209AA /* NSString+dictionaryFromQueryString.m */; };
 		1F83FD961EB1C695000209AA /* NSString+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD941EB1C695000209AA /* NSString+dictionaryFromQueryString.m */; };
 		1F83FD9A1EB1D65D000209AA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD981EB1D65D000209AA /* DetailViewController.m */; };
@@ -43,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F01B4831EB3093C006A2A63 /* Biography.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Biography.plist; sourceTree = "<group>"; };
+		1F01B4861EB30995006A2A63 /* BiographyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiographyController.h; sourceTree = "<group>"; };
+		1F01B4871EB30995006A2A63 /* BiographyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiographyController.m; sourceTree = "<group>"; };
+		1F01B48A1EB30F53006A2A63 /* BiographyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiographyViewController.h; sourceTree = "<group>"; };
+		1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiographyViewController.m; sourceTree = "<group>"; };
+		1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiographyViewController.xib; sourceTree = "<group>"; };
 		1F83FD5E1EB18EB9000209AA /* 2-6-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-6-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F83FD621EB18EB9000209AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F83FD641EB18EB9000209AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,9 +70,6 @@
 		1F83FD7D1EB18EB9000209AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F83FD891EB1BDC8000209AA /* KublicRoutes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KublicRoutes.h; sourceTree = "<group>"; };
 		1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KublicRoutes.m; sourceTree = "<group>"; };
-		1F83FD8E1EB1BF1F000209AA /* ViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerBase.h; sourceTree = "<group>"; };
-		1F83FD8F1EB1BF1F000209AA /* ViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerBase.m; sourceTree = "<group>"; };
-		1F83FD921EB1C04C000209AA /* ViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerProtocol.h; sourceTree = "<group>"; };
 		1F83FD931EB1C695000209AA /* NSString+dictionaryFromQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+dictionaryFromQueryString.h"; sourceTree = "<group>"; };
 		1F83FD941EB1C695000209AA /* NSString+dictionaryFromQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+dictionaryFromQueryString.m"; sourceTree = "<group>"; };
 		1F83FD971EB1D65D000209AA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -127,7 +136,6 @@
 				1F83FD941EB1C695000209AA /* NSString+dictionaryFromQueryString.m */,
 				1F83FD621EB18EB9000209AA /* main.m */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -146,14 +154,15 @@
 				1F83FD8D1EB1BEEA000209AA /* View Controller */,
 				1F83FD641EB18EB9000209AA /* AppDelegate.h */,
 				1F83FD651EB18EB9000209AA /* AppDelegate.m */,
+				1F83FD891EB1BDC8000209AA /* KublicRoutes.h */,
+				1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */,
 				1F83FDA41EB1F0AA000209AA /* ControllerBase.h */,
 				1F83FDA51EB1F0AA000209AA /* ControllerBase.m */,
 				1F83FDA81EB1F0EB000209AA /* DetailController.h */,
 				1F83FDA91EB1F0EB000209AA /* DetailController.m */,
-				1F83FD891EB1BDC8000209AA /* KublicRoutes.h */,
-				1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */,
+				1F01B4861EB30995006A2A63 /* BiographyController.h */,
+				1F01B4871EB30995006A2A63 /* BiographyController.m */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -164,8 +173,8 @@
 				1F83FD9E1EB1E154000209AA /* Films.plist */,
 				1F83FD721EB18EB9000209AA /* Info.plist */,
 				1F83FD6F1EB18EB9000209AA /* LaunchScreen.storyboard */,
+				1F01B4831EB3093C006A2A63 /* Biography.plist */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -174,23 +183,21 @@
 			children = (
 				1F83FD6A1EB18EB9000209AA /* Main.storyboard */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
 		1F83FD8D1EB1BEEA000209AA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1F83FD671EB18EB9000209AA /* ViewController.h */,
+				1F83FD681EB18EB9000209AA /* ViewController.m */,
 				1F83FD971EB1D65D000209AA /* DetailViewController.h */,
 				1F83FD981EB1D65D000209AA /* DetailViewController.m */,
 				1F83FD991EB1D65D000209AA /* DetailViewController.xib */,
-				1F83FD671EB18EB9000209AA /* ViewController.h */,
-				1F83FD681EB18EB9000209AA /* ViewController.m */,
-				1F83FD8E1EB1BF1F000209AA /* ViewControllerBase.h */,
-				1F83FD8F1EB1BF1F000209AA /* ViewControllerBase.m */,
-				1F83FD921EB1C04C000209AA /* ViewControllerProtocol.h */,
+				1F01B48A1EB30F53006A2A63 /* BiographyViewController.h */,
+				1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */,
+				1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */,
 			);
-			name = "View Controller";
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
@@ -282,7 +289,9 @@
 				1F83FD9F1EB1E154000209AA /* Films.plist in Resources */,
 				1F83FD6E1EB18EB9000209AA /* Assets.xcassets in Resources */,
 				1F83FD6C1EB18EB9000209AA /* Main.storyboard in Resources */,
+				1F01B4841EB3093C006A2A63 /* Biography.plist in Resources */,
 				1F83FD9C1EB1D65D000209AA /* DetailViewController.xib in Resources */,
+				1F01B48F1EB30F53006A2A63 /* BiographyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +299,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F01B4901EB30F53006A2A63 /* BiographyViewController.xib in Resources */,
 				1F83FDA01EB1E154000209AA /* Films.plist in Resources */,
+				1F01B4851EB3093C006A2A63 /* Biography.plist in Resources */,
 				1F83FD9D1EB1D65D000209AA /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F83FD691EB18EB9000209AA /* ViewController.m in Sources */,
-				1F83FD901EB1BF1F000209AA /* ViewControllerBase.m in Sources */,
 				1F83FDAA1EB1F0EB000209AA /* DetailController.m in Sources */,
 				1F83FDA61EB1F0AA000209AA /* ControllerBase.m in Sources */,
 				1F83FD8B1EB1BDC8000209AA /* KublicRoutes.m in Sources */,
@@ -311,6 +321,8 @@
 				1F83FD951EB1C695000209AA /* NSString+dictionaryFromQueryString.m in Sources */,
 				1F83FD631EB18EB9000209AA /* main.m in Sources */,
 				1F83FD9A1EB1D65D000209AA /* DetailViewController.m in Sources */,
+				1F01B48D1EB30F53006A2A63 /* BiographyViewController.m in Sources */,
+				1F01B4881EB30995006A2A63 /* BiographyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,13 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F01B48E1EB30F53006A2A63 /* BiographyViewController.m in Sources */,
 				1F83FD9B1EB1D65D000209AA /* DetailViewController.m in Sources */,
+				1F01B4891EB30995006A2A63 /* BiographyController.m in Sources */,
 				1F83FD7C1EB18EB9000209AA /* __6_2Tests.m in Sources */,
 				1F83FDA71EB1F0AA000209AA /* ControllerBase.m in Sources */,
 				1F83FDAB1EB1F0EB000209AA /* DetailController.m in Sources */,
 				1F83FD8C1EB1BDC8000209AA /* KublicRoutes.m in Sources */,
 				1F83FD961EB1C695000209AA /* NSString+dictionaryFromQueryString.m in Sources */,
-				1F83FD911EB1BF1F000209AA /* ViewControllerBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-6-2/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--6-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = "2-6-2/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stv.--6-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,6 +534,7 @@
 				1F83FD821EB18EB9000209AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F83FD831EB18EB9000209AA /* Build configuration list for PBXNativeTarget "2-6-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +543,7 @@
 				1F83FD851EB18EB9000209AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

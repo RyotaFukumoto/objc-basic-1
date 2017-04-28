@@ -12,9 +12,12 @@
 - (BOOL)showAction:(NSDictionary *)query
 {
     if (query[@"title"] && query[@"key"]) {
-        //[self configureView:query];
-        //TODO: ViewControllerにDetailViewControllerを表示するように実装
-        return YES;
+        
+        if ([self.controllerBaseDelegate respondsToSelector:@selector(setView:For:)])
+        {
+            return [self.controllerBaseDelegate setView:self
+                                                    For:query];
+        }
     }
     
     return NO;

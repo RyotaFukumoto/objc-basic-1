@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class ControllerBase;
+@protocol ControllerBaseDelegate <NSObject>
+-(BOOL)setView:(ControllerBase*)controllerBase
+           For:(NSDictionary*)query;
+@end
+
 @interface ControllerBase : NSObject
+
+@property id<ControllerBaseDelegate> controllerBaseDelegate;
+
 - (BOOL)action:(NSString *)action
          query:(NSDictionary *)query;
 @end

@@ -20,7 +20,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kubrick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-Xd-cht">
+                                <rect key="frame" x="136" y="164" width="104.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptx-ze-oO6">
+                                <rect key="frame" x="105.5" y="457" width="164" height="30"/>
+                                <state key="normal" title="Full Metal Jacket &amp; Year"/>
+                                <connections>
+                                    <action selector="fullMetalJacketButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvo-6Y-mFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54I-KV-j9w">
+                                <rect key="frame" x="152.5" y="537" width="70" height="30"/>
+                                <state key="normal" title="Biography"/>
+                                <connections>
+                                    <action selector="biographyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U51-Ug-WHN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ptx-ze-oO6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0v-xK-gzf"/>
+                            <constraint firstItem="JaV-Xd-cht" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="aXG-9W-dWU"/>
+                            <constraint firstItem="JaV-Xd-cht" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b6h-sZ-w5O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="54I-KV-j9w" secondAttribute="bottom" constant="100" id="rLv-Gu-gKw"/>
+                            <constraint firstItem="54I-KV-j9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uaT-u6-hGZ"/>
+                            <constraint firstItem="54I-KV-j9w" firstAttribute="top" secondItem="ptx-ze-oO6" secondAttribute="bottom" constant="50" id="yYB-FS-mKr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6p6-mi-QEO"/>
                 </viewController>

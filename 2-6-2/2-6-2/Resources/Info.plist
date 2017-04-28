@@ -24,6 +24,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<string>kubrick</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -31,7 +33,7 @@
 			<string>stv.--6-2</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string> kubrick</string>
+				<string>kubrick</string>
 			</array>
 		</dict>
 	</array>

@@ -1,12 +1,12 @@
 //
-//  DetailViewController.m
+//  BiographyViewController.m
 //  2-6-2
 //
-//  Created by yuu ogasawara on 2017/04/27.
+//  Created by yuu ogasawara on 2017/04/28.
 //  Copyright © 2017年 stv. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "BiographyViewController.h"
 
 //plistの読み込み時に、配列か辞書か選択するための列挙型
 typedef enum : NSInteger{
@@ -14,13 +14,13 @@ typedef enum : NSInteger{
     Dictionary
 }RootType;
 
-@interface DetailViewController ()
+@interface BiographyViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @end
 
-@implementation DetailViewController
-@synthesize titleLabel,keyLabel,valueLabel;
+@implementation BiographyViewController
 
-#pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -35,28 +35,17 @@ typedef enum : NSInteger{
     [super viewWillAppear:animated];
     
     //表示前に改めてUIパーツの設定を行う。
-    if (self.query) {
-        [self configureView:self.query];
-    }
+    [self configureView];
+    
 }
 
-#pragma mark view configuration
--(BOOL)configureView:(NSDictionary<NSString*,NSString*>*)query{
-    
-    self.titleLabel.text = query[@"title"];
-    self.keyLabel.text = query[@"key"];
-    
+-(BOOL)configureView{
     //plistから値を読み込んできて設定
-    NSArray<NSDictionary<NSString*,NSString*>*> *array = [self objectFromPlistOf:@"Films"
-                             rootTypeOfPlist:Array];
+    NSDictionary<NSString*,NSString*> *dictionary = [self objectFromPlistOf:@"Biography"
+                                                          rootTypeOfPlist:Dictionary];
     
-    for (NSDictionary<NSString*,NSString*>* dic in array) {
-        if ([dic[@"title"] isEqualToString:(NSString*)query[@"title"]]) {
-            self.valueLabel.text = dic[query[@"key"]];
-            return YES;
-        }
-    }
-    return NO;
+    self.textView.text = dictionary[@"biography"];
+    return YES;
 }
 
 /**

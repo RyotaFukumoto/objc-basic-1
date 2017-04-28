@@ -57,7 +57,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    if ([[url scheme] isEqualToString:@"kublic"]) {
+    if ([[url scheme] isEqualToString:@"kubrick"]) {
         return [[[KublicRoutes alloc] init] openURL:url];
     }
     
