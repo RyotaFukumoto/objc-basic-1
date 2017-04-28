@@ -1,13 +1,14 @@
-import os
+# This Python file uses the following encoding: utf-8
+# -*- coding: utf_8 -*- 
+#参考:http://lab.hde.co.jp/2008/08/pythonunicodeencodeerror.html
 
-# Flask などの必要なライブラリをインポートする
+import os
+#Flaskなどの必要なライブラリをインポートする
 from flask import Flask, render_template, request, redirect, url_for
 
 #apns
 import time
 from apns.apns import APNs, Frame, Payload
-
-import subprocess
 
 # 自身の名称を app という名前でインスタンス化する
 app = Flask(__name__)
