@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kubrick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-Xd-cht">
-                                <rect key="frame" x="136" y="164" width="104.5" height="36"/>
+                                <rect key="frame" x="136" y="371" width="104.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,18 +41,29 @@
                                     <action selector="biographyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U51-Ug-WHN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display parameter!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCP-yX-ACH">
+                                <rect key="frame" x="116" y="164" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ptx-ze-oO6" firstAttribute="top" secondItem="JaV-Xd-cht" secondAttribute="bottom" constant="50" id="7w2-07-Whs"/>
                             <constraint firstItem="ptx-ze-oO6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0v-xK-gzf"/>
-                            <constraint firstItem="JaV-Xd-cht" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="aXG-9W-dWU"/>
+                            <constraint firstItem="iCP-yX-ACH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Ugg-ky-isI"/>
                             <constraint firstItem="JaV-Xd-cht" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b6h-sZ-w5O"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="54I-KV-j9w" secondAttribute="bottom" constant="100" id="rLv-Gu-gKw"/>
                             <constraint firstItem="54I-KV-j9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uaT-u6-hGZ"/>
                             <constraint firstItem="54I-KV-j9w" firstAttribute="top" secondItem="ptx-ze-oO6" secondAttribute="bottom" constant="50" id="yYB-FS-mKr"/>
+                            <constraint firstItem="iCP-yX-ACH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zT1-Rt-56s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6p6-mi-QEO"/>
+                    <connections>
+                        <outlet property="label" destination="iCP-yX-ACH" id="ctN-wp-1U5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

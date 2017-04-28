@@ -34,6 +34,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kubrick</string>
+				<string>hello</string>
 			</array>
 		</dict>
 	</array>

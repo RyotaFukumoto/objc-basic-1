@@ -12,6 +12,7 @@
 
 #import "AppDelegate.h"
 #import "KublicRoutes.h"
+#import "HelloRoutes.h"
 
 @interface AppDelegate ()
 
@@ -61,6 +62,11 @@
         return [[[KublicRoutes alloc] init] openURL:url];
     }
     
+    //来るURLとしては、hello:///show?title=hello
+    if ([[url scheme] isEqualToString:@"hello"]) {
+        
+        return [[[HelloRoutes alloc] init] openURL:url];
+    }
     return NO;
 }
 

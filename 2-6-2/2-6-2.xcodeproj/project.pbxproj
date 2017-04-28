@@ -15,6 +15,8 @@
 		1F01B48E1EB30F53006A2A63 /* BiographyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */; };
 		1F01B48F1EB30F53006A2A63 /* BiographyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */; };
 		1F01B4901EB30F53006A2A63 /* BiographyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */; };
+		1F01B4931EB32169006A2A63 /* HelloRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B4921EB32169006A2A63 /* HelloRoutes.m */; };
+		1F01B4941EB32169006A2A63 /* HelloRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01B4921EB32169006A2A63 /* HelloRoutes.m */; };
 		1F83FD631EB18EB9000209AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD621EB18EB9000209AA /* main.m */; };
 		1F83FD661EB18EB9000209AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD651EB18EB9000209AA /* AppDelegate.m */; };
 		1F83FD691EB18EB9000209AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FD681EB18EB9000209AA /* ViewController.m */; };
@@ -55,6 +57,8 @@
 		1F01B48A1EB30F53006A2A63 /* BiographyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiographyViewController.h; sourceTree = "<group>"; };
 		1F01B48B1EB30F53006A2A63 /* BiographyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiographyViewController.m; sourceTree = "<group>"; };
 		1F01B48C1EB30F53006A2A63 /* BiographyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiographyViewController.xib; sourceTree = "<group>"; };
+		1F01B4911EB32169006A2A63 /* HelloRoutes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloRoutes.h; sourceTree = "<group>"; };
+		1F01B4921EB32169006A2A63 /* HelloRoutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloRoutes.m; sourceTree = "<group>"; };
 		1F83FD5E1EB18EB9000209AA /* 2-6-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-6-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F83FD621EB18EB9000209AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F83FD641EB18EB9000209AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				1F83FD8D1EB1BEEA000209AA /* View Controller */,
 				1F83FD641EB18EB9000209AA /* AppDelegate.h */,
 				1F83FD651EB18EB9000209AA /* AppDelegate.m */,
+				1F01B4911EB32169006A2A63 /* HelloRoutes.h */,
+				1F01B4921EB32169006A2A63 /* HelloRoutes.m */,
 				1F83FD891EB1BDC8000209AA /* KublicRoutes.h */,
 				1F83FD8A1EB1BDC8000209AA /* KublicRoutes.m */,
 				1F83FDA41EB1F0AA000209AA /* ControllerBase.h */,
@@ -322,6 +328,7 @@
 				1F83FD631EB18EB9000209AA /* main.m in Sources */,
 				1F83FD9A1EB1D65D000209AA /* DetailViewController.m in Sources */,
 				1F01B48D1EB30F53006A2A63 /* BiographyViewController.m in Sources */,
+				1F01B4931EB32169006A2A63 /* HelloRoutes.m in Sources */,
 				1F01B4881EB30995006A2A63 /* BiographyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01B48E1EB30F53006A2A63 /* BiographyViewController.m in Sources */,
+				1F01B4941EB32169006A2A63 /* HelloRoutes.m in Sources */,
 				1F83FD9B1EB1D65D000209AA /* DetailViewController.m in Sources */,
 				1F01B4891EB30995006A2A63 /* BiographyController.m in Sources */,
 				1F83FD7C1EB18EB9000209AA /* __6_2Tests.m in Sources */,

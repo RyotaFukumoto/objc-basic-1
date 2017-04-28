@@ -13,6 +13,7 @@
 #import "BiographyViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -87,6 +88,15 @@
                 options:options
       completionHandler:nil];
     }
+}
+
+-(BOOL)show:(NSDictionary *)query{
+    if (query[@"title"]) {
+        self.label.text = query[@"title"];
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

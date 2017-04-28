@@ -10,6 +10,6 @@
 #import "ControllerBase.h"
 
 @interface ViewController : UIViewController <ControllerBaseDelegate>
-
+-(BOOL)show:(NSDictionary*)query;
 @end
 
