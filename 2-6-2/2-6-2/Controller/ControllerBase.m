@@ -11,7 +11,9 @@
 @implementation ControllerBase
 - (BOOL)action:(NSString *)action
          query:(NSDictionary *)query{
+    
     SEL sel = NSSelectorFromString([NSString stringWithFormat:@"%@Action:", action]);
+    
     if ([self respondsToSelector:sel]) {
         BOOL (*actionImp)(id, SEL, NSDictionary *);
         actionImp = (BOOL (*)(id, SEL, NSDictionary *))[self methodForSelector:sel];

@@ -40,6 +40,8 @@
             self.controllerBase.controllerBaseDelegate = vc;
         }
         
+        //ex."kublic://biography/show"なら、BiographyControllerのshowActionを呼び出す
+        //"kublic://detail/show?title=Paths_Of_Glory&key=year"なら、["title":"Paths_Of_Glory","key":"year"]をqueryにした、DetailControllerのshowActionメソッドを呼び出す。
         return [self.controllerBase action:[url lastPathComponent]
                             query:[[url query] dictionaryFromQueryString]];
     }
