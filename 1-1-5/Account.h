@@ -12,13 +12,13 @@
 @interface Account : NSObject{
     //【プロパティ】 氏名:文字列型 年齢:整数型 性別:文字列型 得意な言語:文字列型
     NSString *name;
-    NSInteger *age;
+    NSInteger age;
     NSString *sex;
     NSString *favoriteLanguage;
 }
 
 -(id)initWithName:(NSString *)n
-              age:(NSInteger *)a
+              age:(NSInteger)a
               sex:(NSString *)s
  favoriteLanguage:(NSString *)f;
 

@@ -13,7 +13,7 @@
 }
 
 -(id)initWithName:(NSString *)n
-              age:(NSInteger *)a
+              age:(NSInteger)a
               sex:(NSString *)s
  favoriteLanguage:(NSString *)f
 {
